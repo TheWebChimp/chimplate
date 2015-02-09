@@ -1,0 +1,171 @@
+/* 	    ______
+	   / ____/___  _________ ___  _____
+	  / /_  / __ \/ ___/ __ `__ \/ ___/
+	 / __/ / /_/ / /  / / / / / (__  )
+	/_/    \____/_/  /_/ /_/ /_/____/
+										*/
+
+/* Core */
+/*------------------------------------------------------------------------------------------------*/
+
+.form-control{
+
+	/* Structure */
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	line-height: normal;
+	vertical-align: middle;
+	-webkit-user-drag: none;
+}
+
+
+/* Form Group */
+/* ---------------------------------------------------------------------------------------------- */
+
+.form-group {
+
+	margin-bottom: 10px;
+}
+
+.form-group .control-label {
+
+	display: block;
+	margin-bottom: 4px;
+}
+
+.form-control {
+
+	text-transform: none;
+	font-size: inherit;
+	font-family: inherit;
+	font-size: 100%;
+	*font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
+	*overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+
+	vertical-align: middle;
+	background: #FFF;
+	color: #555;
+	border: 1px solid #DDD;
+	padding: 0.429em;
+	font-weight: 300;
+	height: 2.4em;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+			box-sizing: border-box;
+
+	/* border-radius */
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+			border-radius: 2px;
+}
+
+.form-group .form-control:focus{
+
+	border-color: #CCC;
+}
+
+.form-group select.form-control{ padding: 0.35em 0.429em; }
+
+.form-group .form-control-xsmall { font-size: 70%; }
+.form-group .form-control-small { font-size: 85%; }
+.form-group .form-control-large { font-size: 110%; }
+.form-group .form-control-xlarge { font-size: 125%; }
+
+.form-group .input-block {
+
+	width: 100%;
+	display: block;
+
+	/* box-sizing */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+.form-group .radio {
+
+	padding-left: 16px;
+}
+
+.form-group .checkbox input[type=checkbox] {
+
+	float: left;
+	margin: 1px 0 0 -16px;
+}
+
+.form-group .radio input[type=radio] {
+
+	float: left;
+	margin: 1px 0 0 -16px;
+}
+
+.form-group .help-block,
+.form-group .feedback-block {
+
+	display: block;
+	margin: 10px 0;
+	color: #999;
+}
+
+.form-group .required {
+
+	color: #C00;
+}
+
+.form-group.has-error .control-label,
+.form-group.has-error .form-control,
+.form-group.has-error .feedback-block {
+
+	color: #C00;
+}
+
+.form-group.has-success .control-label,
+.form-group.has-success .form-control,
+.form-group.has-success .feedback-block {
+
+	color: #437F1A;
+}
+
+.form-group.has-error .form-control     { border-color: #C00;    }
+.form-group.has-success .form-control   { border-color: #437F1A; }
+
+/* Select2 Overrides */
+/* ---------------------------------------------------------------------------------------------- */
+
+.select2-container {
+
+	font-weight: 300;
+	font-family: inherit;
+	font-size: inherit !important;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.select2-container--default .select2-selection--single {
+
+	border-radius: 2px;
+	border-color: #DDD !important;
+}
+
+.select2-container .select2-selection--single {
+
+	height: 2.4em;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+
+	padding-top: 0.38em;
+	padding-bottom: 0.38em;
+	line-height: 1.5;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+
+	height: auto;
+	padding: 1.1em 0;
+}

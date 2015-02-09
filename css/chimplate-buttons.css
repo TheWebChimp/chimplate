@@ -1,0 +1,206 @@
+/* 	    ____        __  __
+	   / __ )__  __/ /_/ /_____  ____  _____
+	  / __  / / / / __/ __/ __ \/ __ \/ ___/
+	 / /_/ / /_/ / /_/ /_/ /_/ / / / (__  )
+	/_____/\__,_/\__/\__/\____/_/ /_/____/
+											 */
+
+/* Core */
+/*------------------------------------------------------------------------------------------------*/
+
+button {
+
+	overflow: visible;
+	text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+
+	cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+
+	border: 0;
+	padding: 0;
+}
+
+.button {
+
+	/* Structure */
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	line-height: normal;
+	white-space: nowrap;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	-webkit-user-drag: none;
+	/* User Select */
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+		-ms-user-select: none;
+			user-select: none;
+}
+
+/* Firefox: Get rid of the inner focus border */
+.button::-moz-focus-inner {
+
+	padding: 0;
+	border: 0;
+}
+
+/* Styles */
+/*------------------------------------------------------------------------------------------------*/
+
+.button {
+
+	text-transform: none;
+	font-family: inherit;
+	font-size: 100%;
+	*font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
+	*overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+	padding: 0.429em 1.2em;
+	color: white; /* rgba not supported (IE 8) */
+	*color: white; /* IE 6 & 7 */
+	border: 1px solid #7F8C8D;
+	background-color: #7F8C8D;
+	text-decoration: none;
+	border-radius: 2px;
+	font-weight: 300;
+	height: 2.4em;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+			box-sizing: border-box;
+
+	-webkit-transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s;
+	   -moz-transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s;
+		-ms-transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s;
+		 -o-transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s;
+			transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s;
+}
+
+.buttton-hover, .button:hover{ background-color: #95A5A6; }
+
+/*.button-hover,
+.button:hover {
+
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00000000',GradientType=0);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(100%, rgba(0,0,0, 0.10)), to(rgba(0,0,0, 0.10)));
+	background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.10) 100%, rgba(0,0,0, 0.10));
+	background-image: -moz-linear-gradient(top, rgba(0,0,0, 0.10) 0%, rgba(0,0,0, 0.10));
+	background-image: -o-linear-gradient(transparent, rgba(0,0,0, 0.10) 100%, rgba(0,0,0, 0.10));
+	background-image: linear-gradient(transparent, rgba(0,0,0, 0.10) 100%, rgba(0,0,0, 0.10));
+}*/
+
+.button:focus { outline: 0; }
+
+.button[disabled],
+.button-disabled,
+.button-disabled:hover {
+
+	border: none;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	filter: alpha(opacity=40);
+	-khtml-opacity: 0.40;
+	  -moz-opacity: 0.40;
+		   opacity: 0.40;
+	cursor: not-allowed;
+	box-shadow: none;
+}
+
+.button-hidden { display: none; }
+
+/* Firefox: Get rid of the inner focus border */
+.button::-moz-focus-inner{
+
+	padding: 0;
+	border: 0;
+}
+
+/* Colors */
+/* ---------------------------------------------------------------------------------------------- */
+
+.button-primary, .button-selected { background-color: #2980B9; border-color: #2980B9; }
+.button-primary:hover, .button-selected:hover { background-color: #3498DB; }
+
+.button-success { background-color: #27AE60; border-color: #27AE60; }
+.button-success:hover { background-color: #2ECC71; }
+
+.button-error { background-color: #C0392B; border-color: #C0392B; }
+.button-error:hover { background-color: #E74C3C; }
+
+.button-warning { background-color: #D35400; border-color: #D35400; }
+.button-warning:hover { background-color: #e67e22; }
+
+.button-facebook { background-color: #2D5F9A; border-color: #2D5F9A; }
+.button-facebook:hover { background-color: #567EAE; }
+
+.button-twitter { background-color: #55ACEE; border-color: #55ACEE; }
+.button-twitter:hover { background-color: #76BCF1; }
+
+.button-linkedin { background-color: #2189BE; border-color: #2189BE; }
+.button-linkedin:hover { background-color: #4DA0CB; }
+
+.button-pinterest { background-color: #D11E16; border-color: #D11E16; }
+.button-pinterest:hover { background-color: #DA4A44; }
+
+.button-rss { background-color: #F60; border-color: #F60; }
+.button-rss:hover { background-color: #FF8432; }
+
+/* Sizes */
+/* ---------------------------------------------------------------------------------------------- */
+
+.button-xsmall { font-size: 70%; }
+.button-small { font-size: 85%; }
+.button-large { font-size: 110%; }
+.button-xlarge { font-size: 125%; }
+
+/* Borders */
+/*------------------------------------------------------------------------------------------------*/
+
+.button-square{ border-radius: 0; }
+.button-pill{ border-radius: 100px; }
+
+/* Outline Buttons */
+/*------------------------------------------------------------------------------------------------*/
+
+.button-outline{
+
+	background-color: transparent;
+	color: #7F8C8D;
+	border: 1px solid #7F8C8D;
+}
+
+.button-outline:hover{
+
+	color: white;
+	background-color: #7F8C8D;
+}
+
+.button-outline-primary{ color: #2980B9; border-color: #2980B9; }
+.button-outline-primary:hover{ background-color: #2980B9; }
+
+.button-outline-success{ color: #27AE60; border-color: #27AE60; }
+.button-outline-success:hover{ background-color: #27AE60; }
+
+.button-outline-warning{ color: #D35400; border-color: #D35400; }
+.button-outline-warning:hover{ background-color: #D35400; }
+
+.button-outline-error{ color: #C0392B; border-color: #C0392B; }
+.button-outline-error:hover{ background-color: #C0392B; }

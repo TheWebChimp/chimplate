@@ -1,0 +1,105 @@
+/**
+ * style.css
+ */
+
+html {
+
+	color: #333;
+	font-size: 13px;
+	min-height: 100%;
+}
+
+body {
+
+	background: #F9F9F9;
+	font-size: 1em;
+	font-family: 'Open Sans';
+}
+
+.site-header {}
+
+.site-footer {
+
+	background-color: #666;
+	color: white;
+	position: relative;
+	z-index: 0;
+}
+
+.site-section {
+
+	margin-left: 300px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 80px;
+}
+
+/* Primary Navigation */
+/* ---------------------------------------------------------------------------------------------- */
+
+.site-sidebar {
+
+	z-index: 1;
+	position: fixed;
+	left: 0;
+	height: 100%;
+	top: 0;
+	width: 270px;
+	background: #2D2E31;
+	color: white;
+}
+
+.site-sidebar .logo img{
+
+	display: block;
+	margin: 20px auto;
+}
+
+.site-sidebar h1 {
+
+	text-align: center;
+	font-size: 2em;
+	margin: 0;
+	padding: 20px;
+	font-family: 'Oswald';
+}
+
+.primary-menu {
+
+	margin: 10px;
+}
+
+.primary-navigation li {
+
+	border-bottom: 1px solid #444;
+}
+
+.primary-navigation li a {
+
+	font-size: 1.077em;
+	color: #CCC;
+	text-decoration: none;
+	padding: 10px 0;
+	display: block;
+}
+
+/* Generales */
+/* ---------------------------------------------------------------------------------------------- */
+
+.section-title{
+
+	background: #7F8C8D;
+	margin-left: -30px;
+	margin-top: -20px;
+	padding: 10px 25px;
+	width: 100%;
+	color: white;
+	font-family: 'Oswald';
+}
+
+.title { font-family: 'Oswald'; }
+
+.swatch { width: 90px; color: white !important; }
+.swatch small { font-weight: 300; }
+
+.button-th { width: 200px; }
