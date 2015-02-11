@@ -8,19 +8,19 @@ module.exports = function(grunt) {
 			dist: {
 				src: [
 					//Project Styles
-					'src/css/chimplate-base.css',
-					'src/css/chimplate-grid.css',
-					'src/css/chimplate-forms.css',
-					'src/css/chimplate-buttons.css'
+					'css/src/chimplate-base.css',
+					'css/src/chimplate-grid.css',
+					'css/src/chimplate-forms.css',
+					'css/src/chimplate-buttons.css'
 				],
-				dest: 'dist/chimplate-build.css',
+				dest: 'css/dist/chimplate-build.css',
 			}
 		},
 
 		cssmin: {
 			target: {
 				files: {
-					'dist/chimplate-build.min.css': ['dist/chimplate-build.css']
+					'css/dist/chimplate-build.min.css': ['css/dist/chimplate-build.css']
 				}
 			}
 		}
