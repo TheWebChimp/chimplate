@@ -11,6 +11,7 @@
 						<li><a href="<?php $site->urlTo('/grid', true); ?>"><i class="fa fa-fw fa-th"></i> The Grid</a></li>
 						<li><a href="<?php $site->urlTo('/forms', true); ?>"><i class="fa fa-fw fa-check-square-o"></i> Forms</a></li>
 						<li><a href="<?php $site->urlTo('/buttons', true); ?>"><i class="fa fa-fw fa-caret-square-o-right"></i> Buttons</a></li>
+						<li><a href="<?php $site->urlTo('/tables', true); ?>"><i class="fa fa-fw fa-table"></i> Tables</a></li>
 					</ul>
 				</nav>
 			</menu>

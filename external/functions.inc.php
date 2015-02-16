@@ -7,10 +7,10 @@
 	# Basic set-up ------------------------------------------------------------
 
 	# Include styles
-	$site->registerStyle('reset', $site->baseUrl('/css/reset.css') );
-	$site->registerStyle('structure', $site->baseUrl('/css/structure.css') );
-	$site->registerStyle('sticky-footer', $site->baseUrl('/css/sticky-footer.css') );
-	$site->registerStyle('boilerplate', $site->baseUrl('/css/boilerplate.css') );
+	$site->registerStyle('reset', $site->baseUrl('/css/src/reset.css') );
+	$site->registerStyle('structure', $site->baseUrl('/css/src/structure.css') );
+	$site->registerStyle('sticky-footer', $site->baseUrl('/css/src/sticky-footer.css') );
+	$site->registerStyle('boilerplate', $site->baseUrl('/css/src/boilerplate.css') );
 
 	# Plugins
 	$site->registerStyle('icheck-skins', '//cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.1/skins/flat/flat.css' );
@@ -23,12 +23,13 @@
 	$site->registerStyle('font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css' );
 
 	# ChimPlate
-	$site->registerStyle('chimplate-base', $site->baseUrl('/css/chimplate-base.css') );
-	$site->registerStyle('chimplate-grid', $site->baseUrl('/css/chimplate-grid.css') );
-	$site->registerStyle('chimplate-buttons', $site->baseUrl('/css/chimplate-buttons.css') );
-	$site->registerStyle('chimplate-forms', $site->baseUrl('/css/chimplate-forms.css') );
+	$site->registerStyle('chimplate-base', $site->baseUrl('/css/src/chimplate-base.css') );
+	$site->registerStyle('chimplate-grid', $site->baseUrl('/css/src/chimplate-grid.css') );
+	$site->registerStyle('chimplate-buttons', $site->baseUrl('/css/src/chimplate-buttons.css') );
+	$site->registerStyle('chimplate-forms', $site->baseUrl('/css/src/chimplate-forms.css') );
+	$site->registerStyle('chimplate-tables', $site->baseUrl('/css/src/chimplate-tables.css') );
 
-	$site->registerStyle('style', $site->baseUrl('/css/style.css'), array(
+	$site->registerStyle('style', $site->baseUrl('/css/src/style.css'), array(
 
 		'reset',
 		'sticky-footer',
@@ -47,7 +48,8 @@
 		'chimplate-base',
 		'chimplate-grid',
 		'chimplate-buttons',
-		'chimplate-forms'
+		'chimplate-forms',
+		'chimplate-tables'
 	));
 	$site->enqueueStyle('style');
 
@@ -85,6 +87,7 @@
 	$site->addPage('grid', 'grid-page');
 	$site->addPage('forms', 'forms-page');
 	$site->addPage('buttons', 'buttons-page');
+	$site->addPage('tables', 'tables-page');
 
 	# Localization
 	if ( isset($i18n) ) {
