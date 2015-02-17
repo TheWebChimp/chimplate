@@ -67,6 +67,8 @@
 	border-color: #CCC;
 }
 
+.form-group textarea.form-control { height: auto; }
+
 .form-group select.form-control{ padding: 0.35em 0.429em; }
 
 .form-group .form-control-xsmall { font-size: 70%; }

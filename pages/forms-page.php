@@ -3,6 +3,33 @@
 		<section class="site-section">
 			<h1 class="section-title">Forms</h1>
 
+			<h2 class="title">Supported tags</h2>
+			<p>Our great boilerplate code supports all the common for tags</p>
+
+			<div class="form-group">
+				<label for="" class="control-label">Input</label>
+				<input type="text" name="" id="" class="form-control input-block">
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label">Select</label>
+				<select name="" id="" class="form-control input-block"></select>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label">Textarea</label>
+				<textarea name="" id="" class="form-control input-block"></textarea>
+			</div>
+			<!-- <div class="form-group">
+				<div class="checkbox">
+					<label for=""><input type="checkbox" name="" id=""> Checkbox</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="radio">
+					<label for=""><input type="radio" name="" id=""> Radio button</label>
+				</div>
+			</div> -->
+			<br>
+
 			<h2 class="title">Element Heights</h2>
 			<p>One of the trickiest thing with form controls is to standarize them in style, specially in height.</p>
 
@@ -50,6 +77,37 @@
 				</select>
 				<button class="button button-xsmall">Button</button>
 			</div>
+			<br>
+
+			<h2 class="title">Validation states</h2>
+			<p></p>
+			<div class="form-group has-error">
+				<label for="" class="control-label">Enter your email</label>
+				<input type="text" name="" id="" class="form-control input-block" value="test.mailinator.com">
+			</div>
+			<div class="form-group has-success">
+				<label for="" class="control-label">Enter your email</label>
+				<input type="text" name="" id="" class="form-control input-block" value="test@mailinator.com">
+			</div>
+			<br>
+
+			<h2 class="title">Help and feedback blocks</h2>
+			<p>Help-blocks allow you to provide additional information to your users</p>
+			<div class="form-group">
+				<input type="text" name="" id="" class="form-control input-block">
+				<div class="help-block">This is a help block</div>
+			</div>
+
+			<p>Feedback-blocks are intended to show validation details, for example "Please enter a valid e-mail address" or similar messages</p>
+			<div class="form-group has-error">
+				<input type="text" name="" id="" class="form-control input-block">
+				<div class="feedback-block">This is a feedback block</div>
+			</div>
+			<div class="form-group has-success">
+				<input type="text" name="" id="" class="form-control input-block">
+				<div class="feedback-block">This is a feedback block</div>
+			</div>
+			<br>
 
 			<h2 class="title">Date Picker</h2>
 			<p>Sometimes we need to input dates, and this dates need to be easy to pick and displayed in an especific format. Here we have the great jQuery DatePicker, created by one of our awesome programmers, Raul (<a href="https://github.com/biohzrdmx/" target="_blank">https://github.com/biohzrdmx/</a>).</p>
