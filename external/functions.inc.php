@@ -28,6 +28,7 @@
 	$site->registerStyle('chimplate-buttons', $site->baseUrl('/css/src/chimplate-buttons.css') );
 	$site->registerStyle('chimplate-forms', $site->baseUrl('/css/src/chimplate-forms.css') );
 	$site->registerStyle('chimplate-tables', $site->baseUrl('/css/src/chimplate-tables.css') );
+	$site->registerStyle('chimplate-helpers', $site->baseUrl('/css/src/chimplate-helpers.css') );
 
 	$site->registerStyle('style', $site->baseUrl('/css/src/style.css'), array(
 
@@ -49,7 +50,8 @@
 		'chimplate-grid',
 		'chimplate-buttons',
 		'chimplate-forms',
-		'chimplate-tables'
+		'chimplate-tables',
+		'chimplate-helpers'
 	));
 	$site->enqueueStyle('style');
 
@@ -88,6 +90,7 @@
 	$site->addPage('forms', 'forms-page');
 	$site->addPage('buttons', 'buttons-page');
 	$site->addPage('tables', 'tables-page');
+	$site->addPage('helpers', 'helpers-page');
 
 	# Localization
 	if ( isset($i18n) ) {

@@ -12,6 +12,7 @@
 						<li><a href="<?php $site->urlTo('/forms', true); ?>"><i class="fa fa-fw fa-check-square-o"></i> Forms</a></li>
 						<li><a href="<?php $site->urlTo('/buttons', true); ?>"><i class="fa fa-fw fa-caret-square-o-right"></i> Buttons</a></li>
 						<li><a href="<?php $site->urlTo('/tables', true); ?>"><i class="fa fa-fw fa-table"></i> Tables</a></li>
+						<li><a href="<?php $site->urlTo('/helpers', true); ?>"><i class="fa fa-fw fa-rocket"></i> Helpers</a></li>
 					</ul>
 				</nav>
 			</menu>

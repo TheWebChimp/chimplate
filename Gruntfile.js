@@ -12,7 +12,8 @@ module.exports = function(grunt) {
 					'css/src/chimplate-grid.css',
 					'css/src/chimplate-forms.css',
 					'css/src/chimplate-buttons.css',
-					'css/src/chimplate-tables.css'
+					'css/src/chimplate-tables.css',
+					'css/src/chimplate-helpers.css'
 				],
 				dest: 'css/dist/chimplate-build.css',
 			}

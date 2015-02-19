@@ -1,0 +1,77 @@
+/*	    __  __     __
+	   / / / /__  / /___  ___  __________
+	  / /_/ / _ \/ / __ \/ _ \/ ___/ ___/
+	 / __  /  __/ / /_/ /  __/ /  (__  )
+	/_/ /_/\___/_/ .___/\___/_/  /____/
+	            /_/                      */
+
+/* Media */
+/*------------------------------------------------------------------------------------------------*/
+
+.media {
+
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+.media .media-object {
+
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.media .media-details {
+
+	overflow: hidden;
+	text-align: left;
+}
+
+.media.media-right .media-object {
+
+	float: right;
+	margin: 0 0 0 10px;
+}
+
+.media.media-right .media-details {
+
+	text-align: right;
+}
+
+/* Images */
+/*------------------------------------------------------------------------------------------------*/
+.img-rounded {
+
+	/* border-radius */
+	-webkit-border-radius: 5px;
+	   -moz-border-radius: 5px;
+	        border-radius: 5px;
+}
+
+.img-thumbnail {
+
+	padding: 5px;
+	background: #FFF;
+	border: 1px solid #CCC;
+}
+
+.img-circle {
+
+	/* border-radius */
+	-webkit-border-radius: 100%;
+	   -moz-border-radius: 100%;
+	        border-radius: 100%;
+}
+
+.img-shadow {
+
+	/* box-shadow */
+	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+	   -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+	        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+.img-responsive {
+
+	max-width: 100%;
+	height: auto;
+}
