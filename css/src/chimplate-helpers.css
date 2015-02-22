@@ -3,7 +3,19 @@
 	  / /_/ / _ \/ / __ \/ _ \/ ___/ ___/
 	 / __  /  __/ / /_/ /  __/ /  (__  )
 	/_/ /_/\___/_/ .___/\___/_/  /____/
-	            /_/                      */
+				/_/                      */
+
+/**
+	=======================================
+	INDEX =================================
+	=======================================
+
+	+ Media
+	+ Images
+	+ Vertical Alignment
+
+	=======================================
+**/
 
 /* Media */
 /*------------------------------------------------------------------------------------------------*/
@@ -44,7 +56,7 @@
 	/* border-radius */
 	-webkit-border-radius: 5px;
 	   -moz-border-radius: 5px;
-	        border-radius: 5px;
+			border-radius: 5px;
 }
 
 .img-thumbnail {
@@ -59,7 +71,7 @@
 	/* border-radius */
 	-webkit-border-radius: 100%;
 	   -moz-border-radius: 100%;
-	        border-radius: 100%;
+			border-radius: 100%;
 }
 
 .img-shadow {
@@ -67,11 +79,24 @@
 	/* box-shadow */
 	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
 	   -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
-	        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
 }
 
 .img-responsive {
 
 	max-width: 100%;
 	height: auto;
+}
+
+/* Vertical Alignment */
+/* ---------------------------------------------------------------------------------------------- */
+.valign-wrapper{
+
+	display: table;
+	vertical-align: middle;
+}
+
+.valign{
+
+	display: table-cell;
 }
