@@ -47,6 +47,11 @@ table.table tfoot tr {
 	border-top: 2px solid #DDD;
 }
 
+table.table-border {
+
+	border: 1px solid #DDD;
+}
+
 table.table.table-striped tbody tr:nth-child(even) td {
 
 	background: #F6F6F6;

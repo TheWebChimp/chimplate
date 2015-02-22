@@ -95,6 +95,40 @@
 				</tbody>
 			</table>
 
+			<h2 class="title">Bordered Table</h2>
+			<p>What about giving border to the table?</p>
+			<p>Not a problem at all, just add the <code>table-border</code> class to your table element.</p>
+
+			<table class="table table-border">
+				<tbody>
+					<tr>
+						<td>Foo</td>
+						<td>Bar</td>
+						<td>Baz</td>
+					</tr>
+					<tr>
+						<td>Foo</td>
+						<td>Bar</td>
+						<td>Baz</td>
+					</tr>
+					<tr>
+						<td>Foo</td>
+						<td>Bar</td>
+						<td>Baz</td>
+					</tr>
+					<tr>
+						<td>Foo</td>
+						<td>Bar</td>
+						<td>Baz</td>
+					</tr>
+					<tr>
+						<td>Foo</td>
+						<td>Bar</td>
+						<td>Baz</td>
+					</tr>
+				</tbody>
+			</table>
+
 			<h2 class="title">Hover highlight</h2>
 			<p>We're spoiling you, aren't we?</p>
 			<p>You wanted highlight-on-hover rows and you got 'em. <em>&quot;But how?&quot;</em> you may ask; well, just add the <code>table-hover</code> class to your table and enjoy the pure CSS bonanza.</p>
