@@ -3,18 +3,24 @@
 	  / __  / __ `/ ___/ _ \
 	 / /_/ / /_/ (__  )  __/
 	/_____/\__,_/____/\___/
-	                         */
+							 */
 
 /**
-	INDEX
-	1. Generales
-	2. Clear Fixes
-	3. Font sizing
-	4. Helpers
+	=======================================
+	INDEX =================================
+	=======================================
+
+	+ Generals
+	+ Responsive Helpers
+	+ Clear Fixes
+	+ Font sizing
+	+ Helpers
+
+	=======================================
 **/
 
 
-/* Generales */
+/* Generals */
 /*------------------------------------------------------------------------------------------------*/
 
 ::-moz-selection {
@@ -68,7 +74,7 @@ pre {
 	/* border-radius */
 	-webkit-border-radius: 4px;
 	   -moz-border-radius: 4px;
-	        border-radius: 4px;
+			border-radius: 4px;
 }
 
 code {
@@ -82,7 +88,7 @@ code {
 	/* border-radius */
 	-webkit-border-radius: 4px;
 	   -moz-border-radius: 4px;
-	        border-radius: 4px;
+			border-radius: 4px;
 }
 
 /* Responsive Helpers */
@@ -275,3 +281,10 @@ textarea {
 }
 
 .alignnone { float: none; }
+
+.truncate {
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
