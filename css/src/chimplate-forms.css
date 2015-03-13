@@ -72,6 +72,11 @@
 	background-color: #E1E1E1;
 }
 
+.form-group .form-control[readonly]{
+
+	background-color: #F6F6F6;
+}
+
 .form-group .form-control:focus{
 
 	border-color: #CCC;
