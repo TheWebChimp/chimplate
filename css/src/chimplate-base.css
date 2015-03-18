@@ -100,6 +100,12 @@ code {
 .show-mobile-inline { display: inline-block; *display: inline; *zoom: 1; }
 .show-desktop-inline { display: none; }
 
+.show-mobile-table { display: table; }
+.show-desktop-table { display: none; }
+
+.show-mobile-table-cell { display: table-cell; }
+.show-desktop-table-cell { display: none; }
+
 @media (min-width: 1000px) {
 
 	.show-mobile { display: none; }
@@ -107,6 +113,12 @@ code {
 
 	.show-mobile-inline { display: none; }
 	.show-desktop-inline { display: inline-block; *display: inline; *zoom: 1; }
+
+	.show-mobile-table { display: none; }
+	.show-desktop-table { display: table; }
+
+	.show-mobile-table { display: none; }
+	.show-desktop-table-cell { display: table-cell; }
 }
 
 /* Clear Fixes */
