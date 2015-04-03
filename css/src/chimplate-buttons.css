@@ -94,7 +94,7 @@ input::-moz-focus-inner {
 			transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s;
 }
 
-.buttton-hover, .button:hover{ background-color: #95A5A6; }
+.buttton-hover, .button:hover { background-color: #95A5A6; }
 
 .button:focus { outline: 0; }
 
@@ -116,7 +116,7 @@ input::-moz-focus-inner {
 .button-hidden { display: none; }
 
 /* Firefox: Get rid of the inner focus border */
-.button::-moz-focus-inner{
+.button::-moz-focus-inner {
 
 	padding: 0;
 	border: 0;
@@ -155,41 +155,41 @@ input::-moz-focus-inner {
 /* Sizes */
 /* ---------------------------------------------------------------------------------------------- */
 
-.button-xsmall { font-size: 70%; }
-.button-small { font-size: 85%; }
-.button-large { font-size: 110%; }
-.button-xlarge { font-size: 125%; }
+.button-xsmall 	{ font-size: 70%; }
+.button-small 	{ font-size: 85%; }
+.button-large 	{ font-size: 110%; }
+.button-xlarge 	{ font-size: 125%; }
 
 /* Borders */
 /*------------------------------------------------------------------------------------------------*/
 
-.button-square{ border-radius: 0; }
-.button-pill{ border-radius: 100px; }
+.button-square 	{ border-radius: 0; }
+.button-pill 	{ border-radius: 100px; }
 
 /* Outline Buttons */
 /*------------------------------------------------------------------------------------------------*/
 
-.button-outline{
+.button-outline {
 
 	background-color: transparent;
 	color: #7F8C8D;
 	border: 1px solid #7F8C8D;
 }
 
-.button-outline:hover{
+.button-outline:hover {
 
 	color: white;
 	background-color: #7F8C8D;
 }
 
-.button-outline-primary{ color: #2980B9; border-color: #2980B9; }
-.button-outline-primary:hover{ background-color: #2980B9; }
+.button-outline-primary { color: #2980B9; border-color: #2980B9; }
+.button-outline-primary:hover { background-color: #2980B9; }
 
-.button-outline-success{ color: #27AE60; border-color: #27AE60; }
-.button-outline-success:hover{ background-color: #27AE60; }
+.button-outline-success { color: #27AE60; border-color: #27AE60; }
+.button-outline-success:hover { background-color: #27AE60; }
 
-.button-outline-warning{ color: #D35400; border-color: #D35400; }
-.button-outline-warning:hover{ background-color: #D35400; }
+.button-outline-warning { color: #D35400; border-color: #D35400; }
+.button-outline-warning:hover { background-color: #D35400; }
 
-.button-outline-error{ color: #C0392B; border-color: #C0392B; }
-.button-outline-error:hover{ background-color: #C0392B; }
+.button-outline-error { color: #C0392B; border-color: #C0392B; }
+.button-outline-error:hover { background-color: #C0392B; }

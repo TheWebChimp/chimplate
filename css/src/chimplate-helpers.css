@@ -12,6 +12,7 @@
 
 	+ General
 	+ Message
+	+ Columns
 	+ Media
 	+ Images
 	+ Vertical Alignment
@@ -23,33 +24,16 @@
 /* General Helpers */
 /*------------------------------------------------------------------------------------------------*/
 
-[hide] { display: none !important; }
-[show] { display: block !important; }
+[hide] 	{ display: none !important; }
+.hide 	{ display: none !important; }
 
-.hide { display: none !important; }
-.show { display: block !important; }
+[show] 	{ display: block !important; }
+.show 	{ display: block !important; }
 
-.h1, .h2, .h3, .h4, .h5, .h6 {
-
-	font-weight: 400;
-	margin-bottom: 15px;
-}
-
-.h1 small,
-.h2 small,
-.h3 small,
-.h4 small,
-.h5 small,
-.h6 small {
-
-	font-size: 75%;
-	color: #888;
-}
-
-.text-muted   { color: #888;    }
-.text-success { color: #528217; }
-.text-info    { color: #155083; }
-.text-error   { color: #AB3101; }
+.text-muted 	{ color: #888;    }
+.text-success 	{ color: #528217; }
+.text-info 		{ color: #155083; }
+.text-error 	{ color: #AB3101; }
 
 .no-text {
 
@@ -81,20 +65,8 @@
 .break-word 	{ word-wrap: break-word; }
 .no-wrap 		{ white-space: nowrap; }
 
-.alignleft {
-
-	float: left;
-	margin-right: 10px;
-	margin-bottom: 10px;
-}
-
-.alignright {
-
-	float: right;
-	margin-left: 10px;
-	margin-bottom: 10px;
-}
-
+.alignleft,
+.alignright,
 .aligncenter {
 
 	display: block;
@@ -103,6 +75,29 @@
 
 .alignnone { float: none; }
 
+@media (min-width: 1000px) {
+
+	.alignleft {
+
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+
+	.alignright {
+
+		float: right;
+		margin-left: 10px;
+		margin-bottom: 10px;
+	}
+
+	.aligncenter {
+
+		display: block;
+		margin: 10px auto;
+	}
+}
+
 .truncate {
 
 	overflow: hidden;
@@ -110,8 +105,15 @@
 	white-space: nowrap;
 }
 
+.inner {
+
+	width: 1000px;
+	margin: 0 auto;
+}
+
 /* Message */
 /* ---------------------------------------------------------------------------------------------- */
+
 .message {
 
 	padding: 15px;
@@ -147,13 +149,23 @@
 	color: #AB3101;
 }
 
-.message.message-default a { color: #444;    }
-.message.message-success a { color: #528217; }
-.message.message-info a    { color: #155083; }
-.message.message-error a   { color: #AB3101; }
+.message.message-default a 	{ color: #444;    }
+.message.message-success a 	{ color: #528217; }
+.message.message-info a 	{ color: #155083; }
+.message.message-error a 	{ color: #AB3101; }
+
+/* Columns */
+/* ---------------------------------------------------------------------------------------------- */
+
+.column 		{ float: left; }
+.column-half 	{ width: 50%; }
+.column-third 	{ width: 33.3333333333%; }
+.column-fourth 	{ width: 25%; }
+.column-fifth 	{ width: 20%; }
 
 /* Media */
 /*------------------------------------------------------------------------------------------------*/
+
 .media {
 
 	overflow: hidden;

@@ -8,18 +8,19 @@
 /* Core */
 /*------------------------------------------------------------------------------------------------*/
 
-.form-control{
+.form-control {
+
+	line-height: normal;
+	vertical-align: middle;
+	-webkit-user-drag: none;
 
 	/* Structure */
 	display: inline-block;
 	*display: inline;
 	zoom: 1;
-	line-height: normal;
-	vertical-align: middle;
-	-webkit-user-drag: none;
 }
 
-.form-control:disabled{
+.form-control:disabled {
 
 	cursor: not-allowed;
 }
@@ -67,24 +68,24 @@
 			border-radius: 2px;
 }
 
-.form-group .form-control:disabled{
+.form-group .form-control:disabled {
 
 	background-color: #E1E1E1;
 }
 
-.form-group .form-control[readonly]{
+.form-group .form-control[readonly] {
 
 	background-color: #F6F6F6;
 }
 
-.form-group .form-control:focus{
+.form-group .form-control:focus {
 
 	border-color: #CCC;
 }
 
 .form-group textarea.form-control { height: auto; }
 
-.form-group select.form-control{ padding: 0.35em 0.429em; }
+.form-group select.form-control { padding: 0.35em 0.429em; }
 
 .form-group .form-control-xsmall { font-size: 70%; }
 .form-group .form-control-small { font-size: 85%; }
@@ -98,8 +99,8 @@
 
 	/* box-sizing */
 	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
 }
 
 
@@ -147,42 +148,5 @@
 	color: #437F1A;
 }
 
-.form-group.has-error .form-control     { border-color: #C00;    }
-.form-group.has-success .form-control   { border-color: #437F1A; }
-
-/* Select2 Overrides */
-/* ---------------------------------------------------------------------------------------------- */
-
-.select2-container {
-
-	font-weight: 300;
-	font-family: inherit;
-	font-size: inherit !important;
-	display: inline-block;
-	*display: inline;
-	*zoom: 1;
-}
-
-.select2-container--default .select2-selection--single {
-
-	border-radius: 2px;
-	border-color: #DDD !important;
-}
-
-.select2-container .select2-selection--single {
-
-	height: 2.4em;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-
-	padding-top: 0.38em;
-	padding-bottom: 0.38em;
-	line-height: 1.5;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-
-	height: auto;
-	padding: 1.1em 0;
-}
+.form-group.has-error .form-control 	{ border-color: #C00;    }
+.form-group.has-success .form-control 	{ border-color: #437F1A; }
