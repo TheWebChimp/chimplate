@@ -7,10 +7,8 @@
 	# Basic set-up ------------------------------------------------------------
 
 	# Include styles
-	$site->registerStyle('reset', $site->baseUrl('/css/src/reset.css') );
-	$site->registerStyle('structure', $site->baseUrl('/css/src/structure.css') );
-	$site->registerStyle('sticky-footer', $site->baseUrl('/css/src/sticky-footer.css') );
-	$site->registerStyle('boilerplate', $site->baseUrl('/css/src/boilerplate.css') );
+	$site->registerStyle('reset', $site->baseUrl('/css/reset.css') );
+	$site->registerStyle('sticky-footer', $site->baseUrl('/css/sticky-footer.css') );
 
 	# Plugins
 	$site->registerStyle('icheck-skins', '//cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.1/skins/flat/flat.css' );

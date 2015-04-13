@@ -1,4 +1,4 @@
-	<div class="wrapper cf">
+	<div class="sticky-wrapper cf">
 		<header class="site-header">
 		</header>
 

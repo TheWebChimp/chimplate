@@ -150,3 +150,22 @@
 
 .form-group.has-error .form-control 	{ border-color: #C00;    }
 .form-group.has-success .form-control 	{ border-color: #437F1A; }
+
+.form-group .radio label,
+.form-group .checkbox label {
+
+	display: block;
+	padding-left: 18px;
+}
+
+.form-group.has-error .radio label,
+.form-group.has-error .checkbox label {
+
+	color: #CC0000;
+}
+
+.form-group.has-success .radio label,
+.form-group.has-success .checkbox label {
+
+	color: #437F1A;
+}

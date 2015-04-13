@@ -13,7 +13,7 @@
 	+ Generals
 	+ Responsive Helpers
 	+ Clear Fixes
-	+ Font sizing
+	+ The Content
 	+ Helpers
 
 	=======================================
@@ -35,6 +35,16 @@
 	text-shadow: none;
 }
 
+body {
+
+	background-color: white;
+	font-weight: 400;
+	line-height: 1.45;
+	color: #333;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
 hr {
 
 	display: block;
@@ -43,6 +53,17 @@ hr {
 	border-top: 1px solid #ccc;
 	margin: 1em 0;
 	padding: 0;
+}
+
+a {
+
+	color: #337ab7;
+	text-decoration: none;
+}
+
+a:hover {
+
+	color: #23527c;
 }
 
 /* Remove the gap between audio, canvas, iframes, */
@@ -101,33 +122,49 @@ section {
 	position: relative;
 }
 
+small, .font-small { font-size: 0.8em; }
+
+textarea { resize: vertical; }
+
 /* Responsive Helpers */
 /* ---------------------------------------------------------------------------------------------- */
 
 .show-mobile { display: block; }
 .show-desktop { display: none; }
+.show-tablet { display: none; }
 
 .show-mobile-inline { display: inline-block; *display: inline; *zoom: 1; }
 .show-desktop-inline { display: none; }
+.show-tablet-inline { display: none; }
 
 .show-mobile-table { display: table; }
 .show-desktop-table { display: none; }
+.show-tablet-table { display: none; }
 
 .show-mobile-table-cell { display: table-cell; }
 .show-desktop-table-cell { display: none; }
+.show-tablet-table-cell { display: none; }
+
+@media (min-width: 768px) {
+
+	.show-mobile { display: none; }
+	.show-tablet { display: block; }
+
+	.show-mobile-inline { display: none; }
+	.show-tablet-inline { display: inline-block; *display: inline; *zoom: 1; }
+
+	.show-mobile-table { display: none; }
+	.show-tablet-table { display: table; }
+
+	.show-mobile-table { display: none; }
+	.show-tablet-table-cell { display: table-cell; }
+}
 
 @media (min-width: 1000px) {
 
-	.show-mobile { display: none; }
 	.show-desktop { display: block; }
-
-	.show-mobile-inline { display: none; }
 	.show-desktop-inline { display: inline-block; *display: inline; *zoom: 1; }
-
-	.show-mobile-table { display: none; }
 	.show-desktop-table { display: table; }
-
-	.show-mobile-table { display: none; }
 	.show-desktop-table-cell { display: table-cell; }
 }
 
@@ -153,50 +190,94 @@ br.clear {
 
 .cf { *zoom: 1; }
 
-/* Font sizing */
+/* The Content */
 /*------------------------------------------------------------------------------------------------*/
 
-html { font-size: 0.813em; }
+.the-content img {
 
-body {
-
-	background-color: white;
-	font-weight: 400;
-	line-height: 1.45;
-	color: #333;
-	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-	font-size: 13px;
+	max-width: 100%;
+	height: auto;
 }
 
-p { margin-bottom: 1.5em; }
+.the-content p { margin-bottom: 15px; }
 
-h1, h2, h3, h4, h5, h6 {
+.the-content h1, .the-content .h1,
+.the-content h2, .the-content .h2,
+.the-content h3, .the-content .h3,
+.the-content h4, .the-content .h4,
+.the-content h5, .the-content .h5,
+.the-content h6, .the-content .h6 {
 
-	margin-bottom: 1.2rem;
+	margin-bottom: 15px;
 	font-weight: inherit;
 }
 
-h1 { font-size: 2em; line-height: 1.5; }
-h2 { font-size: 1.5em; line-height: 1; }
-h3 { font-size: 1.2em; line-height: 1.2; }
-h4 { font-size: 1.125em; line-height: 1.333; }
-h5 { font-size: 1em; line-height: 1.5; }
-h6 { font-size: 1em; line-height: 1.5; }
+.the-content h1, .the-content .h1 { font-size: 2em; line-height: 1.5; }
+.the-content h2, .the-content .h2 { font-size: 1.5em; line-height: 1; }
+.the-content h3, .the-content .h3 { font-size: 1.2em; line-height: 1.2; }
+.the-content h4, .the-content .h4 { font-size: 1.125em; line-height: 1.333; }
+.the-content h5, .the-content .h5 { font-size: 1em; line-height: 1.5; }
+.the-content h6, .the-content .h6 { font-size: 1em; line-height: 1.5; }
 
-h1 small,
-h2 small,
-h3 small,
-h4 small,
-h5 small,
-h6 small {
+.the-content h1 small, .the-content .h1 small
+.the-content h2 small, .the-content .h2 small
+.the-content h3 small, .the-content .h3 small
+.the-content h4 small, .the-content .h4 small
+.the-content h5 small, .the-content .h5 small
+.the-content h6 small  .the-content .h6 small{
 
 	font-size: 75%;
-	color: #888;
 }
 
-small, .font-small { font-size: 0.8em; }
+.the-content ol,
+.the-content ul,
+.the-content dl {
 
-textarea {
+	margin-left: 30px;
+	margin-bottom: 15px;
+}
 
-	resize: vertical;
+.the-content li,
+.the-content dt {
+
+	margin-bottom: 15px;
+}
+
+.the-content a:hover {
+
+	text-decoration: underline;
+}
+
+.the-content .alignleft,
+.the-content .alignright,
+.the-content .aligncenter,
+.the-content .alignnone {
+
+	display: block;
+	margin: 10px auto;
+}
+
+.the-content .alignnone { float: none; display: inline; }
+
+@media (min-width: 1000px) {
+
+	.the-content .alignleft {
+
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+
+	.the-content .alignright {
+
+		float: right;
+		margin-left: 10px;
+		margin-bottom: 10px;
+	}
+
+	.the-content .aligncenter {
+
+		display: block;
+		margin: 10px auto;
+	}
 }

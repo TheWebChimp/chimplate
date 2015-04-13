@@ -122,6 +122,26 @@ input::-moz-focus-inner {
 	border: 0;
 }
 
+.button-block {
+
+	display: block;
+	width: 100%;
+}
+
+.button-link {
+
+	color: #337ab7;
+	background: none;
+	border-color: transparent;
+}
+
+.button-link:hover {
+
+	color: #23527c;
+	background: transparent;
+	text-decoration: underline;
+}
+
 /* Colors */
 /* ---------------------------------------------------------------------------------------------- */
 

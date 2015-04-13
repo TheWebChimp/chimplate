@@ -37,7 +37,8 @@
 
 .no-text {
 
-	text-indent: 100%;
+	text-align: left;
+	text-indent: -9999px;
 	white-space: nowrap;
 	overflow: hidden;
 }
@@ -45,6 +46,15 @@
 .margins 		{ margin: 15px; }
 .margins-horz 	{ margin: 0 15px; }
 .margins-vert 	{ margin: 15px 0; }
+
+.margins.margins-5 			{ margin: 5px; }
+.margins.margins-10 		{ margin: 10px; }
+
+.margins-horz.margins-5 	{ margin: 0 5px; }
+.margins-horz.margins-10 	{ margin: 0 10px; }
+
+.margins-vert.margins-5 	{ margin: 5px 0; }
+.margins-vert.margins-10 	{ margin: 10px 0; }
 
 .boxfix 		{ padding: 1px; }
 .boxfix-horz 	{ padding: 0 1px; }
@@ -58,45 +68,15 @@
 .text-center	{ text-align: center; }
 .text-justify 	{ text-align: justify; }
 
-.bold 			{ font-weight: bold; }
-.regular 		{ font-weight: normal; }
+.bold 			{ font-weight: 700; }
+.thin 			{ font-weight: 300; }
+.regular 		{ font-weight: 400; }
+
 .italic 		{ font-style: italic; }
+.underline 		{ font-style: underline; }
 
 .break-word 	{ word-wrap: break-word; }
 .no-wrap 		{ white-space: nowrap; }
-
-.alignleft,
-.alignright,
-.aligncenter {
-
-	display: block;
-	margin: 10px auto;
-}
-
-.alignnone { float: none; }
-
-@media (min-width: 1000px) {
-
-	.alignleft {
-
-		float: left;
-		margin-right: 10px;
-		margin-bottom: 10px;
-	}
-
-	.alignright {
-
-		float: right;
-		margin-left: 10px;
-		margin-bottom: 10px;
-	}
-
-	.aligncenter {
-
-		display: block;
-		margin: 10px auto;
-	}
-}
 
 .truncate {
 
@@ -163,6 +143,20 @@
 .column-fourth 	{ width: 25%; }
 .column-fifth 	{ width: 20%; }
 
+/* Box */
+/*------------------------------------------------------------------------------------------------*/
+
+.box {
+
+	padding: 15px;
+	margin-bottom: 15px;
+}
+
+.box.box-default {
+
+	background: #F1F1F1;
+}
+
 /* Media */
 /*------------------------------------------------------------------------------------------------*/
 
@@ -197,7 +191,8 @@
 
 /* Images */
 /*------------------------------------------------------------------------------------------------*/
-.img-rounded {
+
+img.img-rounded {
 
 	/* border-radius */
 	-webkit-border-radius: 5px;
@@ -205,14 +200,14 @@
 			border-radius: 5px;
 }
 
-.img-thumbnail {
+img.img-thumbnail {
 
 	padding: 5px;
 	background: #FFF;
 	border: 1px solid #CCC;
 }
 
-.img-circle {
+img.img-circle {
 
 	/* border-radius */
 	-webkit-border-radius: 100%;
@@ -220,7 +215,7 @@
 			border-radius: 100%;
 }
 
-.img-shadow {
+img.img-shadow {
 
 	/* box-shadow */
 	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
@@ -228,7 +223,7 @@
 			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
 }
 
-.img-responsive {
+img.img-responsive {
 
 	max-width: 100%;
 	height: auto;
@@ -236,6 +231,7 @@
 
 /* Vertical Alignment */
 /* ---------------------------------------------------------------------------------------------- */
+
 .valign-wrapper {
 
 	display: table;
@@ -252,6 +248,7 @@
 
 /* Embeds */
 /* ---------------------------------------------------------------------------------------------- */
+
 .embed-responsive {
 
 	position: relative;

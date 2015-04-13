@@ -7,7 +7,7 @@ html, body {
 	height: 100%;
 }
 
-.wrapper {
+.sticky-wrapper {
 
 	min-height: 100%;
 	height: auto !important;
@@ -15,7 +15,7 @@ html, body {
 	margin: 0 auto -70px;
 }
 
-.site-footer, .push {
+.site-footer, .sticky-push {
 
 	height: 70px;
 }
