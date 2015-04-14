@@ -129,43 +129,43 @@ textarea { resize: vertical; }
 /* Responsive Helpers */
 /* ---------------------------------------------------------------------------------------------- */
 
-.show-mobile { display: block; }
-.show-desktop { display: none; }
-.show-tablet { display: none; }
+.show-mobile { display: block !important; }
+.show-desktop { display: none !important; }
+.show-tablet { display: none !important; }
 
-.show-mobile-inline { display: inline-block; *display: inline; *zoom: 1; }
-.show-desktop-inline { display: none; }
-.show-tablet-inline { display: none; }
+.show-mobile-inline { display: inline-block !important; *display: inline !important; *zoom: 1; }
+.show-desktop-inline { display: none !important; }
+.show-tablet-inline { display: none !important; }
 
-.show-mobile-table { display: table; }
-.show-desktop-table { display: none; }
-.show-tablet-table { display: none; }
+.show-mobile-table { display: table !important; }
+.show-desktop-table { display: none !important; }
+.show-tablet-table { display: none !important; }
 
-.show-mobile-table-cell { display: table-cell; }
-.show-desktop-table-cell { display: none; }
-.show-tablet-table-cell { display: none; }
+.show-mobile-table-cell { display: table-cell !important; }
+.show-desktop-table-cell { display: none !important; }
+.show-tablet-table-cell { display: none !important; }
 
 @media (min-width: 768px) {
 
-	.show-mobile { display: none; }
-	.show-tablet { display: block; }
+	.show-mobile { display: none !important; }
+	.show-tablet { display: block !important; }
 
-	.show-mobile-inline { display: none; }
-	.show-tablet-inline { display: inline-block; *display: inline; *zoom: 1; }
+	.show-mobile-inline { display: none !important; }
+	.show-tablet-inline { display: inline-block !important; *display: inline !important; *zoom: 1; }
 
-	.show-mobile-table { display: none; }
-	.show-tablet-table { display: table; }
+	.show-mobile-table { display: none !important; }
+	.show-tablet-table { display: table !important; }
 
-	.show-mobile-table { display: none; }
-	.show-tablet-table-cell { display: table-cell; }
+	.show-mobile-table { display: none !important; }
+	.show-tablet-table-cell { display: table-cell !important; }
 }
 
 @media (min-width: 1000px) {
 
-	.show-desktop { display: block; }
-	.show-desktop-inline { display: inline-block; *display: inline; *zoom: 1; }
-	.show-desktop-table { display: table; }
-	.show-desktop-table-cell { display: table-cell; }
+	.show-desktop { display: block !important; }
+	.show-desktop-inline { display: inline-block !important; *display: inline !important; *zoom: 1; }
+	.show-desktop-table { display: table !important; }
+	.show-desktop-table-cell { display: table-cell !important; }
 }
 
 /* Clear Fixes */
