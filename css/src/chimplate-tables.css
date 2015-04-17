@@ -19,8 +19,8 @@ table.table {
 	margin-bottom: 15px;
 }
 
-table.table > th,
-table.table > td {
+table.table th,
+table.table td {
 
 	padding: 10px 12px;
 }

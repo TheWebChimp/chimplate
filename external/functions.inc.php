@@ -28,7 +28,7 @@
 	$site->registerStyle('chimplate-tables', $site->baseUrl('/css/src/chimplate-tables.css') );
 	$site->registerStyle('chimplate-helpers', $site->baseUrl('/css/src/chimplate-helpers.css') );
 
-	$site->registerStyle('style', $site->baseUrl('/css/src/style.css'), array(
+	$site->registerStyle('style', $site->baseUrl('/css/style.css'), array(
 
 		'reset',
 		'sticky-footer',
