@@ -94,7 +94,7 @@ input::-moz-focus-inner {
 			transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s;
 }
 
-.buttton-hover, .button:hover { background-color: #95A5A6; }
+.buttton-hover, .button:hover { background-color: #95A5A6; color: white; }
 
 .button:focus { outline: 0; }
 
