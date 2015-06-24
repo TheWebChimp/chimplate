@@ -81,6 +81,7 @@ input::-moz-focus-inner {
 	border-radius: 2px;
 	font-weight: 300;
 	height: 2.4em;
+	line-height: 1.542em;
 
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
