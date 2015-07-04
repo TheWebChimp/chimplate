@@ -1,0 +1,255 @@
+/*				    __  __     __
+   ▀▀▀▀▀▀▀▀▀	   / / / /__  / /___  ___  __________
+ █ ▀▀▀▀ ▀▀▀▀ █	  / /_/ / _ \/ / __ \/ _ \/ ___/ ___/
+ ▀ █ ▀▀▀▀▀ █ ▀	 / __  /  __/ / /_/ /  __/ /  (__  )
+   ▀▀▀▀▀▀▀▀▀	/_/ /_/\___/_/ .___/\___/_/  /____/
+							/_/                      */
+
+/**
+	=======================================
+	INDEX =================================
+	=======================================
+
+	+ General
+	+ Message
+	+ Columns
+	+ Media
+	+ Images
+	+ Vertical Alignment
+	+ Embeds
+
+	=======================================
+**/
+
+/* General Helpers */
+/*------------------------------------------------------------------------------------------------*/
+
+[hide] 	{ display: none !important; }
+.hide 	{ display: none !important; }
+
+[show] 	{ display: block !important; }
+.show 	{ display: block !important; }
+
+.text-muted 	{ color: #888;    }
+.text-success 	{ color: #528217; }
+.text-info 		{ color: #155083; }
+.text-error 	{ color: #AB3101; }
+
+.no-text {
+
+	text-align: left;
+	text-indent: -9999px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.margins 		{ margin: 15px; }
+.margins-horz 	{ margin: 0 15px; }
+.margins-vert 	{ margin: 15px 0; }
+
+.margins.margins-5 			{ margin: 5px; }
+.margins.margins-10 		{ margin: 10px; }
+
+.margins-horz.margins-5 	{ margin: 0 5px; }
+.margins-horz.margins-10 	{ margin: 0 10px; }
+
+.margins-vert.margins-5 	{ margin: 5px 0; }
+.margins-vert.margins-10 	{ margin: 10px 0; }
+
+.boxfix 		{ padding: 1px; }
+.boxfix-horz 	{ padding: 0 1px; }
+.boxfix-vert 	{ padding: 1px 0; }
+
+.pull-left 		{ float: left; }
+.pull-right 	{ float: right; }
+
+.text-left 		{ text-align: left; }
+.text-right 	{ text-align: right; }
+.text-center	{ text-align: center; }
+.text-justify 	{ text-align: justify; }
+
+.bold 			{ font-weight: 700; }
+.thin 			{ font-weight: 300; }
+.regular 		{ font-weight: 400; }
+
+.italic 		{ font-style: italic; }
+.underline 		{ font-style: underline; }
+
+.break-word 	{ word-wrap: break-word; }
+.no-wrap 		{ white-space: nowrap; }
+
+.truncate {
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Message */
+/* ---------------------------------------------------------------------------------------------- */
+
+.message {
+
+	padding: 15px;
+	margin-bottom: 15px;
+
+	a { font-weight: 700; }
+
+	&.message-default {
+
+		background: #F1F1F1;
+		color: #444;
+	}
+
+	&.message-success {
+
+		background: #DEF4C2;
+		color: #528217;
+	}
+
+	&.message-info {
+
+		background: #DCEBF9;
+		color: #155083;
+	}
+
+	&.message-error {
+
+		background: #FEE2D7;
+		color: #AB3101;
+	}
+
+	&.message-default a 	{ color: #444;    }
+	&.message-success a 	{ color: #528217; }
+	&.message-info a 		{ color: #155083; }
+	&.message-error a 		{ color: #AB3101; }
+}
+
+/* Columns */
+/* ---------------------------------------------------------------------------------------------- */
+
+.column 		{ float: left; }
+.column-half 	{ width: 50%; }
+.column-third 	{ width: 33.3333333333%; }
+.column-fourth 	{ width: 25%; }
+.column-fifth 	{ width: 20%; }
+
+/* Box */
+/*------------------------------------------------------------------------------------------------*/
+
+.box {
+
+	padding: 15px;
+	margin-bottom: 15px;
+
+	&.box-default {
+
+		background: #F1F1F1;
+	}
+}
+
+/* Media */
+/*------------------------------------------------------------------------------------------------*/
+
+.media {
+
+	overflow: hidden;
+	margin-bottom: 15px;
+
+	.media-object {
+
+		float: left;
+		margin: 0 10px 0 0;
+	}
+
+	.media-details {
+
+		overflow: hidden;
+		text-align: left;
+	}
+
+	&.media-right .media-object {
+
+		float: right;
+		margin: 0 0 0 10px;
+	}
+
+	&.media-right .media-details {
+
+		text-align: right;
+	}
+}
+
+/* Images */
+/*------------------------------------------------------------------------------------------------*/
+
+img {
+
+	&.img-rounded {
+
+		.border-radius(5px);
+	}
+
+	&.img-thumbnail {
+
+		padding: 5px;
+		background: #FFF;
+		border: 1px solid #CCC;
+	}
+
+	&.img-circle {
+
+		.border-radius(50%);
+	}
+
+	&.img-shadow {
+
+		box-shadow(2px 2px 5px rgba(0, 0, 0, 0.35));
+	}
+
+	&.img-responsive {
+
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/* Vertical Alignment */
+/* ---------------------------------------------------------------------------------------------- */
+
+.valign-wrapper {
+
+	display: table;
+	vertical-align: middle;
+	height: 100%;
+	width: 100%;
+}
+
+.valign {
+
+	vertical-align: middle;
+	display: table-cell;
+}
+
+/* Embeds */
+/* ---------------------------------------------------------------------------------------------- */
+
+.embed-responsive {
+
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+
+	iframe,
+	object,
+	embed {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}

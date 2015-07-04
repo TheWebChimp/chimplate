@@ -1,0 +1,73 @@
+/*				  ______      __    __
+   ▀▀▀▀▀▀▀▀▀	 /_  __/___ _/ /_  / /__  _____
+ █ ▀▀▀▀ ▀▀▀▀ █	  / / / __ `/ __ \/ / _ \/ ___/
+ ▀ █ ▀▀▀▀▀ █ ▀	 / / / /_/ / /_/ / /  __(__  )
+   ▀▀▀▀▀▀▀▀▀	/_/  \__,_/_.___/_/\___/____/
+				                                */
+
+/* Core */
+/*------------------------------------------------------------------------------------------------*/
+
+table {
+
+	max-width: 100%;
+
+	&.table {
+
+		width: 100%;
+		margin-bottom: 15px;
+
+		th, td {
+
+			padding: 10px 12px;
+		}
+
+		& > thead > tr > th,
+		& > tfoot > tr > th {
+
+			text-align: left;
+		}
+
+		& > thead > tr,
+		& > tbody > tr {
+
+			border-bottom: 1px solid #DDD;
+		}
+
+		& > thead > tr{
+
+			border-bottom: 2px solid #DDD;
+		}
+
+		& > tfoot > tr {
+
+			border-top: 2px solid #DDD;
+		}
+	}
+
+	&.table-border {
+
+		border: 1px solid #DDD;
+	}
+
+	&.table-striped {
+
+		& > tbody > tr:nth-child(even) > td {
+
+			background: #F6F6F6;
+		}
+	}
+
+	&.table-hover {
+
+		& > tbody > tr:hover > td {
+
+			background: #F4F4F4;
+		}
+
+		&.table-striped > tbody > tr:nth-child(even):hover > td {
+
+			background: #F1F1F1;
+		}
+	}
+}
