@@ -22,11 +22,11 @@
 /* Vendor Prefixes */
 /* ---------------------------------------------------------------------------------------------- */
 
-.box-shadow (@string) {
+.box-shadow (...) {
 
-	-webkit-box-shadow: @string;
-	   -moz-box-shadow: @string;
-			box-shadow: @string;
+	-webkit-box-shadow: @arguments;
+	   -moz-box-shadow: @arguments;
+			box-shadow: @arguments;
 }
 
 .border-radius (@string) {
@@ -34,7 +34,7 @@
 	-webkit-border-radius: @string;
 	   -moz-border-radius: @string;
 			border-radius: @string;
-
+}
 
 .box-sizing (@type: border-box) {
 
@@ -59,13 +59,13 @@
 			transform: @string;
 }
 
-.transition (@string) {
+.transition (...) {
 
-	-webkit-transition: @string;
-	   -moz-transition: @string;
-		-ms-transition: @string;
-		 -o-transition: @string;
-			transition: @string;
+	-webkit-transition: @arguments;
+	   -moz-transition: @arguments;
+		-ms-transition: @arguments;
+		 -o-transition: @arguments;
+			transition: @arguments;
 }
 
 .background-clip (@string) {

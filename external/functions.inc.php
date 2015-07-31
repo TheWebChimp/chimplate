@@ -16,9 +16,8 @@
 	$site->registerStyle('jquery.datepicker', $site->baseUrl('/css/plugins/jquery.datepicker.css') );
 
 	# Fonts
-	$site->registerStyle('google.open-sans', '//fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' );
-	$site->registerStyle('google.oswald', '//fonts.googleapis.com/css?family=Oswald:400,700,300' );
-	$site->registerStyle('font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css' );
+	$site->registerStyle('google.fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,300,700,800|Oswald:400,700,300' );
+	$site->registerStyle('font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css' );
 
 	# ChimPlate
 	$site->registerStyle('chimplate-base', $site->baseUrl('/css/src/chimplate-base.css') );
@@ -27,6 +26,8 @@
 	$site->registerStyle('chimplate-forms', $site->baseUrl('/css/src/chimplate-forms.css') );
 	$site->registerStyle('chimplate-tables', $site->baseUrl('/css/src/chimplate-tables.css') );
 	$site->registerStyle('chimplate-helpers', $site->baseUrl('/css/src/chimplate-helpers.css') );
+
+	$site->registerStyle('chimplate', $site->baseUrl('/css/src/chimplate.less') );
 
 	$site->registerStyle('style', $site->baseUrl('/css/style.css'), array(
 
@@ -39,17 +40,18 @@
 		'select2',
 		'jquery.datepicker',
 
-		'google.open-sans',
-		'google.oswald',
+		'google.fontd',
 		'font-awesome',
 
 		# ChimPlate
-		'chimplate-base',
+		/*'chimplate-base',
 		'chimplate-grid',
 		'chimplate-buttons',
 		'chimplate-forms',
 		'chimplate-tables',
-		'chimplate-helpers'
+		'chimplate-helpers'*/
+
+		'chimplate'
 	));
 	$site->enqueueStyle('style');
 

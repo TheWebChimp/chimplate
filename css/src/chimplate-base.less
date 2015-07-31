@@ -143,7 +143,7 @@ br.clear {
 
 #responsive-displays() {
 
-	.show (@type) { display: @type !important; }
+	.show(@type) { display: @type !important; }
 	.hide { display: none !important; }
 }
 
@@ -177,14 +177,14 @@ br.clear {
 
 	#responsive-displays > .hide;
 	@media (min-width: @breakpoint_tablet) { #responsive-displays > .show(@type); }
-	@media (min-width: @breakpoint_desktop { #responsive-displays > .hide; }
+	@media (min-width: @breakpoint_desktop) { #responsive-displays > .hide; }
 }
 
 .show-tablets-inline-block() {
 
 	#responsive-displays > .hide;
 	@media (min-width: @breakpoint_tablet) { .inline-block() !important; }
-	@media (min-width: @breakpoint_desktop { #responsive-displays > .hide; }
+	@media (min-width: @breakpoint_desktop) { #responsive-displays > .hide; }
 }
 
 .show-tablet { .show-tablets(block); }
@@ -201,14 +201,14 @@ br.clear {
 
 	#responsive-displays > .hide;
 	@media (min-width: @breakpoint_tablet) { #responsive-displays > .hide; }
-	@media (min-width: @breakpoint_desktop { #responsive-displays > .show(@type); }
+	@media (min-width: @breakpoint_desktop) { #responsive-displays > .show(@type); }
 }
 
 .show-desktops-inline-block() {
 
 	#responsive-displays > .hide;
 	@media (min-width: @breakpoint_tablet) { #responsive-displays > .hide; }
-	@media (min-width: @breakpoint_desktop { .inline-block() !important; }
+	@media (min-width: @breakpoint_desktop) { .inline-block() !important; }
 }
 
 .show-desktop { .show-desktops(block); }
@@ -224,7 +224,7 @@ br.clear {
 .hide-mobiles(@type) {
 
 	#responsive-displays > .hide;
-	@media (min-width: @breakpoint_tablet) { #responsive-displays > .show; }
+	@media (min-width: @breakpoint_tablet) { #responsive-displays > .show(@type); }
 }
 
 .hide-mobiles-inline-block() {
@@ -247,14 +247,14 @@ br.clear {
 
 	#responsive-displays > .show(@type);
 	@media (min-width: @breakpoint_tablet) { #responsive-displays > .hide; }
-	@media (min-width: @breakpoint_desktop { #responsive-displays > .show(@type); }
+	@media (min-width: @breakpoint_desktop) { #responsive-displays > .show(@type); }
 }
 
 .hide-tablets-inline-block() {
 
 	.inline-block() !important;
 	@media (min-width: @breakpoint_tablet) { #responsive-displays > .hide; }
-	@media (min-width: @breakpoint_desktop { .inline-block() !important; }
+	@media (min-width: @breakpoint_desktop) { .inline-block() !important; }
 }
 
 .hide-tablet { .hide-tablets(block); }
@@ -271,14 +271,14 @@ br.clear {
 
 	#responsive-displays > .show(@type);
 	@media (min-width: @breakpoint_tablet) { #responsive-displays > .show(@type); }
-	@media (min-width: @breakpoint_desktop { #responsive-displays > .hide; }
+	@media (min-width: @breakpoint_desktop) { #responsive-displays > .hide; }
 }
 
 .hide-desktops-inline-block() {
 
 	.inline-block() !important;
 	@media (min-width: @breakpoint_tablet) { .inline-block() !important; }
-	@media (min-width: @breakpoint_desktop { #responsive-displays > .hide; }
+	@media (min-width: @breakpoint_desktop) { #responsive-displays > .hide; }
 }
 
 .hide-desktop { .hide-desktops(block); }

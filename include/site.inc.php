@@ -3,7 +3,7 @@
 	 * site.inc.php
 	 * This class is the core of Hummingbird, so please try to keep it backwards-compatible if you modify it.
 	 *
-	 * Version: 	2.0.1
+	 * Version: 	2.0.2
 	 * Author(s):	biohzrdmx <github.com/biohzrdmx>
 	 */
 
@@ -74,7 +74,7 @@
 			$this->registerScript('respond', '//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js');
 			$this->registerScript('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js');
 			$this->registerScript('jquery.form', '//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.50/jquery.form.min.js', array('jquery'));
-			$this->registerScript('jquery.cycle', '//cdnjs.cloudflare.com/ajax/libs/jquery.cycle/3.03/jquery.cycle.all.min.js', array('jquery'));
+			$this->registerScript('jquery.cycle2', '//cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/20140415/jquery.cycle2.min.js', array('jquery'));
 			$this->registerScript('magnific-popup', '//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/0.9.9/jquery.magnific-popup.min.js', array('jquery'));
 			$this->registerScript('twitter-bootstrap', '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js', array('jquery'));
 			$this->registerScript('underscore', '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js');
@@ -129,6 +129,13 @@
 			}
 			$slug = ltrim( rtrim($slug, '/'), '/' );
 			$template = isset($site->pages[$slug]) && $whitelist ? $site->pages[$slug] : $slug;
+
+			#Check if redirect
+			if(preg_match( '#((https?|ftp)://(\S*?\.\S*?))([\s)\[\]{},;"\':<]|\.\s|$)#i', $template ) === 1 ){
+				$site->redirectTo($template, null, '302');
+				exit();
+			}
+
 			$page = sprintf('%s/%s.php', $templates_dir, $template);
 			if ( (!isset($site->pages[$slug]) && $whitelist ) || !file_exists($page) ) {
 				# The page does not exist
@@ -232,8 +239,8 @@
 		function addRoute($route, $functName, $insert = false) {
 			if ($insert) {
 				$this->routes = array_reverse($this->routes, true);
-			    $this->routes[$route] = $functName;
-			    $this->routes = array_reverse($this->routes, true);
+				$this->routes[$route] = $functName;
+				$this->routes = array_reverse($this->routes, true);
 			} else {
 				$this->routes[$route] = $functName;
 			}
@@ -501,14 +508,14 @@
 		 * @param  string $route    Route to redirect to
 		 * @param  string $protocol Protocol to override default http (https, ftp, etc)
 		 */
-		function redirectTo($route, $protocol = null) {
+		function redirectTo($route, $protocol = null, $http_response_code = 302) {
 			if ( preg_match('/^(http:\/\/|https:\/\/).*/', $route) !== 1 ) {
 				$url = $this->baseUrl($route, false, $protocol);
 			} else {
 				$url = $route;
 			}
 			$header = sprintf('Location: %s', $url);
-			header($header);
+			header($header, true, $http_response_code);
 			exit;
 		}
 
@@ -678,9 +685,11 @@
 		 * @param  string $style 	Registered style name
 		 */
 		function includeStyle($style) {
+			global $site;
 			if ( isset( $this->styles[$style] ) ) {
 				$item = $this->styles[$style];
-				$output = sprintf('<link rel="stylesheet" type="text/css" href="%s">', $item['resource']);
+				$output = $site->executeHook('core.includeStyle', $item);
+				$output = $output ? $output : sprintf('<link rel="stylesheet" type="text/css" href="%s">', $item['resource']);
 				echo($output."\n");
 			}
 		}
@@ -690,9 +699,11 @@
 		 * @param  string $script 	Registered script name
 		 */
 		function includeScript($script) {
+			global $site;
 			if ( isset( $this->scripts[$script] ) ) {
 				$item = $this->scripts[$script];
-				$output = sprintf('<script type="text/javascript" src="%s"></script>', $item['resource']);
+				$output = $site->executeHook('core.includeScript', $item);
+				$output = $output ? $output : sprintf('<script type="text/javascript" src="%s"></script>', $item['resource']);
 				echo($output."\n");
 			}
 		}
