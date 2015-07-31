@@ -742,10 +742,10 @@ input::-moz-focus-inner {
   font-size: 85%;
 }
 .button-large {
-  font-size: 110%;
+  font-size: 125%;
 }
 .button-xlarge {
-  font-size: 125%;
+  font-size: 150%;
 }
 .button-square {
   border-radius: 0;
@@ -853,10 +853,10 @@ input::-moz-focus-inner {
   font-size: 85%;
 }
 .form-group .form-control.form-control-large {
-  font-size: 110%;
+  font-size: 125%;
 }
 .form-group .form-control.form-control-xlarge {
-  font-size: 125%;
+  font-size: 150%;
 }
 .form-group .form-control.input-block {
   width: 100%;
