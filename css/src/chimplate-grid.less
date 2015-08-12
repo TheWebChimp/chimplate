@@ -82,10 +82,12 @@
 			&.col-md-3 { width: (3/12)*100%; }
 			&.col-md-4 { width: (4/12)*100%; }
 			&.col-md-6 { width: (6/12)*100%; }
+			&.col-md-8 { width: (8/12)*100%; }
 
 			&.col-offset-md-3 { margin-left: (2/12)*100%; }
 			&.col-offset-md-4 { margin-left: (4/12)*100%; }
 			&.col-offset-md-6 { margin-left: (6/12)*100%; }
+			&.col-offset-md-8 { margin-left: (8/12)*100%; }
 		}
 	}
 }
@@ -98,6 +100,24 @@
 
 		margin-left: -@default_margin;
 		margin-right: -@default_margin;
+
+		&.row-10 {
+
+			margin: 0 -10px;
+			& > .col { padding-left: 10px; padding-right: 10px; }
+		}
+
+		&.row-5 {
+
+			margin: 0 -5px;
+			& > .col { padding-left: 5px; padding-right: 5px; }
+		}
+
+		&.row-collapse {
+
+			margin: 0 0;
+			& > .col { padding-left: 0; padding-right: 0; }
+		}
 
 		.col {
 
