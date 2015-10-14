@@ -30,10 +30,10 @@
 [show] 	{ display: block !important; }
 .show 	{ display: block !important; }
 
-.text-muted 	{ color: #888;    }
-.text-success 	{ color: #528217; }
-.text-info 		{ color: #155083; }
-.text-error 	{ color: #AB3101; }
+.text-muted 	{ color: @greyed_color; }
+.text-success 	{ color: @nephritis; }
+.text-info 		{ color: @belize_hole }
+.text-error 	{ color: @pomegranate; }
 
 .no-text {
 
@@ -43,9 +43,9 @@
 	overflow: hidden;
 }
 
-.margins 		{ margin: @default_margin; }
-.margins-horz 	{ margin: 0 @default_margin; }
-.margins-vert 	{ margin: @default_margin 0; }
+.margins 		{ margin: @margin_default; }
+.margins-horz 	{ margin: 0 @margin_default; }
+.margins-vert 	{ margin: @margin_default 0; }
 
 .margins.margins-10 		{ margin: 10px; }
 .margins.margins-5 			{ margin: 5px; }
@@ -56,20 +56,21 @@
 .margins-vert.margins-10 	{ margin: 10px 0; }
 .margins-vert.margins-5 	{ margin: 5px 0; }
 
-.margin-bottom				{ margin-bottom: @default_margin; }
+.margin-bottom				{ margin-bottom: @margin_default; }
 .margin-bottom.margins-10	{ margin-bottom: 10px; }
 .margin-bottom.margins-5	{ margin-bottom: 5px; }
 
-.margin-left				{ margin-left: @default_margin; }
+.margin-left				{ margin-left: @margin_default; }
 .margin-left.margins-10		{ margin-left: 10px; }
 .margin-left.margins-5		{ margin-left: 5px; }
 
-.margin-right				{ margin-right: @default_margin; }
+.margin-right				{ margin-right: @margin_default; }
 .margin-right.margins-10	{ margin-right: 10px; }
 .margin-right.margins-5		{ margin-right: 5px; }
 
 .boxfix 		{ padding: 1px; }
 .boxfix-horz 	{ padding: 0 1px; }
+.boxfix-horse 	{ .boxfix-horz; }
 .boxfix-vert 	{ padding: 1px 0; }
 
 .pull-left 		{ float: left; }
@@ -80,6 +81,7 @@
 .text-center	{ text-align: center; }
 .text-justify 	{ text-align: justify; }
 
+.bolder 		{ font-weight: 900; }
 .bold 			{ font-weight: 700; }
 .thin 			{ font-weight: 300; }
 .regular 		{ font-weight: 400; }
@@ -89,6 +91,9 @@
 
 .break-word 	{ word-wrap: break-word; }
 .no-wrap 		{ white-space: nowrap; }
+
+.uppercase 		{ text-transform: uppercase; }
+.lowercase 		{ text-transform: lowercase; }
 
 .truncate {
 
@@ -109,54 +114,46 @@
 
 	&.message-default {
 
-		background: #F1F1F1;
-		color: #444;
+		background: @greyed_background;
+		color: @greyed_color;
 	}
 
 	&.message-success {
 
-		background: #DEF4C2;
-		color: #528217;
+		background: mix(@nephritis, @default_background, 25%);
+		color: @nephritis;
 	}
 
 	&.message-info {
 
-		background: #DCEBF9;
-		color: #155083;
+		background: mix(@belize_hole, @default_background, 25%);
+		color: @belize_hole;
 	}
 
 	&.message-error {
 
-		background: #FEE2D7;
-		color: #AB3101;
+		background: mix(@pomegranate, @default_background, 25%);
+		color: @pomegranate;
 	}
 
-	&.message-default a 	{ color: #444;    }
-	&.message-success a 	{ color: #528217; }
-	&.message-info a 		{ color: #155083; }
-	&.message-error a 		{ color: #AB3101; }
+	&.message-default a 	{ color: @greyed_color; }
+	&.message-success a 	{ color: @nephritis;    }
+	&.message-info a 		{ color: @belize_hole;  }
+	&.message-error a 		{ color: @pomegranate;  }
 }
 
-/* Columns */
-/* ---------------------------------------------------------------------------------------------- */
-
-.column 		{ float: left; }
-.column-half 	{ width: 50%; }
-.column-third 	{ width: 33.3333333333%; }
-.column-fourth 	{ width: 25%; }
-.column-fifth 	{ width: 20%; }
 
 /* Box */
 /*------------------------------------------------------------------------------------------------*/
 
 .box {
 
-	padding: 15px;
-	margin-bottom: 15px;
+	padding: @margin_default;
+	margin-bottom: @margin_default;
 
 	&.box-default {
 
-		background: #F1F1F1;
+		background: @greyed_background;
 	}
 }
 
@@ -166,12 +163,12 @@
 .media {
 
 	overflow: hidden;
-	margin-bottom: 15px;
+	margin-bottom: @margin_default;
 
 	.media-object {
 
 		float: left;
-		margin: 0 10px 0 0;
+		margin: 0 @margin_default 0 0;
 	}
 
 	.media-details {
@@ -183,7 +180,7 @@
 	&.media-right .media-object {
 
 		float: right;
-		margin: 0 0 0 10px;
+		margin: 0 0 0 @margin_default;
 	}
 
 	&.media-right .media-details {
@@ -199,14 +196,15 @@ img {
 
 	&.img-rounded {
 
-		.border-radius(5px);
+		.border-radius(@default_radius);
 	}
 
 	&.img-thumbnail {
 
-		padding: 5px;
-		background: #FFF;
-		border: 1px solid #CCC;
+		padding: @margin_third;
+		background: @default_background;
+		border: 1px solid @default_border;
+		.box-sizing(border-box);
 	}
 
 	&.img-circle {
@@ -248,20 +246,12 @@ img {
 
 .embed-responsive {
 
-	position: relative;
-	padding-bottom: 56.25%;
-	height: 0;
-	overflow: hidden;
-	max-width: 100%;
+	.responsive-container(@proportion: 56.25%);
 
 	iframe,
 	object,
 	embed {
 
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		.overlay-element;
 	}
 }

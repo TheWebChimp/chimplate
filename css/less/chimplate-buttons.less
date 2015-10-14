@@ -5,6 +5,17 @@
    ▀▀▀▀▀▀▀▀▀	/_____/\__,_/\__/\__/\____/_/ /_/____/
 														 */
 
+/**
+	=======================================
+	INDEX =================================
+	=======================================
+
+	+ Core
+	+ Styles
+
+	=======================================
+**/
+
 /* Core */
 /*------------------------------------------------------------------------------------------------*/
 
@@ -39,9 +50,7 @@ input::-moz-focus-inner {
 .button {
 
 	/* Structure */
-	display: inline-block;
-	*display: inline;
-	zoom: 1;
+	.inline-block();
 	line-height: normal;
 	white-space: nowrap;
 	vertical-align: middle;
@@ -68,28 +77,32 @@ input::-moz-focus-inner {
 
 .button {
 
-	& {
-		text-transform: none;
-		font-family: inherit;
-		font-size: 100%;
-		*font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
-		*overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
-		padding: 0.429em 1.2em;
-		color: white; /* rgba not supported (IE 8) */
-		*color: white; /* IE 6 & 7 */
-		border: 1px solid #7F8C8D;
-		background-color: #7F8C8D;
-		text-decoration: none !important;
-		border-radius: 2px;
-		font-weight: 300;
-		height: 2.4em;
-		line-height: 1.542em;
+	text-transform: none;
+	font-family: inherit;
+	font-size: 100%;
+	*font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
+	*overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+	padding: 0.429em 1.2em;
+	color: white; /* rgba not supported (IE 8) */
+	*color: white; /* IE 6 & 7 */
+	border: 1px solid @asbestos;
+	background-color: @asbestos;
+	text-decoration: none !important;
+	border-radius: @form_radius;
+	font-weight: 300;
+	height: 2.4em;
+	line-height: 1.542em;
 
-		.box-sizing(border-box);
-		.transition(border 0.25s linear 0s color 0.25s, linear 0s background-color 0.25s linear 0s);
+	.box-sizing(border-box);
+	.transition(border 0.25s, color 0.25s, background-color 0.25s;);
+
+	&:hover, &.button-hover {
+
+		text-decoration: none !important;
+		background-color: lighten(@asbestos, 15%);
+		color: white;
 	}
 
-	&:hover, &.button-hover { background-color: #95A5A6; color: white; }
 	&:focus { outline: 0; }
 
 	&[disabled],
@@ -105,13 +118,6 @@ input::-moz-focus-inner {
 
 	&.button-hidden { display: none; }
 
-	/* Firefox: Get rid of the inner focus border */
-	&::-moz-focus-inner {
-
-		padding: 0;
-		border: 0;
-	}
-
 	&.button-block {
 
 		display: block;
@@ -120,23 +126,17 @@ input::-moz-focus-inner {
 
 	&.button-link {
 
-		color: #337ab7;
+		color: @link_color_normal;
 		background: none;
 		border-color: transparent;
+
+		&:hover {
+
+			color: @link_color_hover;
+			background: transparent;
+			text-decoration: underline !important;
+		}
 	}
-
-	&.button-link:hover {
-
-		color: #23527c;
-		background: transparent;
-		text-decoration: underline;
-	}
-}
-
-.button-style (@button_color: @asbestos, @text_color: white) {
-
-	& { background-color: @button_color; border-color: @button_color; color: @text_color; }
-	&:hover { background-color: lighten(@button_color, 15%); }
 }
 
 .button-primary, .button-selected { .button-style(@belize_hole); }
@@ -166,17 +166,7 @@ input::-moz-focus-inner {
 /* Outline Buttons */
 /*------------------------------------------------------------------------------------------------*/
 
-.button-outline-style (@button_color: @asbestos, @text_color: white) {
-
-	& { border-color: @button_color; color: @button_color; }
-	&:hover { background-color: @button_color; color: @text_color; }
-}
-
 .button-outline {
-
-	background-color: transparent;
-	border-width: 1px;
-	border-style: solid;
 
 	.button-outline-style();
 

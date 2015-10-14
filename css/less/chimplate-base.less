@@ -31,7 +31,7 @@
 
 body {
 
-	background-color: white;
+	background-color: @default_background;
 	color: @default_color;
 	font-family: @default_font;
 	font-size: @default_font_size;
@@ -42,8 +42,8 @@ hr {
 	display: block;
 	height: 1px;
 	border: 0;
-	border-top: 1px solid @default_border_color;
-	margin: @default_margin 0;
+	border-top: 1px solid @default_border;
+	margin: @margin_default 0;
 	padding: 0;
 }
 
@@ -78,12 +78,12 @@ pre {
 	font-family: @monospaced_font;
 	font-size: inherit;
 	white-space: pre-wrap;
-	padding: @default_margin;
-	margin-bottom: @default_margin;
-	background: @greyed_background_color;
+	padding: @margin_default;
+	margin-bottom: @margin_default;
+	background: @greyed_background;
 	color: @greyed_color;
 
-	.border-radius( @default_border_radius );
+	.border-radius( @default_radius );
 }
 
 code {
@@ -92,10 +92,10 @@ code {
 	font-size: inherit;
 	padding: 2px 4px;
 
-	background: @greyed_background_color;
+	background: @greyed_background;
 	color: @greyed_color;
 
-	.border-radius( @default_border_radius );
+	.border-radius( @default_radius );
 }
 
 div,
@@ -301,13 +301,13 @@ br.clear {
 	p {
 
 		font-weight: inherit;
-		margin-bottom: @default_margin;
+		margin-bottom: @margin_default;
 	}
 
 	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 		line-height: 1.2;
-		margin-bottom: @default_margin;
+		margin-bottom: @margin_default;
 		font-weight: inherit;
 	}
 
@@ -330,18 +330,18 @@ br.clear {
 
 	ol, ul, dt {
 
-		margin-left: @default_margin*2;
-		margin-bottom: @default_margin;
+		margin-left: @margin_double;
+		margin-bottom: @margin_default;
 	}
 
-	li, dt { margin-bottom: @default_margin; }
+	li, dt { margin-bottom: @margin_default; }
 
 	a:hover { text-decoration: underline; }
 
 	.alignleft, .alignright, .aligncenter, .alignnone {
 
 		display: block;
-		.block-center(@default_margin);
+		.block-center(@margin_default);
 	}
 
 	.alignnone { float: none; display: none; }
@@ -351,20 +351,20 @@ br.clear {
 		.alignleft {
 
 			float: left;
-			margin-right: @default_margin;
-			margin-bottom: @default_margin;
+			margin-right: @margin_default;
+			margin-bottom: @margin_default;
 		}
 
 		.alignright {
 
 			float: right;
-			margin-left: @default_margin;
-			margin-bottom: @default_margin;
+			margin-left: @margin_default;
+			margin-bottom: @margin_default;
 		}
 
 		.aligncenter {
 
-			.block-center(@default_margin);
+			.block-center(@margin_default);
 		}
 	}
 }

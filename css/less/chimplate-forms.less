@@ -5,6 +5,17 @@
    ▀▀▀▀▀▀▀▀▀	/_/    \____/_/  /_/ /_/ /_/____/
 													*/
 
+/**
+	=======================================
+	INDEX =================================
+	=======================================
+
+	+ Core
+	+ Form Group
+
+	=======================================
+**/
+
 /* Core */
 /*------------------------------------------------------------------------------------------------*/
 
@@ -43,9 +54,9 @@
 		*overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
 
 		vertical-align: middle;
-		background: #FFF;
-		color: #555;
-		border: 1px solid #DDD;
+		background: @default_background;
+		color: @default_color;
+		border: 1px solid @default_border;
 		padding: 0.429em;
 		font-weight: 300;
 		height: 2.4em;
@@ -53,11 +64,11 @@
 		.box-sizing(border-box);
 
 		/* border-radius */
-		.border-radius(@form_border_radius);
+		.border-radius(@form_radius);
 
-		&:disabled { background-color: #E1E1E1; }
-		&[readonly] { background-color: #F6F6F6; }
-		&:focus { border-color: #CCC; }
+		&:disabled { background-color: @greyed_background; }
+		&[readonly] { background-color: mix(@greyed_background, @default_background, 50%); }
+		&:focus { border-color: darken(@default_border, 10%); }
 
 		&.form-control-xsmall { font-size: 70%; }
 		&.form-control-small { font-size: 85%; }
@@ -68,8 +79,6 @@
 
 			width: 100%;
 			display: block;
-
-			.box-sizing(border-box);
 		}
 	}
 
@@ -80,28 +89,28 @@
 	.feedback-block {
 
 		display: block;
-		margin: 10px 0;
-		color: #999;
+		margin: @form_margin 0;
+		color: @greyed_color;
 	}
 
-	.required { color: #C00; }
+	.required { color: @pomegranate; }
 
 	&.has-error .control-label,
 	&.has-error .form-control,
 	&.has-error .feedback-block {
 
-		color: #C00;
+		color: @pomegranate;
 	}
 
 	&.has-success .control-label,
 	&.has-success .form-control,
 	&.has-success .feedback-block {
 
-		color: #437F1A;
+		color: @nephritis;
 	}
 
-	&.has-error .form-control { border-color: #C00; }
-	&.has-success .form-control { border-color: #437F1A; }
+	&.has-error .form-control { border-color: @pomegranate; }
+	&.has-success .form-control { border-color: @nephritis; }
 }
 
 
@@ -134,12 +143,12 @@
 .form-group.has-error .radio label,
 .form-group.has-error .checkbox label {
 
-	color: #CC0000;
+	color: @pomegranate;
 }
 
 .form-group.has-success .radio label,
 .form-group.has-success .checkbox label {
 
-	color: #437F1A;
+	color: @nephritis;
 }
 */

@@ -10,10 +10,7 @@
 	INDEX =================================
 	=======================================
 
-	+ Generals
-	+ Clear Fixes
-	+ Responsive Helpers
-	+ The Content
+	+ Vendor Prefixes
 	+ Helpers
 
 	=======================================
@@ -75,6 +72,13 @@
 			background-clip: @string;
 }
 
+.background-size (@string: cover) {
+
+	-webkit-background-size: @string;
+	   -moz-background-size: @string;
+			background-size: @string;
+}
+
 /* Helpers */
 /* ---------------------------------------------------------------------------------------------- */
 
@@ -89,4 +93,53 @@
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
+}
+
+.responsive-container(@proportion: 50%) {
+
+	position: relative;
+	padding-bottom: @proportion;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+.overlay-element {
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Buttons */
+/* ---------------------------------------------------------------------------------------------- */
+
+.button-style (@button_color: @asbestos, @text_color: white) {
+
+	background-color: @button_color;
+	border-color: @button_color;
+	color: @text_color;
+
+	&:hover {
+
+		background-color: lighten(@button_color, 15%);
+		border-color: @button_color;
+		color: @text_color;
+	}
+}
+.button-outline-style (@button_color: @asbestos, @text_color: white) {
+
+	border-color: @button_color;
+	color: @button_color;
+	background-color: transparent !important;
+	border-width: 1px;
+	border-style: solid;
+
+	&:hover {
+
+		background-color: @button_color !important;
+		color: @text_color;
+	}
 }
