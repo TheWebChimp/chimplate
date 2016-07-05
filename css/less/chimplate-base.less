@@ -147,6 +147,18 @@ br.clear {
 	.hide { display: none !important; }
 }
 
+/* SHOW */
+/* ---------------------------------------------------------------------------------------------- */
+
+/*
+ SHOW | M  T  D
+------+--------
+   M  | 0  X  X
+   T  | X  0  X
+   D  | X  X  0
+
+ */
+
 /* ┌─┐┬ ┬┌─┐┬ ┬  ┌┬┐┌─┐┌┐ ┬┬  ┌─┐
    └─┐├─┤│ ││││  ││││ │├┴┐││  ├┤
    └─┘┴ ┴└─┘└┴┘  ┴ ┴└─┘└─┘┴┴─┘└─┘ */
@@ -217,6 +229,18 @@ br.clear {
 .show-desktop-table { .show-desktops(table); }
 .show-desktop-table-cell { .show-desktops(table-cell); }
 
+/* HIDE */
+/* ---------------------------------------------------------------------------------------------- */
+
+/*
+ HIDE | M  T  D
+------+--------
+   M  | X  0  0
+   T  | 0  X  0
+   D  | 0  0  X
+
+ */
+
 /* ┬ ┬┬┌┬┐┌─┐  ┌┬┐┌─┐┌┐ ┬┬  ┌─┐
    ├─┤│ ││├┤   ││││ │├┴┐││  ├┤
    ┴ ┴┴─┴┘└─┘  ┴ ┴└─┘└─┘┴┴─┘└─┘ */
@@ -286,6 +310,7 @@ br.clear {
 .hide-desktop-inline-block { .hide-desktops-inline-block(); }
 .hide-desktop-table { .hide-desktops(table); }
 .hide-desktop-table-cell { .hide-desktops(table-cell); }
+
 
 /* The Content */
 /*------------------------------------------------------------------------------------------------*/
