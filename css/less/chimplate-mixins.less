@@ -72,6 +72,13 @@
 			transition: @arguments;
 }
 
+.transform-origin (...) {
+
+	-webkit-transform-origin: @arguments;
+		-ms-transform-origin: @arguments;
+			transform-origin: @arguments;
+}
+
 .background-clip (@string) {
 
 	-webkit-background-clip: @string;
@@ -89,9 +96,9 @@
 .placeholder-color (@color) {
 
 	&::-webkit-input-placeholder { color: @color; }
-	&:-moz-placeholder { color: @color; }
-	&::-moz-placeholder { color: @color; }
-	&:-ms-input-placeholder { color: @color; }
+	          &:-moz-placeholder { color: @color; }
+	         &::-moz-placeholder { color: @color; }
+	     &:-ms-input-placeholder { color: @color; }
 }
 
 /* Helpers */
