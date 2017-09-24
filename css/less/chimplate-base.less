@@ -151,11 +151,12 @@ br.clear {
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
- SHOW | M  T  D
-------+--------
-   M  | 0  X  X
-   T  | X  0  X
-   D  | X  X  0
+ SHOW | M  T  D  W
+------+-----------
+   M  | 0  X  X  X
+   T  | X  0  X  X
+   D  | X  X  0  X
+   W  | X  X  X  0
 
  */
 
@@ -214,6 +215,7 @@ br.clear {
 	#responsive-displays > .hide;
 	@media (min-width: @breakpoint_tablet) { #responsive-displays > .hide; }
 	@media (min-width: @breakpoint_desktop) { #responsive-displays > .show(@type); }
+	@media (min-width: @breakpoint_wide) { #responsive-displays > .hide; }
 }
 
 .show-desktops-inline-block() {
@@ -221,6 +223,7 @@ br.clear {
 	#responsive-displays > .hide;
 	@media (min-width: @breakpoint_tablet) { #responsive-displays > .hide; }
 	@media (min-width: @breakpoint_desktop) { .inline-block() !important; }
+	@media (min-width: @breakpoint_wide) { #responsive-displays > .hide; }
 }
 
 .show-desktop { .show-desktops(block); }
@@ -229,15 +232,39 @@ br.clear {
 .show-desktop-table { .show-desktops(table); }
 .show-desktop-table-cell { .show-desktops(table-cell); }
 
+/* ┌─┐┬ ┬┌─┐┬ ┬  ┬ ┬┬┌┬┐┌─┐
+   └─┐├─┤│ ││││  ││││ ││├┤
+   └─┘┴ ┴└─┘└┴┘  └┴┘┴─┴┘└─┘ */
+
+.show-wides(@type) {
+
+	#responsive-displays > .hide;
+	@media (min-width: @breakpoint_wide) { #responsive-displays > .show(@type); }
+}
+
+.show-wides-inline-block() {
+
+	#responsive-displays > .hide;
+	@media (min-width: @breakpoint_wide) { .inline-block() !important; }
+}
+
+.show-wide { .show-wides(block); }
+.show-wide-inline { .show-wides(inline); }
+.show-wide-inline-block { .show-wides-inline-block(); }
+.show-wide-table { .show-wides(table); }
+.show-wide-table-cell { .show-wides(table-cell); }
+
+
 /* HIDE */
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
- HIDE | M  T  D
-------+--------
-   M  | X  0  0
-   T  | 0  X  0
-   D  | 0  0  X
+ HIDE | M  T  D  W
+------+-----------
+   M  | X  0  0  0
+   T  | 0  X  0  0
+   D  | 0  0  X  0
+   W  | 0  0  0  X
 
  */
 
@@ -303,6 +330,28 @@ br.clear {
 	.inline-block() !important;
 	@media (min-width: @breakpoint_tablet) { .inline-block() !important; }
 	@media (min-width: @breakpoint_desktop) { #responsive-displays > .hide; }
+}
+
+.hide-desktop { .hide-desktops(block); }
+.hide-desktop-inline { .hide-desktops(inline); }
+.hide-desktop-inline-block { .hide-desktops-inline-block(); }
+.hide-desktop-table { .hide-desktops(table); }
+.hide-desktop-table-cell { .hide-desktops(table-cell); }
+
+/* ┬ ┬┬┌┬┐┌─┐  ┬ ┬┬┌┬┐┌─┐
+   ├─┤│ ││├┤   ││││ ││├┤
+   ┴ ┴┴─┴┘└─┘  └┴┘┴─┴┘└─┘ */
+
+.hide-desktops(@type) {
+
+	#responsive-displays > .show(@type);
+	@media (min-width: @breakpoint_wide) { #responsive-displays > .hide; }
+}
+
+.hide-desktops-inline-block() {
+
+	.inline-block() !important;
+	@media (min-width: @breakpoint_wide) { #responsive-displays > .hide; }
 }
 
 .hide-desktop { .hide-desktops(block); }
