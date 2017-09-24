@@ -365,60 +365,85 @@ br.clear {
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
-                      | M  T  D  W
-----------------------+-----------
-  .hidden-mobile-down | X  0  0  0
-  .hidden-tablet-down | X  X  0  0
- .hidden-desktop-down | X  X  X  0
-    .hidden-wide-down | X  X  X  X
-----------------------+-----------
-    .hidden-mobile-up | X  X  X  X
-    .hidden-tablet-up | 0  X  X  X
-   .hidden-desktop-up | 0  0  X  X
-      .hidden-wide-up | 0  0  0  X
+                    | M  T  D  W
+--------------------+-----------
+  .hide-mobile-down | X  0  0  0
+  .hide-tablet-down | X  X  0  0
+ .hide-desktop-down | X  X  X  0
+    .hide-wide-down | X  X  X  X
+--------------------+-----------
+    .hide-mobile-up | X  X  X  X
+    .hide-tablet-up | 0  X  X  X
+   .hide-desktop-up | 0  0  X  X
+      .hide-wide-up | 0  0  0  X
  */
 
-.hidden-mobile-down {
+.hide-mobile-down {
 
 	display: none;
 	@media (min-width: @breakpoint_tablet) { display: block; }
 }
 
-.hidden-tablet-down {
+.hide-tablet-down {
 
 	display: none;
 	@media (min-width: @breakpoint_desktop) { display: block; }
 }
 
-.hidden-desktop-down {
+.hide-desktop-down {
 
 	display: none;
 	@media (min-width: @breakpoint_wide) { display: block; }
 }
 
-.hidden-wide-down,
-.hidden-mobile-up {
+.hide-wide-down,
+.hide-mobile-up {
 
 	display: none;
 }
 
-.hidden-tablet-up {
+.hide-tablet-up {
 
 	display: block;
 	@media (min-width: @breakpoint_desktop) { display: none; }
 }
 
-.hidden-desktop-up {
+.hide-desktop-up {
 
 	display: block;
 	@media (min-width: @breakpoint_wide) { display: none; }
 }
 
-.hidden-wide-up {
+.hide-wide-up {
 
 	display: block;
 }
 
+/* Media Types */
+/* ---------------------------------------------------------------------------------------------- */
+
+.show-print {
+
+	display: none;
+	@media print { display: block; }
+}
+
+.show-print-inline {
+
+	display: none;
+	@media print { display: inline; }
+}
+
+.show-print-inline-block {
+
+	display: none;
+	@media print { .inline-block(); }
+}
+
+.hide-print {
+
+	@media print { display: none; }
+}
 
 /* The Content */
 /*------------------------------------------------------------------------------------------------*/
