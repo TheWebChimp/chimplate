@@ -361,6 +361,65 @@ br.clear {
 .hide-desktop-table-cell { .hide-desktops(table-cell); }
 
 
+/* Hidden Up / Down */
+/* ---------------------------------------------------------------------------------------------- */
+
+/*
+                      | M  T  D  W
+----------------------+-----------
+  .hidden-mobile-down | X  0  0  0
+  .hidden-tablet-down | X  X  0  0
+ .hidden-desktop-down | X  X  X  0
+    .hidden-wide-down | X  X  X  X
+----------------------+-----------
+    .hidden-mobile-up | X  X  X  X
+    .hidden-tablet-up | 0  X  X  X
+   .hidden-desktop-up | 0  0  X  X
+      .hidden-wide-up | 0  0  0  X
+ */
+
+.hidden-mobile-down {
+
+	display: none;
+	@media (min-width: @breakpoint_tablet) { display: block; }
+}
+
+.hidden-tablet-down {
+
+	display: none;
+	@media (min-width: @breakpoint_desktop) { display: block; }
+}
+
+.hidden-desktop-down {
+
+	display: none;
+	@media (min-width: @breakpoint_wide) { display: block; }
+}
+
+.hidden-wide-down,
+.hidden-mobile-up {
+
+	display: none;
+}
+
+.hidden-tablet-up {
+
+	display: block;
+	@media (min-width: @breakpoint_desktop) { display: none; }
+}
+
+.hidden-desktop-up {
+
+	display: block;
+	@media (min-width: @breakpoint_wide) { display: none; }
+}
+
+.hidden-wide-up {
+
+	display: block;
+}
+
+
 /* The Content */
 /*------------------------------------------------------------------------------------------------*/
 
