@@ -3,6 +3,11 @@
 /* General */
 /* ---------------------------------------------------------------------------------------------- */
 
+html, body {
+
+	min-height: 100%;
+}
+
 body {
 
 	font-family: 'Ubuntu';
@@ -36,9 +41,15 @@ body {
 	.button-style(#999);
 }
 
+.button-link {
+
+	border: none !important;
+	box-shadow: none !important;
+}
+
 .documentation-block {
 
-	padding: 80px 0;
+	padding-bottom: 40px;
 	background: #F8F8F8;
 	text-align: center;
 	margin-bottom: @margin_default;
@@ -48,6 +59,11 @@ body {
 	@media (min-width: @breakpoint_tablet) {
 
 		margin-bottom: @margin_double;
+	}
+
+	img {
+
+		margin-bottom: 20px;
 	}
 
 	&:hover {
@@ -62,6 +78,12 @@ body {
 .site-header {
 
 	box-shadow: 0 2px 3px rgba(0,0,0,0.05);
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(255,255,255,0.5);
+	z-index: 1000;
 }
 
 /* Footer */

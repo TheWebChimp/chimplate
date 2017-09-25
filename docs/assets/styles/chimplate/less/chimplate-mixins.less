@@ -12,7 +12,6 @@
 
 	+ Vendor Prefixes
 	+ Helpers
-	+ Buttons
 
 	=======================================
 **/
@@ -46,9 +45,6 @@
 	-webkit-opacity: @opacity;
 	   -moz-opacity: @opacity;
 			opacity: @opacity;
-	@ie_opacity: @opacity * 100;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{@ie_opacity})";
-		filter: ~"alpha(opacity=@{@ie_opacity})";
 }
 
 .transform (@string) {
@@ -76,6 +72,13 @@
 			transition: @arguments;
 }
 
+.transform-origin (...) {
+
+	-webkit-transform-origin: @arguments;
+		-ms-transform-origin: @arguments;
+			transform-origin: @arguments;
+}
+
 .background-clip (@string) {
 
 	-webkit-background-clip: @string;
@@ -90,12 +93,12 @@
 			background-size: @string;
 }
 
-.placeholder (@color) {
+.placeholder-color (@color) {
 
 	&::-webkit-input-placeholder { color: @color; }
-	&:-moz-placeholder { color: @color; }
-	&::-moz-placeholder { color: @color; }
-	&:-ms-input-placeholder { color: @color; }
+	          &:-moz-placeholder { color: @color; }
+	         &::-moz-placeholder { color: @color; }
+	     &:-ms-input-placeholder { color: @color; }
 }
 
 /* Helpers */

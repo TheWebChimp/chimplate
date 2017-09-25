@@ -51,11 +51,11 @@ a {
 
 	color: @link_color_normal;
 	text-decoration: none;
+}
 
-	&:hover {
+a:hover {
 
-		color: @link_color_hover;
-	}
+	color: @link_color_hover;
 }
 
 /* Remove the gap between audio, canvas, iframes, */
@@ -151,11 +151,12 @@ br.clear {
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
- SHOW | M  T  D
-------+--------
-   M  | 0  X  X
-   T  | X  0  X
-   D  | X  X  0
+ SHOW | M  T  D  W
+------+-----------
+   M  | 0  X  X  X
+   T  | X  0  X  X
+   D  | X  X  0  X
+   W  | X  X  X  0
 
  */
 
@@ -214,6 +215,7 @@ br.clear {
 	#responsive-displays > .hide;
 	@media (min-width: @breakpoint_tablet) { #responsive-displays > .hide; }
 	@media (min-width: @breakpoint_desktop) { #responsive-displays > .show(@type); }
+	@media (min-width: @breakpoint_wide) { #responsive-displays > .hide; }
 }
 
 .show-desktops-inline-block() {
@@ -221,6 +223,7 @@ br.clear {
 	#responsive-displays > .hide;
 	@media (min-width: @breakpoint_tablet) { #responsive-displays > .hide; }
 	@media (min-width: @breakpoint_desktop) { .inline-block() !important; }
+	@media (min-width: @breakpoint_wide) { #responsive-displays > .hide; }
 }
 
 .show-desktop { .show-desktops(block); }
@@ -229,15 +232,39 @@ br.clear {
 .show-desktop-table { .show-desktops(table); }
 .show-desktop-table-cell { .show-desktops(table-cell); }
 
+/* ┌─┐┬ ┬┌─┐┬ ┬  ┬ ┬┬┌┬┐┌─┐
+   └─┐├─┤│ ││││  ││││ ││├┤
+   └─┘┴ ┴└─┘└┴┘  └┴┘┴─┴┘└─┘ */
+
+.show-wides(@type) {
+
+	#responsive-displays > .hide;
+	@media (min-width: @breakpoint_wide) { #responsive-displays > .show(@type); }
+}
+
+.show-wides-inline-block() {
+
+	#responsive-displays > .hide;
+	@media (min-width: @breakpoint_wide) { .inline-block() !important; }
+}
+
+.show-wide { .show-wides(block); }
+.show-wide-inline { .show-wides(inline); }
+.show-wide-inline-block { .show-wides-inline-block(); }
+.show-wide-table { .show-wides(table); }
+.show-wide-table-cell { .show-wides(table-cell); }
+
+
 /* HIDE */
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
- HIDE | M  T  D
-------+--------
-   M  | X  0  0
-   T  | 0  X  0
-   D  | 0  0  X
+ HIDE | M  T  D  W
+------+-----------
+   M  | X  0  0  0
+   T  | 0  X  0  0
+   D  | 0  0  X  0
+   W  | 0  0  0  X
 
  */
 
@@ -311,6 +338,112 @@ br.clear {
 .hide-desktop-table { .hide-desktops(table); }
 .hide-desktop-table-cell { .hide-desktops(table-cell); }
 
+/* ┬ ┬┬┌┬┐┌─┐  ┬ ┬┬┌┬┐┌─┐
+   ├─┤│ ││├┤   ││││ ││├┤
+   ┴ ┴┴─┴┘└─┘  └┴┘┴─┴┘└─┘ */
+
+.hide-desktops(@type) {
+
+	#responsive-displays > .show(@type);
+	@media (min-width: @breakpoint_wide) { #responsive-displays > .hide; }
+}
+
+.hide-desktops-inline-block() {
+
+	.inline-block() !important;
+	@media (min-width: @breakpoint_wide) { #responsive-displays > .hide; }
+}
+
+.hide-desktop { .hide-desktops(block); }
+.hide-desktop-inline { .hide-desktops(inline); }
+.hide-desktop-inline-block { .hide-desktops-inline-block(); }
+.hide-desktop-table { .hide-desktops(table); }
+.hide-desktop-table-cell { .hide-desktops(table-cell); }
+
+
+/* Hidden Up / Down */
+/* ---------------------------------------------------------------------------------------------- */
+
+/*
+                    | M  T  D  W
+--------------------+-----------
+  .hide-mobile-down | X  0  0  0
+  .hide-tablet-down | X  X  0  0
+ .hide-desktop-down | X  X  X  0
+    .hide-wide-down | X  X  X  X
+--------------------+-----------
+    .hide-mobile-up | X  X  X  X
+    .hide-tablet-up | 0  X  X  X
+   .hide-desktop-up | 0  0  X  X
+      .hide-wide-up | 0  0  0  X
+ */
+
+.hide-mobile-down {
+
+	display: none;
+	@media (min-width: @breakpoint_tablet) { display: block; }
+}
+
+.hide-tablet-down {
+
+	display: none;
+	@media (min-width: @breakpoint_desktop) { display: block; }
+}
+
+.hide-desktop-down {
+
+	display: none;
+	@media (min-width: @breakpoint_wide) { display: block; }
+}
+
+.hide-wide-down,
+.hide-mobile-up {
+
+	display: none;
+}
+
+.hide-tablet-up {
+
+	display: block;
+	@media (min-width: @breakpoint_desktop) { display: none; }
+}
+
+.hide-desktop-up {
+
+	display: block;
+	@media (min-width: @breakpoint_wide) { display: none; }
+}
+
+.hide-wide-up {
+
+	display: block;
+}
+
+/* Media Types */
+/* ---------------------------------------------------------------------------------------------- */
+
+.show-print {
+
+	display: none;
+	@media print { display: block; }
+}
+
+.show-print-inline {
+
+	display: none;
+	@media print { display: inline; }
+}
+
+.show-print-inline-block {
+
+	display: none;
+	@media print { .inline-block(); }
+}
+
+.hide-print {
+
+	@media print { display: none; }
+}
 
 /* The Content */
 /*------------------------------------------------------------------------------------------------*/
