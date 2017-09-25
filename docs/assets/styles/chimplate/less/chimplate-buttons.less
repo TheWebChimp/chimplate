@@ -90,7 +90,7 @@ input::-moz-focus-inner {
 	text-decoration: none !important;
 	border-radius: @form_radius;
 	font-weight: 300;
-	height: 2.4em;
+	min-height: 2.4em;
 	line-height: 1.542em;
 
 	.box-sizing(border-box);
@@ -146,7 +146,6 @@ input::-moz-focus-inner {
 .button-facebook { .button-style(@facebook); }
 .button-twitter { .button-style(@twitter); }
 .button-linkedin { .button-style(@linkedin); }
-.button-gplus { .button-style(#d34836); }
 .button-pinterest { .button-style(@pinterest); }
 .button-rss { .button-style(@blaze_orange); }
 
@@ -162,7 +161,7 @@ input::-moz-focus-inner {
 /*------------------------------------------------------------------------------------------------*/
 
 .button-square 	{ border-radius: 0; }
-.button-pill 	{ border-radius: 500px !important; }
+.button-pill 	{ border-radius: 500px; }
 
 /* Outline Buttons */
 /*------------------------------------------------------------------------------------------------*/
@@ -175,40 +174,4 @@ input::-moz-focus-inner {
 	&.button-outline-success { .button-outline-style(@nephritis); }
 	&.button-outline-error { .button-outline-style(@pumpkin); }
 	&.button-outline-warning { .button-outline-style(@pomegranate); }
-}
-
-/* Button Icons */
-/*------------------------------------------------------------------------------------------------*/
-
-.button-icon {
-
-	position: relative;
-	padding-left: 40px;
-
-	.fa {
-
-		position: absolute;
-		left: 0;
-		top: 0;
-		padding-top: 1px;
-		width: 30px;
-		height: 100%;
-		height: calc(~"100% + 1px");
-		display: table;
-		vertical-align: middle;
-		border-right: 1px solid rgba(255,255,255,0.5);
-
-		&:before {
-
-			display: table-cell;
-			vertical-align: middle;
-		}
-	}
-
-	&.button-pill {
-
-		padding-left: 50px;
-
-		.fa { padding-left: 5px; }
-	}
 }

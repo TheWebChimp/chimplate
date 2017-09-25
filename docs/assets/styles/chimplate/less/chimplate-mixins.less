@@ -12,7 +12,6 @@
 
 	+ Vendor Prefixes
 	+ Helpers
-	+ Buttons
 
 	=======================================
 **/
@@ -46,9 +45,6 @@
 	-webkit-opacity: @opacity;
 	   -moz-opacity: @opacity;
 			opacity: @opacity;
-	@ie_opacity: @opacity * 100;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{@ie_opacity})";
-		filter: ~"alpha(opacity=@{@ie_opacity})";
 }
 
 .transform (@string) {
@@ -76,6 +72,13 @@
 			transition: @arguments;
 }
 
+.transform-origin (...) {
+
+	-webkit-transform-origin: @arguments;
+		-ms-transform-origin: @arguments;
+			transform-origin: @arguments;
+}
+
 .background-clip (@string) {
 
 	-webkit-background-clip: @string;
@@ -90,12 +93,12 @@
 			background-size: @string;
 }
 
-.placeholder (@color) {
+.placeholder-color (@color) {
 
 	&::-webkit-input-placeholder { color: @color; }
-	&:-moz-placeholder { color: @color; }
-	&::-moz-placeholder { color: @color; }
-	&:-ms-input-placeholder { color: @color; }
+	          &:-moz-placeholder { color: @color; }
+	         &::-moz-placeholder { color: @color; }
+	     &:-ms-input-placeholder { color: @color; }
 }
 
 /* Helpers */
@@ -132,47 +135,22 @@
 	height: 100%;
 }
 
-.gradient(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
-
-	.gradient(@type; @colors; @dir; @prefixes; (@index - 1));
-
-	@prefix  : extract(@prefixes, @index);
-	@dir-old : 90 - (@dir);
-
-	background-image: ~"-@{prefix}-@{type}-gradient(@{dir-old}, @{colors})";
-	& when ( @index = length(@prefixes) ) {
-		background-image: ~"@{type}-gradient(@{dir}, @{colors})";
-	}
-}
-
 /* Buttons */
 /* ---------------------------------------------------------------------------------------------- */
 
-.button-style (@button_color: @asbestos, @text_color: white, @hover_color: '', @percent: 15%) {
+.button-style (@button_color: @asbestos, @text_color: white) {
 
 	background-color: @button_color;
 	border-color: @button_color;
 	color: @text_color;
 
-	&:hover, &.checked {
+	&:hover {
 
-		background-color: lighten(@button_color, @percent);
+		background-color: lighten(@button_color, 15%);
 		border-color: @button_color;
 		color: @text_color;
 	}
 }
-
-.button-style (@button_color: @asbestos, @text_color: white, @hover_color: '', @percent: 15%) when (@hover_color = 'dark') {
-
-	&:hover, &.checked { background-color: darken(@button_color, @percent); }
-}
-
-.button-style (@button_color: @asbestos, @text_color: white, @hover_color: '', @percent: 15%) when (iscolor(@hover_color)) {
-
-	&:hover, &.checked { background-color: @hover_color; }
-}
-
-
 .button-outline-style (@button_color: @asbestos, @text_color: white) {
 
 	border-color: @button_color;
@@ -181,7 +159,7 @@
 	border-width: 1px;
 	border-style: solid;
 
-	&:hover, &.checked {
+	&:hover {
 
 		background-color: @button_color !important;
 		color: @text_color;
