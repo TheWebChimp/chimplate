@@ -1,2 +1,0 @@
-# chimplate
-WebChimp Boilerplate

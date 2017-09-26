@@ -1,7 +1,0 @@
-# Ignore NPM Modules
-node_modules/
-node_modules/.
-dist/
-dist/.
-package.json
-Gruntfile.js
