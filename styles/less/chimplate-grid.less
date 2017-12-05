@@ -257,3 +257,75 @@
 		}
 	}
 }
+
+@media screen and (min-width: @breakpoint_wide) {
+
+	.row-xl {
+
+		.cf;
+
+		margin-left: -@margin_default;
+		margin-right: -@margin_default;
+
+		.col {
+
+			float: left;
+			position: relative;
+			min-height: 1px;
+			padding-left: @margin_default;
+			padding-right: @margin_default;
+		}
+
+		&.row-10 {
+
+			margin: 0 -10px;
+			& > .col { padding-left: 10px; padding-right: 10px; }
+		}
+
+		&.row-5 {
+
+			margin: 0 -5px;
+			& > .col { padding-left: 5px; padding-right: 5px; }
+		}
+
+		&.row-collapse {
+
+			margin: 0 0;
+			& > .col { padding-left: 0; padding-right: 0; }
+		}
+
+		.col {
+
+			&.col-xl-1 		{ width: (1/12)*100% }
+			&.col-xl-2 		{ width: (2/12)*100% }
+			&.col-xl-3 		{ width: (3/12)*100% }
+			&.col-xl-4 		{ width: (4/12)*100% }
+			&.col-xl-5 		{ width: (5/12)*100% }
+			&.col-xl-6 		{ width: (6/12)*100% }
+			&.col-xl-7 		{ width: (7/12)*100% }
+			&.col-xl-8 		{ width: (8/12)*100% }
+			&.col-xl-9 		{ width: (9/12)*100% }
+			&.col-xl-10 	{ width: (10/12)*100% }
+			&.col-xl-11 	{ width: (11/12)*100% }
+			&.col-xl-12 	{ margin-left: 0; width: 100%; }
+
+			&.col-xl-fifth 		{ width: 100%/5; }
+			&.col-xl-seventh 	{ width: 100%/7; }
+			&.col-xl-eighth 	{ width: 100%/8; }
+			&.col-xl-ninth 		{ width: 100%/9; }
+
+			&.col-xl-offset-1 		{ margin-left: (1/12)*100%; }
+			&.col-xl-offset-2 		{ margin-left: (2/12)*100%; }
+			&.col-xl-offset-3 		{ margin-left: (3/12)*100%; }
+			&.col-xl-offset-4 		{ margin-left: (4/12)*100%; }
+			&.col-xl-offset-5 		{ margin-left: (5/12)*100%; }
+			&.col-xl-offset-6 		{ margin-left: (6/12)*100%; }
+			&.col-xl-offset-7 		{ margin-left: (7/12)*100%; }
+			&.col-xl-offset-8 		{ margin-left: (8/12)*100%; }
+			&.col-xl-offset-9 		{ margin-left: (9/12)*100%; }
+			&.col-xl-offset-10 		{ margin-left: (10/12)*100%; }
+			&.col-xl-offset-11 		{ margin-left: (11/12)*100%; }
+			&.col-xl-offset-12 		{ margin-left-left: 0; }
+		}
+	}
+}
