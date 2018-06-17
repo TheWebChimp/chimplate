@@ -96,9 +96,9 @@
 .placeholder-color (@color) {
 
 	&::-webkit-input-placeholder { color: @color; }
-	          &:-moz-placeholder { color: @color; }
-	         &::-moz-placeholder { color: @color; }
-	     &:-ms-input-placeholder { color: @color; }
+			  &:-moz-placeholder { color: @color; }
+			 &::-moz-placeholder { color: @color; }
+		 &:-ms-input-placeholder { color: @color; }
 }
 
 /* Helpers */
@@ -117,7 +117,7 @@
 	*zoom: 1;
 }
 
-.responsive-container(@proportion: 50%) {
+.responsive-container (@proportion: 50%) {
 
 	position: relative;
 	padding-bottom: @proportion;
@@ -135,7 +135,7 @@
 	height: 100%;
 }
 
-.gradient(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
+.gradient (@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
 
 	.gradient(@type; @colors; @dir; @prefixes; (@index - 1));
 
