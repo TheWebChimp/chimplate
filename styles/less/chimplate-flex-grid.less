@@ -25,8 +25,6 @@
 
 		.box-sizing(border-box);
 		flex: 0 0 auto;
-		padding-right: @margin_default;
-		padding-left: @margin_default;
 	}
 
 	&.@{class}-@{i} {
@@ -43,31 +41,22 @@
 	.generate-flex-columns(@class, @n, (@i + 1));
 }
 
-// Flex Col Mixin
-.flex-col(@class) {
-
-	flex-grow: 1;
-	flex-basis: 0;
-	max-width: 100%;
-
-	.generate-flex-columns(@class);
+// Flex Row Mixin
+.flex-row(@class) {
 
 	&.@{class}-start {
 
 		justify-content: flex-start;
-		text-align: start;
 	}
 
 	&.@{class}-center {
 
 		justify-content: center;
-		text-align: center;
 	}
 
 	&.@{class}-end {
 
 		justify-content: flex-end;
-		text-align: end;
 	}
 
 	&.@{class}-top { align-items: flex-start; }
@@ -75,8 +64,22 @@
 	&.@{class}-bottom { align-items: flex-end; }
 	&.@{class}-around { justify-content: space-around; }
 	&.@{class}-between { justify-content: space-between; }
+}
+
+// Flex Col Mixin
+.flex-col(@class) {
+
 	&.@{class}-first { order: -1; }
 	&.@{class}-last { order: 1; }
+
+	&.@{class} {
+
+		flex-grow: 1;
+		flex-basis: 0;
+		max-width: 100%;
+	}
+
+	.generate-flex-columns(@class);
 }
 
 .flex-row {
@@ -87,15 +90,46 @@
 	flex: 0 1 auto;
 	flex-direction: row;
 	flex-wrap: wrap;
-	margin-right: @margin_default;
-	margin-left: @margin_default;
+	margin: 0 -@margin_default;
 
 	&.row-reverse { flex-direction: row-reverse; }
 	& .col.reverse { flex-direction: column-reverse; }
 
-	.col-sm { .flex-col(col-sm); }
+	.flex-row(row-sm);
 
-	@media screen and (min-width: @breakpoint_tablet) { .col-md { .flex-col(col-md); } }
-	@media screen and (min-width: @breakpoint_desktop) { .col { .flex-col(col); } }
-	@media screen and (min-width: @breakpoint_wide) { .col-xl { .flex-col(col-xl); } }
+	@media screen and (min-width: @breakpoint_tablet) { .flex-row(row-md); }
+	@media screen and (min-width: @breakpoint_desktop) { .flex-row(row); }
+	@media screen and (min-width: @breakpoint_wide) { .flex-row(row-xl); }
+
+	.col {
+
+		.box-sizing(border-box);
+		padding: 0 @margin_default;
+		flex: 100%;
+		max-width: 100%;
+
+		.flex-col(col-sm);
+
+		@media screen and (min-width: @breakpoint_tablet) { .flex-col(col-md); }
+		@media screen and (min-width: @breakpoint_desktop) { .flex-col(col); }
+		@media screen and (min-width: @breakpoint_wide) { .flex-col(col-xl); }
+	}
+
+	&.row-10 {
+
+		margin: 0 -10px;
+		.col { padding: 0 10px; }
+	}
+
+	&.row-5 {
+
+		margin: 0 -5px;
+		.col { padding: 0 5px; }
+	}
+
+	&.row-collapse {
+
+		margin: 0;
+		.col { padding: 0; }
+	}
 }
