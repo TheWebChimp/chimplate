@@ -14,11 +14,32 @@ body {
 	.gradient(linear; #FFF, #EEE 30%; 180deg);
 	color: #999;
 	font-size: 16px;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	overflow-y: scroll;
+}
+
+code {
+
+	background: white;
+}
+
+.client {
+
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 .animable {
 
 	display: none;
+}
+
+.site-content {
+
+	flex: 1 0 auto;
 }
 
 .the-content {
@@ -31,6 +52,7 @@ body {
 	.block-title {
 
 		font-size: 3em;
+		text-align: center;
 		margin-bottom: @margin_default;
 	}
 }
@@ -38,7 +60,6 @@ body {
 .button {
 
 	box-shadow: 0 2px 3px rgba(0,0,0,0.05);
-	.button-style(#999);
 }
 
 .button-link {
@@ -78,6 +99,7 @@ body {
 .site-header {
 
 	box-shadow: 0 2px 3px rgba(0,0,0,0.05);
+	flex: none;
 	position: fixed;
 	width: 100%;
 	left: 0;
@@ -91,6 +113,7 @@ body {
 
 .site-footer {
 
+	flex: none;
 	box-shadow: 0 -2px 3px rgba(0,0,0,0.05);
 }
 
@@ -125,6 +148,54 @@ body {
 				position: absolute;
 				left: 0;
 				top: 0;
+			}
+		}
+	}
+}
+
+/* Documentation pages */
+/* ---------------------------------------------------------------------------------------------- */
+
+.content-documentation {
+
+	.block-intro {
+
+		.block-title {
+
+			padding-top: @margin_quad*2;
+		}
+	}
+}
+
+.page-grid {
+
+	.flex-row-wrapper {
+
+		background: #CCC;
+		padding: 10px;
+		margin-bottom: 10px;
+
+		span { margin-bottom: 0 !important; }
+	}
+
+	.flex-row.row-shaded,
+	.row.row-shaded {
+
+		span {
+
+			.box-sizing(border-box);
+			overflow: hidden;
+			white-space: nowrap;
+			display: block;
+			border: 1px solid rgba(0,0,0,0.25);
+			background: rgba(255,255,255,0.5);
+			padding: @margin_half;
+			margin-bottom: 10px;
+
+			&:hover {
+
+				background: rgba(0,0,0,0.25);
+				color: white;
 			}
 		}
 	}

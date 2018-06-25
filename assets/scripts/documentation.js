@@ -1,4 +1,4 @@
-// --------------------------------------------------------------------------------- webchimp -- //
+// -------------------------------------------------------------------------------------------------
 
 ChimplateApp = Ladybug.Application.extend({
 	init: function(options) {
@@ -15,7 +15,7 @@ ChimplateApp = Ladybug.Application.extend({
 	}
 });
 
-// --------------------------------------------------------------------------------- webchimp -- //
+// -------------------------------------------------------------------------------------------------
 
 ChimplateModule = Ladybug.Module.extend({
 	name: 'Module',
@@ -87,7 +87,7 @@ ChimplateModule = Ladybug.Module.extend({
 	}
 });
 
-// --------------------------------------------------------------------------------- webchimp -- //
+// -------------------------------------------------------------------------------------------------
 
 ModuleHome = ChimplateModule.extend({
 	init: function(options) {
@@ -111,7 +111,79 @@ ModuleHome = ChimplateModule.extend({
 	}
 });
 
-// --------------------------------------------------------------------------------- webchimp -- //
+// -------------------------------------------------------------------------------------------------
+
+ModuleGrid = ChimplateModule.extend({
+	init: function(options) {
+		var obj = this;
+		obj.name = 'Grid';
+		obj.parent(options);
+	},
+	onPrepareTemplates: function(params) {
+		var obj = this;
+		obj.templates.page = Ladybug.Utils.compileTemplate('#page-grid');
+	},
+	onDomReady: function(params) {
+		var obj = this;
+		obj.runVelocity();
+	}
+});
+
+// -------------------------------------------------------------------------------------------------
+
+ModuleTables = ChimplateModule.extend({
+	init: function(options) {
+		var obj = this;
+		obj.name = 'Tables';
+		obj.parent(options);
+	},
+	onPrepareTemplates: function(params) {
+		var obj = this;
+		obj.templates.page = Ladybug.Utils.compileTemplate('#page-tables');
+	},
+	onDomReady: function(params) {
+		var obj = this;
+		obj.runVelocity();
+	}
+});
+
+// -------------------------------------------------------------------------------------------------
+
+ModuleButtons = ChimplateModule.extend({
+	init: function(options) {
+		var obj = this;
+		obj.name = 'Buttons';
+		obj.parent(options);
+	},
+	onPrepareTemplates: function(params) {
+		var obj = this;
+		obj.templates.page = Ladybug.Utils.compileTemplate('#page-buttons');
+	},
+	onDomReady: function(params) {
+		var obj = this;
+		obj.runVelocity();
+	}
+});
+
+// -------------------------------------------------------------------------------------------------
+
+ModuleForms = ChimplateModule.extend({
+	init: function(options) {
+		var obj = this;
+		obj.name = 'Forms';
+		obj.parent(options);
+	},
+	onPrepareTemplates: function(params) {
+		var obj = this;
+		obj.templates.page = Ladybug.Utils.compileTemplate('#page-forms');
+	},
+	onDomReady: function(params) {
+		var obj = this;
+		obj.runVelocity();
+	}
+});
+
+// -------------------------------------------------------------------------------------------------
 
 ModuleOther = ChimplateModule.extend({
 	init: function(options) {
@@ -125,23 +197,20 @@ ModuleOther = ChimplateModule.extend({
 	},
 	onDomReady: function(params) {
 		var obj = this;
-
-		// Do jQuery stuff here
-
 		obj.runVelocity();
 	}
 });
 
-// --------------------------------------------------------------------------------- webchimp -- //
+// -------------------------------------------------------------------------------------------------
 
 var app = new ChimplateApp({
 	element: '#ladybug-root'
 });
 
 app.registerModule('home', new ModuleHome);
-app.registerModule('grid', new ModuleOther);
-app.registerModule('tables', new ModuleOther);
-app.registerModule('buttons', new ModuleOther);
-app.registerModule('forms', new ModuleOther);
+app.registerModule('grid', new ModuleGrid);
+app.registerModule('tables', new ModuleTables);
+app.registerModule('buttons', new ModuleButtons);
+app.registerModule('forms', new ModuleForms);
 
-// --------------------------------------------------------------------------------- webchimp -- //
+// -------------------------------------------------------------------------------------------------
