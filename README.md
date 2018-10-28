@@ -1,2 +1,2 @@
-# chimplate
-WebChimp Boilerplate
+# Chimplate
+The Chimp Boilerplate
