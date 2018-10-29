@@ -59,10 +59,7 @@ input::-moz-focus-inner {
 	-webkit-user-drag: none;
 
 	/* User Select */
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-		-ms-user-select: none;
-			user-select: none;
+	.user-select(none);
 }
 
 /* Firefox: Get rid of the inner focus border */
@@ -90,7 +87,7 @@ input::-moz-focus-inner {
 	text-decoration: none !important;
 	border-radius: @form_radius;
 	font-weight: 300;
-	min-height: 2.4em;
+	height: 2.4em;
 	line-height: 1.542em;
 
 	.box-sizing(border-box);
