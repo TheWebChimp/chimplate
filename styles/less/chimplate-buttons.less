@@ -49,14 +49,17 @@ input::-moz-focus-inner {
 
 .button {
 
+	/* Structure */
 	.inline-block();
-	.user-select(none);
 	line-height: normal;
 	white-space: nowrap;
 	vertical-align: middle;
 	text-align: center;
 	cursor: pointer;
 	-webkit-user-drag: none;
+
+	/* User Select */
+	.user-select(none);
 }
 
 /* Firefox: Get rid of the inner focus border */
@@ -76,21 +79,23 @@ input::-moz-focus-inner {
 	font-size: 100%;
 	*font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
 	*overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
-	padding: .375rem .75rem;
-	color: white;
+	padding: 0.429em 1.2em;
+	color: white; /* rgba not supported (IE 8) */
+	*color: white; /* IE 6 & 7 */
 	border: 1px solid @asbestos;
 	background-color: @asbestos;
-	text-decoration: none;
+	text-decoration: none !important;
 	border-radius: @form_radius;
 	font-weight: 300;
-	line-height: 1.5;
+	height: 2.4em;
+	line-height: 1.542em;
 
 	.box-sizing(border-box);
 	.transition(border 0.25s, color 0.25s, background-color 0.25s;);
 
 	&:hover, &.button-hover {
 
-		text-decoration: none;
+		text-decoration: none !important;
 		background-color: lighten(@asbestos, 15%);
 		color: white;
 	}
