@@ -96,9 +96,17 @@
 .placeholder-color (@color) {
 
 	&::-webkit-input-placeholder { color: @color; }
-			  &:-moz-placeholder { color: @color; }
-			 &::-moz-placeholder { color: @color; }
 		 &:-ms-input-placeholder { color: @color; }
+			 &::-moz-placeholder { color: @color; }
+			  &:-moz-placeholder { color: @color; }
+}
+
+.user-select (@string) {
+
+	-webkit-user-select: @string;
+	   -moz-user-select: @string;
+		-ms-user-select: @string;
+			user-select: @string;
 }
 
 /* Helpers */
