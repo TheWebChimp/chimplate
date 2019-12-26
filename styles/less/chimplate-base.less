@@ -378,46 +378,40 @@ br.clear {
       .hide-wide-up | 0  0  0  X
  */
 
-.hide-mobile-down {
+.hide-mobile-down { display: none !important; @media (min-width: @breakpoint_tablet) { display: block !important; } }
+.hide-mobile-down-inline { display: none !important; @media (min-width: @breakpoint_tablet) { display: inline !important; } }
+.hide-mobile-down-inline-block { display: none !important; @media (min-width: @breakpoint_tablet) { display: inline-block !important; } }
+.hide-mobile-down-inline-table { display: none !important; @media (min-width: @breakpoint_tablet) { display: table !important; } }
+.hide-mobile-down-inline-table-cell { display: none !important; @media (min-width: @breakpoint_tablet) { display: table-cell !important; } }
 
-	display: none !important;
-	@media (min-width: @breakpoint_tablet) { display: block !important; }
-}
+.hide-tablet-down { display: none !important; @media (min-width: @breakpoint_desktop) { display: block !important; } }
+.hide-tablet-down-inline { display: none !important; @media (min-width: @breakpoint_desktop) { display: inline !important; } }
+.hide-tablet-down-inline-block { display: none !important; @media (min-width: @breakpoint_desktop) { display: inline-block !important; } }
+.hide-tablet-down-table { display: none !important; @media (min-width: @breakpoint_desktop) { display: table !important; } }
+.hide-tablet-down-table-cell { display: none !important; @media (min-width: @breakpoint_desktop) { display: table-cell !important; } }
 
-.hide-tablet-down {
-
-	display: none !important;
-	@media (min-width: @breakpoint_desktop) { display: block !important; }
-}
-
-.hide-desktop-down {
-
-	display: none !important;
-	@media (min-width: @breakpoint_wide) { display: block !important; }
-}
+.hide-desktop-down { display: none !important; @media (min-width: @breakpoint_wide) { display: block !important; } }
+.hide-desktop-down-inline { display: none !important; @media (min-width: @breakpoint_wide) { display: inline !important; } }
+.hide-desktop-down-inline-block { display: none !important; @media (min-width: @breakpoint_wide) { display: inline-block !important; } }
+.hide-desktop-down-table { display: none !important; @media (min-width: @breakpoint_wide) { display: table !important; } }
+.hide-desktop-down-table-cell { display: none !important; @media (min-width: @breakpoint_wide) { display: table-cell !important; } }
 
 .hide-wide-down,
-.hide-mobile-up {
+.hide-mobile-up { display: none !important; }
 
-	display: none !important;
-}
+.hide-tablet-up { display: block !important; @media (min-width: @breakpoint_desktop) { display: none !important; } }
+.hide-tablet-up-inline { display: block !important; @media (min-width: @breakpoint_desktop) { display: inline !important; } }
+.hide-tablet-up-inline-block { display: block !important; @media (min-width: @breakpoint_desktop) { display: inline-block !important; } }
+.hide-tablet-up-table { display: block !important; @media (min-width: @breakpoint_desktop) { display: table !important; } }
+.hide-tablet-up-table-cell { display: block !important; @media (min-width: @breakpoint_desktop) { display: table-cell !important; } }
 
-.hide-tablet-up {
+.hide-desktop-up { display: block !important; @media (min-width: @breakpoint_wide) { display: none !important; } }
+.hide-desktop-up-inline { display: block !important; @media (min-width: @breakpoint_wide) { display: inline !important; } }
+.hide-desktop-up-inline-block { display: block !important; @media (min-width: @breakpoint_wide) { display: inline-block !important; } }
+.hide-desktop-up-table { display: block !important; @media (min-width: @breakpoint_wide) { display: table !important; } }
+.hide-desktop-up-table-cell { display: block !important; @media (min-width: @breakpoint_wide) { display: table-cell !important; } }
 
-	display: block !important;
-	@media (min-width: @breakpoint_desktop) { display: none !important; }
-}
-
-.hide-desktop-up {
-
-	display: block !important;
-	@media (min-width: @breakpoint_wide) { display: none !important; }
-}
-
-.hide-wide-up {
-
-	display: block !important;
-}
+.hide-wide-up { display: block !important; }
 
 /* Show Only */
 /* ---------------------------------------------------------------------------------------------- */
