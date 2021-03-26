@@ -19,35 +19,35 @@
 /* Vendor Prefixes */
 /* ---------------------------------------------------------------------------------------------- */
 
-.box-shadow (...) {
+.box-shadow(...) {
 
 	-webkit-box-shadow: @arguments;
 	   -moz-box-shadow: @arguments;
 			box-shadow: @arguments;
 }
 
-.border-radius (@string) {
+.border-radius(@string) {
 
 	-webkit-border-radius: @string;
 	   -moz-border-radius: @string;
 			border-radius: @string;
 }
 
-.box-sizing (@type: border-box) {
+.box-sizing(@type: border-box) {
 
 	-webkit-box-sizing: @type;
 	   -moz-box-sizing: @type;
 			box-sizing: @type;
 }
 
-.opacity (@opacity: 0.5) {
+.opacity(@opacity: 0.5) {
 
 	-webkit-opacity: @opacity;
 	   -moz-opacity: @opacity;
 			opacity: @opacity;
 }
 
-.transform (@string) {
+.transform(@string) {
 
 	-webkit-transform: @string;
 	   -moz-transform: @string;
@@ -56,14 +56,14 @@
 			transform: @string;
 }
 
-.filter (...) {
+.filter(...) {
 
 	-webkit-filter: @arguments;
 		 -o-filter: @arguments;
 			filter: @arguments;
 }
 
-.transition (...) {
+.transition(...) {
 
 	-webkit-transition: @arguments;
 	   -moz-transition: @arguments;
@@ -72,28 +72,28 @@
 			transition: @arguments;
 }
 
-.transform-origin (...) {
+.transform-origin(...) {
 
 	-webkit-transform-origin: @arguments;
 		-ms-transform-origin: @arguments;
 			transform-origin: @arguments;
 }
 
-.background-clip (@string) {
+.background-clip(@string) {
 
 	-webkit-background-clip: @string;
 	   -moz-background-clip: @string;
 			background-clip: @string;
 }
 
-.background-size (@string: cover) {
+.background-size(@string: cover) {
 
 	-webkit-background-size: @string;
 	   -moz-background-size: @string;
 			background-size: @string;
 }
 
-.placeholder-color (@color) {
+.placeholder-color(@color) {
 
 	&::-webkit-input-placeholder { color: @color; }
 		 &:-ms-input-placeholder { color: @color; }
@@ -101,7 +101,7 @@
 			  &:-moz-placeholder { color: @color; }
 }
 
-.user-select (@string) {
+.user-select(@string) {
 
 	-webkit-user-select: @string;
 	   -moz-user-select: @string;
@@ -112,7 +112,7 @@
 /* Helpers */
 /* ---------------------------------------------------------------------------------------------- */
 
-.block-center (@margin: 0) {
+.block-center(@margin: 0) {
 
 	display: block;
 	margin: @margin auto;
@@ -125,7 +125,7 @@
 	*zoom: 1;
 }
 
-.responsive-container (@proportion: 50%) {
+.responsive-container(@proportion: 50%) {
 
 	position: relative;
 	padding-bottom: @proportion;
@@ -143,7 +143,7 @@
 	height: 100%;
 }
 
-.gradient (@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
+.gradient(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
 
 	.gradient(@type; @colors; @dir; @prefixes; (@index - 1));
 
@@ -159,7 +159,7 @@
 /* Buttons */
 /* ---------------------------------------------------------------------------------------------- */
 
-.button-style (@button_color: @asbestos, @text_color: white, @hover_color: '', @percent: 15%) {
+.button-style(@button_color: @asbestos, @text_color: white, @hover_color: '', @percent: 15%) {
 
 	background-color: @button_color;
 	border-color: @button_color;
@@ -173,18 +173,18 @@
 	}
 }
 
-.button-style (@button_color: @asbestos, @text_color: white, @hover_color: '', @percent: 15%) when (@hover_color = 'dark') {
+.button-style(@button_color: @asbestos, @text_color: white, @hover_color: '', @percent: 15%) when (@hover_color = 'dark') {
 
 	&:hover, &.checked { background-color: darken(@button_color, @percent); }
 }
 
-.button-style (@button_color: @asbestos, @text_color: white, @hover_color: '', @percent: 15%) when (iscolor(@hover_color)) {
+.button-style(@button_color: @asbestos, @text_color: white, @hover_color: '', @percent: 15%) when (iscolor(@hover_color)) {
 
 	&:hover, &.checked { background-color: @hover_color; }
 }
 
 
-.button-outline-style (@button_color: @asbestos, @text_color: white) {
+.button-outline-style(@button_color: @asbestos, @text_color: white) {
 
 	border-color: @button_color;
 	color: @button_color;
