@@ -12,6 +12,10 @@
 
 	+ Core
 	+ Styles
+	+ Sizes
+	+ Borders
+	+ Outline Buttons
+	+ Mixins
 
 	=======================================
 **/
@@ -171,4 +175,47 @@ input::-moz-focus-inner {
 	&.button-outline-success { .button-outline-style(@nephritis); }
 	&.button-outline-error { .button-outline-style(@pumpkin); }
 	&.button-outline-warning { .button-outline-style(@pomegranate); }
+}
+
+/* Mixins */
+/* ---------------------------------------------------------------------------------------------- */
+
+.button-style(@button_color: @asbestos, @text_color: white, @hover_color: '', @percent: 15%) {
+
+	background-color: @button_color;
+	border-color: @button_color;
+	color: @text_color;
+
+	&:hover, &.checked {
+
+		background-color: lighten(@button_color, @percent);
+		border-color: @button_color;
+		color: @text_color;
+	}
+}
+
+.button-style(@button_color: @asbestos, @text_color: white, @hover_color: '', @percent: 15%) when (@hover_color = 'dark') {
+
+	&:hover, &.checked { background-color: darken(@button_color, @percent); }
+}
+
+.button-style(@button_color: @asbestos, @text_color: white, @hover_color: '', @percent: 15%) when (iscolor(@hover_color)) {
+
+	&:hover, &.checked { background-color: @hover_color; }
+}
+
+
+.button-outline-style(@button_color: @asbestos, @text_color: white) {
+
+	border-color: @button_color;
+	color: @button_color;
+	background-color: transparent !important;
+	border-width: 1px;
+	border-style: solid;
+
+	&:hover, &.checked {
+
+		background-color: @button_color !important;
+		color: @text_color;
+	}
 }
