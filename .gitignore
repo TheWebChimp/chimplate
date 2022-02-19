@@ -5,3 +5,4 @@ dist/
 dist/.
 package.json
 Gruntfile.js
+less-watch-compiler.config.json
