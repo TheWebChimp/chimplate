@@ -296,8 +296,8 @@ Font weight short hand is a 1 to one from 1x to 100x. Also we implemented semant
 
 ###### Line Heights
 
-| Name               | Variable              | Definition |
-|:-------------------|:----------------------|:-----------|
+| Name                | Variable              | Definition |
+|:--------------------|:----------------------|:-----------|
 | Font Line Height 00 | `@font-lineheight-00` | `.95`      |
 | Font Line Height 0  | `@font-lineheight-0`  | `1.1`      |
 | Font Line Height 1  | `@font-lineheight-1`  | `1.25`     |
@@ -308,8 +308,8 @@ Font weight short hand is a 1 to one from 1x to 100x. Also we implemented semant
 
 ###### Letter Spacing
 
-| Name                 | Variable                | Definition |
-|:---------------------|:------------------------|:-----------|
+| Name                  | Variable                | Definition |
+|:----------------------|:------------------------|:-----------|
 | Font Letter Spacing 0 | `@font-letterspacing-0` | `-.05em`   |
 | Font Letter Spacing 1 | `@font-letterspacing-1` | `.025em`   |
 | Font Letter Spacing 2 | `@font-letterspacing-2` | `.050em`   |
@@ -341,6 +341,72 @@ Font weight short hand is a 1 to one from 1x to 100x. Also we implemented semant
 #### Gradients
 
 #### Media
+
+We have defined different media sizes and helpers to handle all the devices:
+
+##### Sizes
+
+| Name              | Variable    | Definition | Icon                                                                                                                                                                                                                                                                                                                                                                                                      |
+|:------------------|:------------|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Extra Extra Small | `@xxs-size` | `240px`    | <svg height="24" width="24"><path d="m14.31 2 .41 2.48C13.87 4.17 12.96 4 12 4c-.95 0-1.87.17-2.71.47L9.7 2h4.61m.41 17.52L14.31 22H9.7l-.41-2.47c.84.3 1.76.47 2.71.47.96 0 1.87-.17 2.72-.48M16 0H8l-.95 5.73C5.19 7.19 4 9.45 4 12s1.19 4.81 3.05 6.27L8 24h8l.96-5.73C18.81 16.81 20 14.54 20 12s-1.19-4.81-3.04-6.27L16 0zm-4 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path></svg> |
+| Extra Small       | `@xs-size`  | `360px`    | <svg height="24" width="24"><path d="M17 1.01 7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"></path></svg>                                                                                                                                                                                                                                              |
+| Small             | `@sm-size`  | `480px`    | <svg height="24" width="24"><path d="M15.5 1h-8A2.5 2.5 0 0 0 5 3.5v17A2.5 2.5 0 0 0 7.5 23h8a2.5 2.5 0 0 0 2.5-2.5v-17A2.5 2.5 0 0 0 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"></path></svg>                                                                                                                                                 |
+| Medium            | `@md-size`  | `768px`    | <svg height="24" width="24"><path d="M18 0H6C4.34 0 3 1.34 3 3v18c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V3c0-1.66-1.34-3-3-3zm-4 22h-4v-1h4v1zm5.25-3H4.75V3h14.5v16z"></path></svg>                                                                                                                                                                                                                      |
+| Large             | `@lg-size`  | `1024px`   | <svg height="24" width="24"><path d="M1.01 7 1 17c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2H3c-1.1 0-1.99.9-1.99 2zM19 7v10H5V7h14z"></path></svg>                                                                                                                                                                                                                                                 |
+| Extra Large       | `@xl-size`  | `1440px`   | <svg height="24" width="24"><path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"></path></svg>                                                                                                                                                                                                                                                |
+| Extra Extra Large | `@xl-size`  | `1920px`   | <svg height="24" width="24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"></path></svg>                                                                                                                                                                                                                                         |
+
+- __Extra Extra small__ is used for smartwatches and other very small devices.
+- __Extra small__ is used for old / small phones.
+- __Small__ is used for smart phones.
+- __Medium__ is used for tablets.
+- __Large__ is used for small computers / laptops or landscape oriented tablets.
+- __Extra Large__ is used for normal computers and laptops.
+- __Extra Extra Large__ is used for devices with the size or equal or bigger to 1080p.
+
+With this sizes variables we defined a number of variables that contain useful media queries. Each variable has a _only_, _n-above_ and _n-below_:
+
+| Name                      | Variable       | Definition                                             |
+|:--------------------------|:---------------|:-------------------------------------------------------|
+| Extra Extra Small Only    | `@xxs-only`    | `(min-width: 0) and (max-width: @{xxs-size})`          |
+| Extra Extra Small & Above | `@xxs-n-above` | `(min-width: @{xxs-size})`                             |
+| Extra Extra Small & Below | `@xxs-n-below` | `(max-width: @{xxs-size})`                             |
+| Extra Small Only          | `@xs-only`     | `(min-width: @{xxs-size}) and (max-width: @{xs-size})` |
+| Extra Small & Above       | `@xs-n-above`  | `(min-width: @{xs-size})`                              |
+| Extra Small & Below       | `@xs-n-below`  | `(max-width: @{xs-size})`                              |
+| Small Only                | `@sm-only`     | `(min-width: @{xs-size}) and (max-width: @{sm-size})`  |
+| Small & Above             | `@sm-n-above`  | `(min-width: @{sm-size})`                              |
+| Small & Below             | `@sm-n-below`  | `(max-width: @{sm-size})`                              |
+| Medium Only               | `@md-only`     | `(min-width: @{sm-size}) and (max-width: @{md-size})`  |
+| Medium & Above            | `@md-n-above`  | `(min-width: @{md-size})`                              |
+| Medium & Below            | `@md-n-below`  | `(max-width: @{md-size})`                              |
+| Large Only                | `@lg-only`     | `(min-width: @{md-size}) and (max-width: @{lg-size})`  |
+| Large & Above             | `@lg-n-above`  | `(min-width: @{lg-size})`                              |
+| Large & Below             | `@lg-n-below`  | `(max-width: @{lg-size})`                              |
+| Extra Large Only          | `@xl-only`     | `(min-width: @{lg-size}) and (max-width: @{xl-size})`  |
+| Extra Large & Above       | `@xl-n-above`  | `(min-width: @{xl-size})`                              |
+| Extra Large & Below       | `@xl-n-below`  | `(max-width: @{xl-size})`                              |
+| Extra Extra Large Only    | `@xxl-only`    | `(min-width: @{xl-size}) and (max-width: @{xxl-size})` |
+| Extra Extra Large & Above | `@xxl-n-above` | `(min-width: @{xxl-size})`                             |
+| Extra Extra Large & Below | `@xxl-n-below` | `(max-width: @{xxl-size})`                             |
+
+Also we have some special media queries for different portrait displays:
+
+| Name                    | Variable     | Definition                    |
+|:------------------------|:-------------|:------------------------------|
+| Extra Extra Small Phone | `@xxs-phone` | `@{xxs-only} and @{portrait}` |
+| Extra Small Phone       | `@xs-phone`  | `@{xs-only} and @{portrait}`  |
+| Small Phone             | `@sm-phone`  | `@{sm-only} and @{portrait}`  |
+| Medium Phone            | `@md-phone`  | `@{md-only} and @{portrait}`  |
+| Large Phone             | `@lg-phone`  | `@{lg-only} and @{portrait}`  |
+
+And last but not least, the media queries targeting specific browsers (we really hope we don't need these in the near future):
+
+| Name         | Variable       | Definition                             |
+|:-------------|:---------------|:---------------------------------------|
+| Safari Only  | `@safariONLY`  | `(-webkit-hyphens: none)`              |
+| Firefox Only | `@firefoxONLY` | `(-moz-appearance: none)`              |
+| Chrome Only  | `@chromeONLY`  | `(-webkit-tap-highlight-color: black)` |
 
 #### Shadows
 
