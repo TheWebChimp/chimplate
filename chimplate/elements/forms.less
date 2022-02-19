@@ -1,0 +1,177 @@
+/*				    ______
+	▀▀▀▀▀▀▀▀▀	   / ____/___  _________ ___  _____
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /_  / __ \/ ___/ __ `__ \/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	 / __/ / /_/ / /  / / / / / (__  )
+	▀▀▀▀▀▀▀▀▀	/_/    \____/_/  /_/ /_/ /_/____/*/
+
+.form-group {
+
+	margin-bottom: @margin-default;
+
+	.control-label {
+
+		display: block;
+		margin-bottom: @margin-half;
+	}
+
+	.form-control {
+
+		text-transform: none;
+		vertical-align: middle;
+		background: var(--background-base);
+		color: var(--body-color);
+		border: 1px solid var(--border-2);
+		padding: 0.375rem 0.75rem;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.5;
+		height: 2.4em;
+		appearance: none;
+		box-sizing: border-box;
+		background-clip: padding-box;
+		border-radius: 0.25rem;
+		transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+		&:disabled { background-color: var(--background-2); }
+
+		&:focus {
+
+			outline: 0;
+			box-shadow: 0 0 0 0.125rem var(--primary);
+			border-color: var(--border-3);
+		}
+
+		&.form-control-xsmall { font-size: 70%; }
+		&.form-control-small { font-size: 85%; }
+		&.form-control-large { font-size: 125%; }
+		&.form-control-xlarge { font-size: 150%; }
+
+		&.input-block {
+
+			width: 100%;
+			display: block;
+		}
+	}
+
+	textarea.form-control { height: auto; }
+
+	select.form-control {
+
+		padding: .375rem 2.25rem .375rem .75rem;
+		-moz-padding-start: calc(0.75rem - 3px);
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+		background-repeat: no-repeat;
+		background-position: right .75rem center;
+		background-size: 16px 12px;
+	}
+
+	.help-block,
+	.feedback-block {
+
+		display: block;
+		margin: @margin-default 0;
+		color: var(--body-color-muted);
+	}
+
+	.required { color: var(--danger); }
+
+	&.has-error .control-label,
+	&.has-error .form-control,
+	&.has-error .help-block,
+	&.has-error .feedback-block {
+
+		color: var(--danger);
+	}
+
+	&.has-success .control-label,
+	&.has-success .form-control,
+	&.has-success .help-block,
+	&.has-success .feedback-block {
+
+		color: var(--success);
+	}
+
+	&.has-error .form-control { border-color: var(--danger); }
+	&.has-success .form-control { border-color: var(--success); }
+}
+
+.form-check {
+
+	display: block;
+	min-height: 1.5rem;
+	padding-left: 1.5em;
+	margin-bottom: @margin-default;
+
+	.form-check-input {
+
+		float: left;
+		margin-left: -1.5em;
+	}
+
+	.help-block,
+	.feedback-block {
+
+		display: block;
+		margin: @margin-default 0;
+		color: var(--body-color-muted);
+	}
+
+	.required { color: var(--danger); }
+
+	&.has-error .control-label,
+	&.has-error .form-control,
+	&.has-error .help-block,
+	&.has-error .feedback-block {
+
+		color: var(--danger);
+	}
+
+	&.has-success .control-label,
+	&.has-success .form-control,
+	&.has-success .help-block,
+	&.has-success .feedback-block {
+
+		color: var(--success);
+	}
+
+	&.has-error .form-check-input { border-color: var(--danger); }
+	&.has-success .form-check-input { border-color: var(--success); }
+}
+
+.form-check-input {
+
+	width: 1em;
+	height: 1em;
+	margin-top: 0.125em;
+	vertical-align: top;
+	background-color: var(--background-base);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	border: 1px solid var(--border-2);
+	appearance: none;
+	-webkit-print-color-adjust: exact;
+	color-adjust: exact;
+	border-radius: 0.25em;
+
+	&:checked {
+
+		background-color: var(--primary);
+		border-color: var(--primary);
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+	}
+
+	&:indeterminate {
+
+		background-color: #0d6efd;
+		border-color: #0d6efd;
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
+	}
+
+	&:disabled {
+
+		pointer-events: none;
+		filter: none;
+		opacity: 0.5;
+	}
+}

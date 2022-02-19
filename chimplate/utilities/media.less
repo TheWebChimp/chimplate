@@ -1,0 +1,77 @@
+/*				    __  ___         ___
+	▀▀▀▀▀▀▀▀▀	   /  |/  /__  ____/ (_)___ _
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /|_/ / _ \/ __  / / __ `/
+  ▀ █ ▀▀▀▀▀ █ ▀	 / /  / /  __/ /_/ / / /_/ /
+	▀▀▀▀▀▀▀▀▀	/_/  /_/\___/\__,_/_/\__,_/*/
+
+/*  Media
+	-----------------------------------------------------------------------------------------------
+
+	Mixing to help add media queries for breakpoints
+
+	Breakpoint Sizes
+	================
+
+	The sizes used for breakpoints are:
+
+	xxs -  240px - Smart watches
+	 xs -  360px - Small phones
+	 sm -  480px - Medium Phones
+	 md -  768px - Tablets, some phones
+	 lg - 1024px - Small laptops, portrait tables
+	 xl - 1440px - Computer
+	xxl - 1920px - Big Computers
+
+	Usage
+	=====
+
+	Use this as:
+
+	.my-class {
+		.phone-only({
+			[YOUR SWEET LESS CODE]
+		});
+	}
+
+	-----------------------------------------------------------------------------------------------
+*/
+
+
+/*┌─┐┌─┐┬─┐┌─┐
+  │  │ │├┬┘├┤
+  └─┘└─┘┴└─└─┘*/
+
+.xss-only(@rules) { @media only screen and @xss-only { @rules(); } }
+.xxs-n-above(@rules) { @media only screen and @xxs-n-above { @rules(); } }
+.xxs-n-below(@rules) { @media only screen and @xxs-n-below { @rules(); } }
+.xxs-phone(@rules) { @media only screen and @xxs-phone { @rules(); } }
+.xs-only(@rules) { @media only screen and @xs-only { @rules(); } }
+.xs-n-above(@rules) { @media only screen and @xs-n-above { @rules(); } }
+.xs-n-below(@rules) { @media only screen and @xs-n-below { @rules(); } }
+.xs-phone(@rules) { @media only screen and @xs-phone { @rules(); } }
+.sm-only(@rules) { @media only screen and @sm-only { @rules(); } }
+.sm-n-above(@rules) { @media only screen and @sm-n-above { @rules(); } }
+.sm-n-below(@rules) { @media only screen and @sm-n-below { @rules(); } }
+.sm-phone(@rules) { @media only screen and @sm-phone { @rules(); } }
+.md-only(@rules) { @media only screen and @md-only { @rules(); } }
+.md-n-above(@rules) { @media only screen and @md-n-above { @rules(); } }
+.md-n-below(@rules) { @media only screen and @md-n-below { @rules(); } }
+.md-phone(@rules) { @media only screen and @md-phone { @rules(); } }
+.lg-only(@rules) { @media only screen and @lg-only { @rules(); } }
+.lg-n-above(@rules) { @media only screen and @lg-n-above { @rules(); } }
+.lg-n-below(@rules) { @media only screen and @lg-n-below { @rules(); } }
+.lg-phone(@rules) { @media only screen and @lg-phone { @rules(); } }
+.xl-only(@rules) { @media only screen and @xl-only { @rules(); } }
+.xl-n-above(@rules) { @media only screen and @xl-n-above { @rules(); } }
+.xl-n-below(@rules) { @media only screen and @xl-n-below { @rules(); } }
+.xxl-only(@rules) { @media only screen and @xxl-only { @rules(); } }
+.xxl-n-above(@rules) { @media only screen and @xxl-n-above { @rules(); } }
+.xxl-n-below(@rules) { @media only screen and @xxl-n-below { @rules(); } }
+
+/*┬ ┬┌┬┐┬┬  ┌─┐
+  │ │ │ ││  └─┐
+  └─┘ ┴ ┴┴─┘└─┘*/
+
+.at-least(@device-width, @rules) { @media screen and (min-width: @device-width) { @rules(); } }
+.until(@device-width, @rules) { @media screen and (max-width: @device-width - 1) { @rules(); } }
+.range(@min, @max, @rules) { @media screen and (min-width: @min) and (max-width: @max) { @rules(); } }

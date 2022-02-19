@@ -1,0 +1,154 @@
+/*				    __  ___         ___
+	▀▀▀▀▀▀▀▀▀	   /  |/  /__  ____/ (_)___ _
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /|_/ / _ \/ __  / / __ `/
+  ▀ █ ▀▀▀▀▀ █ ▀	 / /  / /  __/ /_/ / / /_/ /
+	▀▀▀▀▀▀▀▀▀	/_/  /_/\___/\__,_/_/\__,_/*/
+
+/**
+ * Taken from https://open-props.style/
+ * https://open-props.style/#media-queries
+ */
+
+// CSS Variables
+
+@custom-media --motionOK      (prefers-reduced-motion: no-preference);
+@custom-media --motionNotOK   (prefers-reduced-motion: reduce);
+@custom-media --opacityOK     (prefers-reduced-transparency: no-preference);
+@custom-media --opacityNotOK  (prefers-reduced-transparency: reduce);
+@custom-media --useDataOK     (prefers-reduced-data: no-preference);
+@custom-media --useDataNotOK  (prefers-reduced-data: reduce);
+
+@custom-media --OSdark        (prefers-color-scheme: dark);
+@custom-media --OSlight       (prefers-color-scheme: light);
+
+@custom-media --highContrast  (prefers-contrast: high);
+@custom-media --lowContrast   (prefers-contrast: low);
+
+@custom-media --portrait      (orientation: portrait);
+@custom-media --landscape     (orientation: landscape);
+
+@custom-media --HDcolor       (dynamic-range: high);
+
+@custom-media --touch         (hover: none) and (pointer: coarse);
+@custom-media --stylus        (hover: none) and (pointer: fine);
+@custom-media --pointer       (hover) and (pointer: coarse);
+@custom-media --mouse         (hover) and (pointer: fine);
+
+@custom-media --xxs-only      (0px <= width <= 240px);
+@custom-media --xxs-n-above   (width >= 240px);
+@custom-media --xxs-n-below   (width <= 240px);
+@custom-media --xxs-phone     (--xxs-only) and (--portrait);
+
+@custom-media --xs-only       (240px <= width <= 360px);
+@custom-media --xs-n-above    (width >= 360px);
+@custom-media --xs-n-below    (width <= 360px);
+@custom-media --xs-phone      (--xs-only) and (--portrait);
+
+@custom-media --sm-only       (360px <= width <= 480px);
+@custom-media --sm-n-above    (width >= 480px);
+@custom-media --sm-n-below    (width <= 480px);
+@custom-media --sm-phone      (--sm-only) and (--portrait);
+
+@custom-media --md-only       (480px <= width <= 768px);
+@custom-media --md-n-above    (width >= 768px);
+@custom-media --md-n-below    (width <= 768px);
+@custom-media --md-phone      (--md-only) and (--portrait);
+
+@custom-media --lg-only       (768px <= width <= 1024px);
+@custom-media --lg-n-above    (width >= 1024px);
+@custom-media --lg-n-below    (width <= 1024px);
+@custom-media --lg-phone      (--lg-only) and (--portrait);
+
+@custom-media --xl-only       (1024px <= width <= 1440px);
+@custom-media --xl-n-above    (width >= 1440px);
+@custom-media --xl-n-below    (width <= 1440px);
+
+@custom-media --xxl-only      (1440px <= width <= 1920px);
+@custom-media --xxl-n-above   (width >= 1920px);
+@custom-media --xxl-n-below   (width <= 1920px);
+
+@custom-media --safariONLY  (-webkit-hyphens: none);
+@custom-media --firefoxONLY (-moz-appearance: none);
+@custom-media --chromeONLY  (-webkit-tap-highlight-color: black);
+
+:where(html) {
+
+	--isLTR: 1;
+	--isRTL: -1;
+}
+
+&:dir(rtl) {
+
+	--isLTR: -1;
+	--isRTL: 1;
+}
+
+// Less Variables
+
+@motionOK:      ~"(prefers-reduced-motion: no-preference)";
+@motionNotOK:   ~"(prefers-reduced-motion: reduce)";
+@opacityOK:     ~"(prefers-reduced-transparency: no-preference)";
+@opacityNotOK:  ~"(prefers-reduced-transparency: reduce)";
+@useDataOK:     ~"(prefers-reduced-data: no-preference)";
+@useDataNotOK:  ~"(prefers-reduced-data: reduce)";
+
+@OSdark:        ~"(prefers-color-scheme: dark)";
+@OSlight:       ~"(prefers-color-scheme: light)";
+
+@highContrast:  ~"(prefers-contrast: high)";
+@lowContrast:   ~"(prefers-contrast: low)";
+
+@portrait:      ~"(orientation: portrait)";
+@landscape:     ~"(orientation: landscape)";
+
+@HDcolor:       ~"(dynamic-range: high)";
+
+@touch:         ~"(hover: none) and (pointer: coarse)";
+@stylus:        ~"(hover: none) and (pointer: fine)";
+@pointer:       ~"(hover) and (pointer: coarse)";
+@mouse:         ~"(hover) and (pointer: fine)";
+
+@xxs-size:      240px;
+@xs-size:       360px;
+@sm-size:       480px;
+@md-size:       768px;
+@lg-size:       1024px;
+@xl-size:       1440px;
+@xxl-size:      1920px;
+
+@xxs-only:      ~"(min-width: 0) and (max-width: @{xxs-size})"; // 0px <= width <= 240px
+@xxs-n-above:   ~"(min-width: @{xxs-size})"; // width >= 240px
+@xxs-n-below:   ~"(max-width: @{xxs-size})"; // width <= 240px
+@xxs-phone:     ~"@{xxs-only} and @{portrait}";
+
+@xs-only:       ~"(min-width: @{xxs-size}) and (max-width: @{xs-size})"; // 240px <= width <= 360px
+@xs-n-above:    ~"(min-width: @{xs-size})"; // width >= 360px
+@xs-n-below:    ~"(max-width: @{xs-size})"; // width <= 360px
+@xs-phone:      ~"@{xs-only} and @{portrait}";
+
+@sm-only:       ~"(min-width: @{xs-size}) and (max-width: @{sm-size})"; // 360px <= width <= 480px
+@sm-n-above:    ~"(min-width: @{sm-size})"; // width >= 480px
+@sm-n-below:    ~"(max-width: @{sm-size})"; // width <= 480px
+@sm-phone:      ~"@{sm-only} and @{portrait}";
+
+@md-only:       ~"(min-width: @{sm-size}) and (max-width: @{md-size})"; // 480px <= width <= 768px
+@md-n-above:    ~"(min-width: @{md-size})"; // width >= 768px
+@md-n-below:    ~"(max-width: @{md-size})"; // width <= 768px
+@md-phone:      ~"@{md-only} and @{portrait}";
+
+@lg-only:       ~"(min-width: @{md-size}) and (max-width: @{lg-size})"; // 768px <= width <= 1024px
+@lg-n-above:    ~"(min-width: @{lg-size})"; // width >= 1024px
+@lg-n-below:    ~"(max-width: @{lg-size})"; // width <= 1024px
+@lg-phone:      ~"@{lg-only} and @{portrait}";
+
+@xl-only:       ~"(min-width: @{lg-size}) and (max-width: @{xl-size})"; // 1024px <= width <= 1440px
+@xl-n-above:    ~"(min-width: @{xl-size})"; // width >= 1440px
+@xl-n-below:    ~"(max-width: @{xl-size})"; // width <= 1440px
+
+@xxl-only:      ~"(min-width: @{xl-size}) and (max-width: @{xxl-size})"; // 1440px <= width <= 1920px
+@xxl-n-above:   ~"(min-width: @{xxl-size})"; // width >= 1920px
+@xxl-n-below:   ~"(max-width: @{xxl-size})"; // width <= 1920px
+
+@safariONLY:    ~"(-webkit-hyphens: none)";
+@firefoxONLY:   ~"(-moz-appearance: none)";
+@chromeONLY:    ~"(-webkit-tap-highlight-color: black)";

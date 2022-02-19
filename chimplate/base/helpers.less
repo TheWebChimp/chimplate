@@ -1,0 +1,169 @@
+/*				    __  __     __
+	▀▀▀▀▀▀▀▀▀	   / / / /__  / /___  ___  __________
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /_/ / _ \/ / __ \/ _ \/ ___/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	 / __  /  __/ / /_/ /  __/ /  (__  )
+	▀▀▀▀▀▀▀▀▀	/_/ /_/\___/_/ .___/\___/_/  /____/
+				            /_/*/
+
+// General Helpers
+
+[hide], [hidden] 	{ display: none !important; }
+.hide, .hidden 		{ display: none !important; }
+
+[show] 	{ display: block !important; }
+.show 	{ display: block !important; }
+
+.no-text {
+
+	text-align: left;
+	text-indent: -9999px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.overlay-element {
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.remove-overlay-element {
+
+	position: static;
+	top: auto;
+	left: auto;
+	width: auto;
+	height: auto;
+}
+
+// Responsive Embedding
+
+.embed-responsive {
+
+	.responsive-container(@proportion: 56.25%);
+
+	iframe,
+	object,
+	video,
+	embed {
+
+		.overlay-element;
+	}
+}
+
+// Clear Fixes
+
+br.clear {
+
+	clear: both;
+	display: block;
+	height: 1px;
+	margin: -1px 0 0 0;
+}
+
+.cf {
+
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.anchor-link {
+
+	text-decoration: none;
+
+	&:hover { text-decoration: underline; }
+}
+
+// Images
+
+img {
+
+	&.img-rounded {
+
+		border-radius: 10px;
+	}
+
+	&.img-circle {
+
+		border-radius: 50%;
+	}
+
+	&.img-shadow {
+
+		box-shadow: 2px 2px 5px fade(black, 35%);
+	}
+
+	&.img-responsive {
+
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+// The Content
+// The content is an area where you can write text that will be correctly formated
+
+.the-content {
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	font-size: @font-size-1;
+	line-height: @font-lineheight-1;
+
+	.fs-text;
+	.leading-normal; // Line height 1.5
+
+	--the-content-space: 1rem;
+
+	& > * + * {
+
+		margin-top: var(--the-content-space);
+	}
+
+	h2 {
+
+		font-size: @size-7;
+	}
+
+	h3 {
+
+		font-size: @size-5;
+	}
+
+	ol, ul {
+
+		& > * + * {
+
+			margin-top: 0.5em;
+		}
+
+		li {
+
+
+		}
+	}
+}
+
+.flex-column {
+
+	display: flex;
+	flex-direction: column;
+
+	& > .flex-grow {
+
+		flex: 1;
+	}
+}

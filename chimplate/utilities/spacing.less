@@ -1,0 +1,122 @@
+/*				   _____                  _
+	▀▀▀▀▀▀▀▀▀	  / ___/____  ____ ______(_)___  ____ _
+  █ ▀▀▀▀ ▀▀▀▀ █	  \__ \/ __ \/ __ `/ ___/ / __ \/ __ `/
+  ▀ █ ▀▀▀▀▀ █ ▀	 ___/ / /_/ / /_/ / /__/ / / / / /_/ /
+	▀▀▀▀▀▀▀▀▀	/____/ .___/\__,_/\___/_/_/ /_/\__, /
+				    /_/                       /____/*/
+
+/*  Margins & Paddings
+	-----------------------------------------------------------------------------------------------
+
+	Grabbed directly from bootstrap and tailwind.
+
+	Property
+	========
+
+		- m - margin
+		- p - padding
+
+	Direction
+	=========
+
+	Direction or Sides (Like bootstrap):
+
+		-   - empty for all directions
+		- t - top
+		- b - bottom
+		- x - right and left
+		- y - top and bottom
+		- s, l - left
+		- e, r - right
+
+	Values
+	======
+
+	Values or magnitude (Like Tailwind):
+
+		- 0
+		- px - 1px
+		- 0.3, third 	- @spacer / 3
+		- 0.5, half 	- @spacer / 2
+		- 1, default 	- @spacer
+		- 1.5			- @spacer * 1.5
+		- 2, double		- @spacer * 2
+		- 3, triple 	- @spacer * 3
+		- 4, quad		- @spacer * 4
+		- auto 			- auto
+
+	Example
+	=======
+
+	.m-default - Gives a margin of @spacer 1rem to all directions
+
+	-----------------------------------------------------------------------------------------------
+*/
+
+/*┬  ┬┌─┐┬─┐┬┌─┐┌┐ ┬  ┌─┐┌─┐
+  └┐┌┘├─┤├┬┘│├─┤├┴┐│  ├┤ └─┐
+   └┘ ┴ ┴┴└─┴┴ ┴└─┘┴─┘└─┘└─┘*/
+
+@spacer: @size-3;
+
+@margin-spacer: @spacer;
+@padding-spacer: @spacer;
+
+@margin-default: @margin-spacer;
+
+@margin-third: (@margin-default / 3);
+@margin-half: (@margin-default / 2);
+
+@margin-double: (@margin-default * 2);
+@margin-triple: (@margin-default * 3);
+@margin-quad: (@margin-default * 4);
+
+
+/*┌┬┐┬─┐ ┬┬┌┐┌┌─┐
+  ││││┌┴┬┘││││└─┐
+  ┴ ┴┴┴ └─┴┘└┘└─┘*/
+
+.set-direction(@prop, @name, @value) {
+
+	&-@{name} { @{prop}: @value; }
+	&t-@{name} { @{prop}-top: @value; }
+	&b-@{name} { @{prop}-bottom: @value; }
+	&x-@{name} { @{prop}-left: @value; @{prop}-right: @value; }
+	&y-@{name} { @{prop}-top: @value; @{prop}-bottom: @value; }
+	&s-@{name}, &l-@{name} { @{prop}-left: @value; }
+	&e-@{name}, &r-@{name} { @{prop}-right: @value; }
+}
+
+.set-values(@prop, @value) {
+
+	.set-direction(@prop, 0, 0);
+	.set-direction(@prop, px, 1px);
+	.set-direction(@prop, ~"0\.3", (@value / 3));
+	.set-direction(@prop, third, (@value / 3));
+
+	.set-direction(@prop, ~"0\.5", (@value / 2));
+	.set-direction(@prop, half, (@value / 2));
+
+	.set-direction(@prop, 1, @value);
+	.set-direction(@prop, default, @value);
+
+	.set-direction(@prop, ~"1\.5", (@value * 1.5));
+
+	.set-direction(@prop, 2, (@value * 2));
+	.set-direction(@prop, double, (@value * 2));
+
+	.set-direction(@prop, 3, (@value * 3));
+	.set-direction(@prop, triple, (@value * 3));
+
+	.set-direction(@prop, 4, (@value * 4));
+	.set-direction(@prop, quad, (@value * 4));
+
+	.set-direction(@prop, auto, auto);
+}
+
+/*┬ ┬┌┬┐┬┬  ┬┌┬┐┬┌─┐┌─┐
+  │ │ │ ││  │ │ │├┤ └─┐
+  └─┘ ┴ ┴┴─┘┴ ┴ ┴└─┘└─┘*/
+
+.m { .set-values(margin, @margin-spacer); }
+.p { .set-values(padding, @padding-spacer); }

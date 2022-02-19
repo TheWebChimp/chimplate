@@ -1,0 +1,40 @@
+/*				 _____      ____          __
+	▀▀▀▀▀▀▀▀▀	/__  /     /  _/___  ____/ /__  _  __
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /      / // __ \/ __  / _ \| |/_/
+  ▀ █ ▀▀▀▀▀ █ ▀	 / /__   _/ // / / / /_/ /  __/>  <
+	▀▀▀▀▀▀▀▀▀	/____/  /___/_/ /_/\__,_/\___/_/|_|*/
+
+/**
+ * Taken from https://open-props.style/
+ * https://open-props.style/#z-index
+ */
+
+// Less Variables
+
+@layer-1: 1;
+@layer-2: 2;
+@layer-3: 3;
+@layer-4: 4;
+@layer-5: 5;
+@layer-important: 2147483647;
+
+// CSS Variables
+
+:where(html) {
+
+	--layer-1: @layer-1;
+	--layer-2: @layer-2;
+	--layer-3: @layer-3;
+	--layer-4: @layer-4;
+	--layer-5: @layer-5;
+	--layer-important: @layer-important;
+}
+
+// LESS - CSS Variables
+
+@-layer-1: var(--layer-1);
+@-layer-2: var(--layer-2);
+@-layer-3: var(--layer-3);
+@-layer-4: var(--layer-4);
+@-layer-5: var(--layer-5);
+@-layer-important: var(--layer-important);

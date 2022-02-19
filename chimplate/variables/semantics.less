@@ -1,0 +1,200 @@
+/*				   _____                            __  _
+	▀▀▀▀▀▀▀▀▀	  / ___/___  ____ ___  ____ _____  / /_(_)_________
+  █ ▀▀▀▀ ▀▀▀▀ █	  \__ \/ _ \/ __ `__ \/ __ `/ __ \/ __/ / ___/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	 ___/ /  __/ / / / / / /_/ / / / / /_/ / /__(__  )
+	▀▀▀▀▀▀▀▀▀	/____/\___/_/ /_/ /_/\__,_/_/ /_/\__/_/\___/____/*/
+
+/*
+ * These variables are semantic. This mean that the variable names are not linked to the styles they
+ * apply but more to the function they
+ */
+
+:where(html) {
+
+	--info-light: 		var(--blue-3);
+	--info: 			var(--blue-6); //#228be6
+	--info-dark: 		var(--blue-9);
+
+	--success-light: 	var(--green-3);
+	--success: 			var(--green-6); //#40c057
+	--success-dark: 	var(--green-9);
+
+	--danger-light: 	var(--red-3);
+	--danger: 			var(--red-6); //#fa5252
+	--danger-dark: 		var(--red-9);
+
+	--error-light: 		var(--red-3);
+	--error: 			var(--red-6); //#fa5252
+	--error-dark: 		var(--red-9);
+
+	--warning-light: 	var(--yellow-3);
+	--warning: 			var(--yellow-6); //#fab005
+	--warning-dark: 	var(--yellow-9);
+
+	--light: 			white; //white
+	--dark: 			var(--gray-9); //#212529
+
+	--primary-light: 	var(--blue-3);
+	--primary: 			var(--blue-6);
+	--primary-dark: 	var(--blue-9);
+}
+
+// Light Mode
+
+:root,
+:root[data-theme="theme-light"],
+:root.light-mode {
+
+	//Borders
+
+	--border-1: var(--gray-3);
+	--border-2: var(--gray-5);
+	--border-3: var(--gray-6);
+	--border-4: var(--gray-9);
+
+	// Backgrounds
+
+	--background-base: var(--light);
+	--background-0: var(--gray-0);
+	--background-1: var(--gray-1);
+	--background-2: var(--gray-2);
+	--background-3: var(--gray-3);
+	--background-4: var(--gray-4);
+	--background-5: var(--gray-5);
+	--background-6: var(--gray-6);
+	--background-7: var(--gray-7);
+	--background-8: var(--gray-8);
+	--background-9: var(--gray-9);
+
+	--primary-washed: var(--primary-light);
+
+	// Body
+
+	--body-background: var(--background-base);
+	--body-color: var(--background-9);
+	--body-color-inverted: var(--gray-0);
+	--body-color-muted: var(--gray-6);
+
+	// Transparencies
+
+	--transparency-1: rgba(0, 0, 0, 0.125);
+	--transparency-2: rgba(0, 0, 0, 0.25);
+	--transparency-3: rgba(0, 0, 0, 0.5);
+	--transparency-4: rgba(0, 0, 0, 0.75);
+
+	--light-transparency-1: fade(white, 50%);
+}
+
+// Dark Mode
+
+:root[data-theme="theme-dark"],
+:root.dark-mode {
+
+	// Borders
+
+	--border-1: var(--gray-8);
+	--border-2: var(--gray-6);
+	--border-3: var(--gray-4);
+	--border-4: var(--gray-2);
+
+	// Backgrounds
+
+	--background-0: var(--gray-9);
+	--background-1: var(--gray-8);
+	--background-2: var(--gray-7);
+	--background-3: var(--gray-6);
+	--background-4: var(--gray-5);
+	--background-5: var(--gray-4);
+	--background-6: var(--gray-3);
+	--background-7: var(--gray-2);
+	--background-8: var(--gray-1);
+	--background-9: var(--gray-0);
+	--background-base: var(--dark);
+
+	--primary-washed: var(--primary-dark);
+
+	// Body
+
+	--body-background: var(--background-base);
+	--body-color: var(--gray-0);
+	--body-color-inverted: var(--gray90);
+	--body-color-muted: var(--gray-4);
+
+	// Transparencies
+
+	--transparency-1: rgba(255, 255, 255, 0.125);
+	--transparency-2: rgba(255, 255, 255, 0.25);
+	--transparency-3: rgba(255, 255, 255, 0.5);
+	--transparency-4: rgba(255, 255, 255, 0.75);
+
+	--light-transparency-1: fade(white, 12.5%);
+}
+
+
+//Less semantics
+
+@info-light: var(--info-light);
+@info: var(--info);
+@info-dark: var(--info-dark);
+
+@success-light: var(--success-light);
+@success: var(--success);
+@success-dark: var(--success-dark);
+
+@danger-light: var(--danger-light);
+@danger: var(--danger);
+@danger-dark: var(--danger-dark);
+
+@error-light: var(--error-light);
+@error: var(--error);
+@error-dark: var(--error-dark);
+
+@warning-light: var(--warning-light);
+@warning: var(--warning);
+@warning-dark: var(--warning-dark);
+
+@light: var(--light);
+@dark: var(--dark);
+
+@primary-light: var(--primary-light);
+@primary: var(--primary);
+@primary-dark: var(--primary-dark);
+
+//Borders
+
+@border-1: var(--border-1);
+@border-2: var(--border-2);
+@border-3: var(--border-3);
+@border-4: var(--border-4);
+
+// Backgrounds
+
+@background-base: var(--background-base);
+@background-0: var(--background-0);
+@background-1: var(--background-1);
+@background-2: var(--background-2);
+@background-3: var(--background-3);
+@background-4: var(--background-4);
+@background-5: var(--background-5);
+@background-6: var(--background-6);
+@background-7: var(--background-7);
+@background-8: var(--background-8);
+@background-9: var(--background-9);
+
+@primary-washed: var(--primary-washed);
+
+// Body
+
+@body-background: var(--body-background);
+@body-color: var(--body-color);
+@body-color-inverted: var(--body-color-inverted);
+@body-color-muted: var(--body-color-muted);
+
+// Transparencies
+
+@transparency-1: var(--transparency-1);
+@transparency-2: var(--transparency-2);
+@transparency-3: var(--transparency-3);
+@transparency-4: var(--transparency-4);
+
+@light-transparency-1: var(--light-transparency-1);

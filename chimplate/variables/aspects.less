@@ -1,0 +1,41 @@
+/*				    ___                         __
+	▀▀▀▀▀▀▀▀▀	   /   |  _________  ___  _____/ /______
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /| | / ___/ __ \/ _ \/ ___/ __/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	 / ___ |(__  ) /_/ /  __/ /__/ /_(__  )
+	▀▀▀▀▀▀▀▀▀	/_/  |_/____/ .___/\___/\___/\__/____/
+				           /_/*/
+
+/**
+ * Taken from https://open-props.style/
+ * https://open-props.style/#aspect-ratio
+ */
+
+// Less Variables
+
+@ratio-box: 1;
+@ratio-landscape: 4/3;
+@ratio-portrait: 3/4;
+@ratio-widescreen: 16/9;
+@ratio-ultrawide: 18/5;
+@ratio-golden: 1.6180/1;
+
+// CSS Variables
+
+:where(html) {
+
+	--ratio-box: @ratio-box;
+	--ratio-landscape: @ratio-landscape;
+	--ratio-portrait: @ratio-portrait;
+	--ratio-widescreen: @ratio-widescreen;
+	--ratio-ultrawide: @ratio-ultrawide;
+	--ratio-golden: @ratio-golden;
+}
+
+// LESS - CSS Variables
+
+@-ratio-box: var(--ratio-box);
+@-ratio-landscape: var(--ratio-landscape);
+@-ratio-portrait: var(--ratio-portrait);
+@-ratio-widescreen: var(--ratio-widescreen);
+@-ratio-ultrawide: var(--ratio-ultrawide);
+@-ratio-golden: var(--ratio-golden);

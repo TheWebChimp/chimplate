@@ -1,0 +1,186 @@
+/*				    ______            __
+	▀▀▀▀▀▀▀▀▀	   / ____/___  ____  / /______
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /_  / __ \/ __ \/ __/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	 / __/ / /_/ / / / / /_(__  )
+	▀▀▀▀▀▀▀▀▀	/_/    \____/_/ /_/\__/____/*/
+
+/**
+ * Taken from https://open-props.style/
+ * https://open-props.style/#typography
+ *
+ * Weights taken from https://www.pollen.style/modules/typography
+ *
+ */
+
+// Less Variables
+
+@font-sans: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+@font-serif: ui-serif,serif;
+@font-mono: Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace;
+
+@font-weight-1: 100;
+@font-weight-2: 200;
+@font-weight-3: 300;
+@font-weight-4: 400;
+@font-weight-5: 500;
+@font-weight-6: 600;
+@font-weight-7: 700;
+@font-weight-8: 800;
+@font-weight-9: 900;
+
+@font-weight-light: 300;
+@font-weight-regular: 400;
+@font-weight-medium: 500;
+@font-weight-semibold: 600;
+@font-weight-bold: 700;
+@font-weight-extrabold: 800;
+@font-weight-black: 900;
+
+@font-lineheight-00: .95;
+@font-lineheight-0: 1.1;
+@font-lineheight-1: 1.25;
+@font-lineheight-2: 1.375;
+@font-lineheight-3: 1.5;
+@font-lineheight-4: 1.75;
+@font-lineheight-5: 2;
+
+@font-letterspacing-0: -.05em;
+@font-letterspacing-1: .025em;
+@font-letterspacing-2: .050em;
+@font-letterspacing-3: .075em;
+@font-letterspacing-4: .150em;
+@font-letterspacing-5: .500em;
+@font-letterspacing-6: .750em;
+@font-letterspacing-7: 1em;
+
+@font-size-00: .5rem;
+@font-size-0: .75rem;
+@font-size-1: 1rem;
+@font-size-2: 1.1rem;
+@font-size-3: 1.25rem;
+@font-size-4: 1.5rem;
+@font-size-5: 2rem;
+@font-size-6: 2.5rem;
+@font-size-7: 3rem;
+@font-size-8: 3.5rem;
+
+@font-size-fluid-0: clamp(.75rem, 2vw, 1rem);
+@font-size-fluid-1: clamp(1rem, 4vw, 1.5rem);
+@font-size-fluid-2: clamp(1.5rem, 6vw, 2.5rem);
+@font-size-fluid-3: clamp(2rem, 9vw, 3.5rem);
+
+// CSS Variables
+
+:where(html) {
+	--font-sans: @font-sans;
+	--font-serif: @font-serif;
+	--font-mono: @font-mono;
+
+	--font-weight-1: @font-weight-1;
+	--font-weight-2: @font-weight-2;
+	--font-weight-3: @font-weight-3;
+	--font-weight-4: @font-weight-4;
+	--font-weight-5: @font-weight-5;
+	--font-weight-6: @font-weight-6;
+	--font-weight-7: @font-weight-7;
+	--font-weight-8: @font-weight-8;
+	--font-weight-9: @font-weight-9;
+
+	--font-weight-light: @font-weight-light;
+	--font-weight-regular: @font-weight-regular;
+	--font-weight-medium: @font-weight-medium;
+	--font-weight-semibold: @font-weight-semibold;
+	--font-weight-bold: @font-weight-bold;
+	--font-weight-extrabold: @font-weight-extrabold;
+	--font-weight-black: @font-weight-black;
+
+	--font-lineheight-00: @font-lineheight-00;
+	--font-lineheight-0: @font-lineheight-0;
+	--font-lineheight-1: @font-lineheight-1;
+	--font-lineheight-2: @font-lineheight-2;
+	--font-lineheight-3: @font-lineheight-3;
+	--font-lineheight-4: @font-lineheight-4;
+	--font-lineheight-5: @font-lineheight-5;
+
+	--font-letterspacing-0: @font-letterspacing-0;
+	--font-letterspacing-1: @font-letterspacing-1;
+	--font-letterspacing-2: @font-letterspacing-2;
+	--font-letterspacing-3: @font-letterspacing-3;
+	--font-letterspacing-4: @font-letterspacing-4;
+	--font-letterspacing-5: @font-letterspacing-5;
+	--font-letterspacing-6: @font-letterspacing-6;
+	--font-letterspacing-7: @font-letterspacing-7;
+
+	--font-size-00: @font-size-00;
+	--font-size-0: @font-size-0;
+	--font-size-1: @font-size-1;
+	--font-size-2: @font-size-2;
+	--font-size-3: @font-size-3;
+	--font-size-4: @font-size-4;
+	--font-size-5: @font-size-5;
+	--font-size-6: @font-size-6;
+	--font-size-7: @font-size-7;
+	--font-size-8: @font-size-8;
+
+	--font-size-fluid-0: @font-size-fluid-0;
+	--font-size-fluid-1: @font-size-fluid-1;
+	--font-size-fluid-2: @font-size-fluid-2;
+	--font-size-fluid-3: @font-size-fluid-3;
+}
+
+// LESS - CSS Variables
+
+@-font-sans: var(--font-sans);
+@-font-serif: var(--font-serif);
+@-font-mono: var(--font-mono);
+
+@-font-weight-1: var(--font-weight-1);
+@-font-weight-2: var(--font-weight-2);
+@-font-weight-3: var(--font-weight-3);
+@-font-weight-4: var(--font-weight-4);
+@-font-weight-5: var(--font-weight-5);
+@-font-weight-6: var(--font-weight-6);
+@-font-weight-7: var(--font-weight-7);
+@-font-weight-8: var(--font-weight-8);
+@-font-weight-9: var(--font-weight-9);
+
+@-font-weight-light: var(--font-weight-light);
+@-font-weight-regular: var(--font-weight-regular);
+@-font-weight-medium: var(--font-weight-medium);
+@-font-weight-semibold: var(--font-weight-semibold);
+@-font-weight-bold: var(--font-weight-bold);
+@-font-weight-extrabold: var(--font-weight-extrabold);
+@-font-weight-black: var(--font-weight-black);
+
+@-font-lineheight-00: var(--font-lineheight-00);
+@-font-lineheight-0: var(--font-lineheight-0);
+@-font-lineheight-1: var(--font-lineheight-1);
+@-font-lineheight-2: var(--font-lineheight-2);
+@-font-lineheight-3: var(--font-lineheight-3);
+@-font-lineheight-4: var(--font-lineheight-4);
+@-font-lineheight-5: var(--font-lineheight-5);
+
+@-font-letterspacing-0: var(--font-letterspacing-0);
+@-font-letterspacing-1: var(--font-letterspacing-1);
+@-font-letterspacing-2: var(--font-letterspacing-2);
+@-font-letterspacing-3: var(--font-letterspacing-3);
+@-font-letterspacing-4: var(--font-letterspacing-4);
+@-font-letterspacing-5: var(--font-letterspacing-5);
+@-font-letterspacing-6: var(--font-letterspacing-6);
+@-font-letterspacing-7: var(--font-letterspacing-7);
+
+@-font-size-00: var(--font-size-00);
+@-font-size-0: var(--font-size-0);
+@-font-size-1: var(--font-size-1);
+@-font-size-2: var(--font-size-2);
+@-font-size-3: var(--font-size-3);
+@-font-size-4: var(--font-size-4);
+@-font-size-5: var(--font-size-5);
+@-font-size-6: var(--font-size-6);
+@-font-size-7: var(--font-size-7);
+@-font-size-8: var(--font-size-8);
+
+@-font-size-fluid-0: var(--font-size-fluid-0);
+@-font-size-fluid-1: var(--font-size-fluid-1);
+@-font-size-fluid-2: var(--font-size-fluid-2);
+@-font-size-fluid-3: var(--font-size-fluid-3);

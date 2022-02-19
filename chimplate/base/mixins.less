@@ -1,0 +1,48 @@
+/*				    __  ____      _
+	▀▀▀▀▀▀▀▀▀	   /  |/  (_)  __(_)___  _____
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /|_/ / / |/_/ / __ \/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	 / /  / / />  </ / / / (__  )
+	▀▀▀▀▀▀▀▀▀	/_/  /_/_/_/|_/_/_/ /_/____/*/
+
+.responsive-container(@proportion: 56%) {
+
+	position: relative;
+	padding-bottom: @proportion;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+// Transforms
+
+.transform(...) {
+	-webkit-transform: @arguments;
+	   -moz-transform: @arguments;
+		 -o-transform: @arguments;
+		-ms-transform: @arguments;
+			transform: @arguments;
+}
+
+.rotation(@deg: 5deg) { .transform(rotate(@deg)); }
+
+.scale(@ratio: 1.5) { .transform(scale(@ratio)); }
+
+.translate(@x: 0, @y: 0) { .transform(translate(@x, @y)); }
+
+.skew(@deg, @deg2) { .transform(skew(@deg, @deg2)); }
+
+/* Buttons Mixin */
+/* ---------------------------------------------------------------------------------------------- */
+
+.button-style(@background, @hover_background, @color: white) {
+
+	color: @color;
+	background: @background;
+	border-color: @background;
+
+	&:hover {
+
+		background: @hover_background;
+		border-color: @hover_background;
+	}
+}

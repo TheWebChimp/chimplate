@@ -1,0 +1,284 @@
+/*				  ______                                         __
+	▀▀▀▀▀▀▀▀▀	 /_  __/_  ______  ____  ____ __________ _____  / /_  __  __
+  █ ▀▀▀▀ ▀▀▀▀ █	  / / / / / / __ \/ __ \/ __ `/ ___/ __ `/ __ \/ __ \/ / / /
+  ▀ █ ▀▀▀▀▀ █ ▀	 / / / /_/ / /_/ / /_/ / /_/ / /  / /_/ / /_/ / / / / /_/ /
+	▀▀▀▀▀▀▀▀▀	/_/  \__, / .___/\____/\__, /_/   \__,_/ .___/_/ /_/\__, /
+				    /____/_/          /____/          /_/          /____/*/
+
+/*  Typography
+	-----------------------------------------------------------------------------------------------
+
+	Sizes
+	=====
+
+	Similar to the implementation in Bootstrap, we will have 6 different base text sizing plus
+	3 small sizes:
+
+		1 - Jumbo
+		2 - Extra Large
+		3 - Large
+
+		4 - Medium
+		5 - Title
+		6 - Text - This is the base size, 1rem
+
+		7 - Small
+		8 - Extra Small
+		9 - Mini
+
+	Font Weights
+	============
+
+	Font weights go from 100 to 900 in intervals of 100 with the weight names:
+
+		- 100 - Thin
+		- 200 - Extralight
+		- 300 - Light
+		- 400 - Normal
+		- 500 - Medium
+		- 600 - Semibold
+		- 700 - Bold
+		- 800 - Extrabold
+		- 900 - Black
+
+	-----------------------------------------------------------------------------------------------
+*/
+
+/*┬  ┬┌─┐┬─┐┬┌─┐┌┐ ┬  ┌─┐┌─┐
+  └┐┌┘├─┤├┬┘│├─┤├┴┐│  ├┤ └─┐
+   └┘ ┴ ┴┴└─┴┴ ┴└─┘┴─┘└─┘└─┘*/
+
+@text-jumbo: @font-size-6; // 2.5rem
+@text-xlarge: @font-size-5; // 2rem
+@text-large: @font-size-4; // 1.5rem
+
+@text-medium: @font-size-3; // 1.25 rem
+@text-title: @font-size-2; // 1.1rem
+@text-base: @font-size-1; // 1rem
+
+@text-medium: 0.875rem; // Magic number for 14 pixels
+
+@text-small: @font-size-0; // 0.75rem
+@text-xsmall: @font-size-0/2; // 0.05rem
+
+/*┬ ┬┌┬┐┬┬  ┬┌┬┐┬┌─┐┌─┐
+  │ │ │ ││  │ │ │├┤ └─┐
+  └─┘ ┴ ┴┴─┘┴ ┴ ┴└─┘└─┘*/
+
+// Sizes
+
+.fs-1, .h1, .fs-jumbo { font-size: @text-jumbo; }
+.fs-2, .h2, .fs-xlarge { font-size: @text-xlarge; }
+.fs-3, .h3, .fs-large { font-size: @text-large; }
+.fs-4, .h4, .fs-medium { font-size: @text-medium; }
+.fs-5, .h5, .fs-title { font-size: @text-title; }
+.fs-6, .h6, .fs-subtitle, .fs-base, .fs-text { font-size: @text-base; }
+.fs-6, .h6, .fs-subtitle, .fs-base, .fs-text { font-size: @text-medium; }
+
+.fs-7, .fs-small { font-size: @text-small; }
+.fs-8, .fs-xsmall { font-size: @text-xsmall; }
+
+// Text Sizes
+
+.text-xs {
+
+	font-size: 0.75rem;
+	line-height: 1rem;
+}
+
+.text-md {
+
+	font-size: @text-medium;
+	line-height: 1.2rem;
+}
+
+.text-sm {
+
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}
+
+.text-base {
+
+	font-size: @text-base;
+	line-height: 1.5rem;
+}
+
+.text-medium {
+
+	font-size: @text-medium;
+	line-height: 1.2rem;
+}
+
+.text-lg {
+
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+
+.text-xl {
+
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+}
+
+.text-2xl {
+
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+.text-3xl {
+
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+}
+
+.text-4xl {
+
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+}
+
+.text-5xl {
+
+	font-size: 3rem;
+	line-height: 1;
+}
+
+.text-6xl {
+
+	font-size: 3.75rem;
+	line-height: 1;
+}
+
+.text-7xl {
+
+	font-size: 4.5rem;
+	line-height: 1;
+}
+
+.text-8xl {
+
+	font-size: 6rem;
+	line-height: 1;
+}
+
+.text-9xl {
+
+	font-size: 8rem;
+	line-height: 1;
+}
+
+// Font Weights
+
+.font-thin { font-weight: 100; }
+.font-extralight { font-weight: 200; }
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-black { font-weight: 900; }
+
+.font-100 { font-weight: 100; }
+.font-200 { font-weight: 200; }
+.font-300 { font-weight: 300; }
+.font-400 { font-weight: 400; }
+.font-500 { font-weight: 500; }
+.font-600 { font-weight: 600; }
+.font-700 { font-weight: 700; }
+.font-800 { font-weight: 800; }
+.font-900 { font-weight: 900; }
+
+// Font Style
+
+.italic { font-style: italic; }
+.not-italic { font-style: normal; }
+
+// Letter Spacing
+
+.tracking-tighter { letter-spacing: -0.05em; }
+.tracking-tight { letter-spacing: -0.025em; }
+.tracking-normal { letter-spacing: 0em; }
+.tracking-wide { letter-spacing: 0.025em; }
+.tracking-wider { letter-spacing: 0.05em; }
+.tracking-widest { letter-spacing: 0.1em; }
+
+// Line Heights
+
+.leading-3 { line-height: .75rem; }
+.leading-4 { line-height: 1rem; }
+.leading-5 { line-height: 1.25rem; }
+.leading-6 { line-height: 1.5rem; }
+.leading-7 { line-height: 1.75rem; }
+.leading-8 { line-height: 2rem; }
+.leading-9 { line-height: 2.25rem; }
+.leading-10 { line-height: 2.5rem; }
+.leading-none { line-height: 1; }
+.leading-tight { line-height: 1.25; }
+.leading-snug { line-height: 1.375; }
+.leading-normal { line-height: 1.5; }
+.leading-relaxed { line-height: 1.625; }
+.leading-loose { line-height: 2; }
+
+// Text align
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+// Text decoration
+
+.underline { text-decoration: underline; }
+.line-through { text-decoration: line-through; }
+.no-underline { text-decoration: none; }
+
+// Text transform
+
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+.normal-case { text-transform: none; }
+
+// Text Overflow
+
+.truncate {
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.overflow-ellipsis { text-overflow: ellipsis; }
+.overflow-clip { text-overflow: clip; }
+
+// Vertical Align
+
+.align-baseline { vertical-align: baseline; }
+.align-top { vertical-align: top; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
+.align-text-top { vertical-align: text-top; }
+.align-text-bottom { vertical-align: text-bottom; }
+
+// White Space
+
+.whitespace-normal { white-space: normal; }
+.whitespace-nowrap { white-space: nowrap; }
+.whitespace-pre { white-space: pre; }
+.whitespace-pre-line { white-space: pre-line; }
+.whitespace-pre-wrap { white-space: pre-wrap; }
+
+// Word Break
+
+.break-normal {
+
+	overflow-wrap: normal;
+	word-break: normal;
+}
+
+.break-words { overflow-wrap: break-word; }
+.break-all { word-break: break-all; }
