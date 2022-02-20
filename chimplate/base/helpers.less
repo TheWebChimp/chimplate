@@ -40,6 +40,10 @@
 	height: auto;
 }
 
+.boxfix { padding: 1px; }
+.boxfix-vert { padding: 1px 0; }
+.boxfix-horz { padding: 0 1px; }
+
 /* Responsive Embedding */
 /* ---------------------------------------------------------------------------------------------- */
 
@@ -132,6 +136,8 @@ img {
 	.leading-normal; // Line height 1.5
 
 	--the-content-space: 1rem;
+	--the-content-space-half: 1rem/2;
+	--list-padding: 1rem;
 
 	& > * + * {
 
@@ -152,12 +158,27 @@ img {
 
 		& > * + * {
 
-			margin-top: 0.5em;
+			margin-top: var(--the-content-space-half);
 		}
 
 		li {
 
+		}
+	}
 
+	ol.list {
+
+		padding-left: var(--list-padding);
+	}
+
+	ul.list {
+
+		list-style-type: disc;
+		padding-left: var(--list-padding);
+
+		& > ul.list {
+
+			list-style-type: circle;
 		}
 	}
 }
@@ -203,8 +224,8 @@ img {
 
 @media @xxs-n-below {
 
-	.hide-xxs-n-above { display: none !important; }
-	.shows(xxs-n-above);
+	.hide-xxs-n-below { display: none !important; }
+	.shows(xxs-n-below);
 }
 
 @media @xxs-phone {
@@ -227,8 +248,8 @@ img {
 
 @media @xs-n-below {
 
-	.hide-xs-n-above { display: none !important; }
-	.shows(xs-n-above);
+	.hide-xs-n-below { display: none !important; }
+	.shows(xs-n-below);
 }
 
 @media @xs-phone {
@@ -251,8 +272,8 @@ img {
 
 @media @sm-n-below {
 
-	.hide-sm-n-above { display: none !important; }
-	.shows(sm-n-above);
+	.hide-sm-n-below { display: none !important; }
+	.shows(sm-n-below);
 }
 
 @media @sm-phone {
@@ -275,8 +296,8 @@ img {
 
 @media @md-n-below {
 
-	.hide-md-n-above { display: none !important; }
-	.shows(md-n-above);
+	.hide-md-n-below { display: none !important; }
+	.shows(md-n-below);
 }
 
 @media @md-phone {
@@ -299,8 +320,8 @@ img {
 
 @media @lg-n-below {
 
-	.hide-lg-n-above { display: none !important; }
-	.shows(lg-n-above);
+	.hide-lg-n-below { display: none !important; }
+	.shows(lg-n-below);
 }
 
 @media @lg-phone {
@@ -323,8 +344,8 @@ img {
 
 @media @xl-n-below {
 
-	.hide-xl-n-above { display: none !important; }
-	.shows(xl-n-above);
+	.hide-xl-n-below { display: none !important; }
+	.shows(xl-n-below);
 }
 
 @media @xxl-only {
@@ -341,6 +362,6 @@ img {
 
 @media @xxl-n-below {
 
-	.hide-xxl-n-above { display: none !important; }
-	.shows(xxl-n-above);
+	.hide-xxl-n-below { display: none !important; }
+	.shows(xxl-n-below);
 }
