@@ -28,9 +28,8 @@
 	flex: 0 1 auto;
 	flex-direction: row;
 	flex-wrap: wrap;
-	//margin-right: @grid-gutter-compensation;
-	//margin-left: @grid-gutter-compensation;
-	gap: @grid-gutter-width;
+	margin-right: @grid-gutter-compensation;
+	margin-left: @grid-gutter-compensation;
 
 	&.reverse {
 
@@ -92,91 +91,91 @@
 
 		box-sizing: border-box;
 		flex: 0 0 auto;
-		//padding-right: @grid-half-gutter-width;
-		//padding-left: @grid-half-gutter-width;
+		padding-right: @grid-half-gutter-width;
+		padding-left: @grid-half-gutter-width;
 	}
 
 	&.row-half {
 
-		gap: @grid-gutter-width/2;
+		//gap: @grid-gutter-width/2;
 
-		//margin-right: -(@grid-gutter-width/2)/2;
-		//margin-left: -(@grid-gutter-width/2)/2;
+		margin-right: -(@grid-gutter-width/2)/2;
+		margin-left: -(@grid-gutter-width/2)/2;
 
 		& > div[class^="col"] {
 
-			//padding-right: (@grid-gutter-width/2)/2;
-			//padding-left: (@grid-gutter-width/2)/2;
+			padding-right: (@grid-gutter-width/2)/2;
+			padding-left: (@grid-gutter-width/2)/2;
 		}
 	}
 
 	&.row-1 {
 
-		gap: 1px;
+		//gap: 1px;
 
-		//margin-right: -1px/2;
-		//margin-left: -1px/2;
+		margin-right: -1px/2;
+		margin-left: -1px/2;
 
 		& > div[class^="col"] {
 
-			//padding-right: 1px/2;
-			//padding-left: 1px/2;
+			padding-right: 1px/2;
+			padding-left: 1px/2;
 		}
 	}
 
 	&.row-5 {
 
-		gap: 5px;
+		//gap: 5px;
 
-		//margin-right: -5px/2;
-		//margin-left: -5px/2;
+		margin-right: -5px/2;
+		margin-left: -5px/2;
 
 		& > div[class^="col"] {
 
-			//padding-right: 5px/2;
-			//padding-left: 5px/2;
+			padding-right: 5px/2;
+			padding-left: 5px/2;
 		}
 	}
 
 	&.row-10 {
 
-		gap: 10px;
+		//gap: 10px;
 
-		//margin-right: -10px/2;
-		//margin-left: -10px/2;
+		margin-right: -10px/2;
+		margin-left: -10px/2;
 
 		& > div[class^="col"] {
 
-			//padding-right: 10px/2;
-			//padding-left: 10px/2;
+			padding-right: 10px/2;
+			padding-left: 10px/2;
 		}
 	}
 
 	&.row-third {
 
-		gap: @grid-gutter-width/3;
+		//gap: @grid-gutter-width/3;
 
-		//margin-right: -(@grid-gutter-width/2)/3;
-		//margin-left: -(@grid-gutter-width/2)/3;
+		margin-right: -(@grid-gutter-width/2)/3;
+		margin-left: -(@grid-gutter-width/2)/3;
 
 		& > div[class^="col"] {
 
-			//padding-right: (@grid-gutter-width/2)/3;
-			//padding-left: (@grid-gutter-width/2)/3;
+			padding-right: (@grid-gutter-width/2)/3;
+			padding-left: (@grid-gutter-width/2)/3;
 		}
 	}
 
 	&.row-collapse {
 
-		gap: 0;
+		//gap: 0;
 
-		//margin-right: 0;
-		//margin-left: 0;
+		margin-right: 0;
+		margin-left: 0;
 
 		& > div[class^="col"] {
 
-			//padding-left: 0;
-			//padding-right: 0;
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 
@@ -185,6 +184,13 @@
 		flex-grow: 1;
 		flex-basis: 0;
 		max-width: 100%;
+
+		&.col-center {
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
 	}
 
 	.generateColsDefault(@grid-cols);
