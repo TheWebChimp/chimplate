@@ -10,6 +10,41 @@
 
 @button-border-radius: @-size-1;
 
+
+.button-color-style(@button-color) {
+
+	@button-shape: "@{button-color}-shape";
+	@button-shape-hover: "@{button-color}-shape-hover";
+
+	color: white;
+	background: @@button-shape;
+	border-color: @@button-shape;
+
+	&.hover,
+	&:hover {
+
+		background: @@button-shape-hover;
+		border-color: @@button-shape-hover;
+	}
+}
+
+.button-ghost-color-style(@button-color) {
+
+	@button-shape: "@{button-color}-shape";
+	@button-shape-hover: "@{button-color}-shape-hover";
+
+	background-color: transparent;
+	color: @@button-shape;
+	border-color: @@button-shape;
+
+	&.hover,
+	&:hover {
+
+		color: white;
+		background-color: @@button-shape;
+	}
+}
+
 .button {
 
 	-webkit-appearance: button;
@@ -39,58 +74,22 @@
 
 	&.button-primary {
 
-		color: white;
-		background: @primary;
-		border-color: @primary;
-
-		&.hover,
-		&:hover {
-
-			background: @primary-dark;
-			border-color: @primary-dark;
-		}
+		.button-color-style(blue);
 	}
 
 	&.button-success {
 
-		color: white;
-		background: @success;
-		border-color: @success;
-
-		&.hover,
-		&:hover {
-
-			background: @success-dark;
-			border-color: @success-dark;
-		}
+		.button-color-style(green);
 	}
 
 	&.button-danger {
 
-		color: white;
-		background: @danger;
-		border-color: @danger;
-
-		&.hover,
-		&:hover {
-
-			background: @danger-dark;
-			border-color: @danger-dark;
-		}
+		.button-color-style(red);
 	}
 
 	&.button-warning {
 
-		color: white;
-		background: @warning;
-		border-color: @warning;
-
-		&.hover,
-		&:hover {
-
-			background: @warning-dark;
-			border-color: @warning-dark;
-		}
+		.button-color-style(yellow);
 	}
 
 	&.button-ghost-primary,
@@ -172,6 +171,41 @@
 		border-radius: @-radius-round;
 	}
 }
+
+/* Button Colors */
+/* ---------------------------------------------------------------------------------------------- */
+
+.button {
+
+	&.button-gray { .button-color-style(gray); }
+	&.button-red { .button-color-style(red); }
+	&.button-pink { .button-color-style(pink); }
+	&.button-grape { .button-color-style(grape); }
+	&.button-violet { .button-color-style(violet); }
+	&.button-indigo { .button-color-style(indigo); }
+	&.button-blue { .button-color-style(blue); }
+	&.button-cyan { .button-color-style(cyan); }
+	&.button-teal { .button-color-style(teal); }
+	&.button-green { .button-color-style(green); }
+	&.button-lime { .button-color-style(lime); }
+	&.button-yellow { .button-color-style(yellow); }
+	&.button-orange { .button-color-style(orange); }
+
+	&.button-ghost-gray { .button-ghost-color-style(gray); }
+	&.button-ghost-red { .button-ghost-color-style(red); }
+	&.button-ghost-pink { .button-ghost-color-style(pink); }
+	&.button-ghost-grape { .button-ghost-color-style(grape); }
+	&.button-ghost-violet { .button-ghost-color-style(violet); }
+	&.button-ghost-indigo { .button-ghost-color-style(indigo); }
+	&.button-ghost-blue { .button-ghost-color-style(blue); }
+	&.button-ghost-cyan { .button-ghost-color-style(cyan); }
+	&.button-ghost-teal { .button-ghost-color-style(teal); }
+	&.button-ghost-green { .button-ghost-color-style(green); }
+	&.button-ghost-lime { .button-ghost-color-style(lime); }
+	&.button-ghost-yellow { .button-ghost-color-style(yellow); }
+	&.button-ghost-orange { .button-ghost-color-style(orange); }
+}
+
 
 /* Button Dropdown */
 /* ---------------------------------------------------------------------------------------------- */
