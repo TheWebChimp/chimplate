@@ -1,0 +1,90 @@
+/*				   ______      __
+	▀▀▀▀▀▀▀▀▀	  / ____/___  / /___  __________
+  █ ▀▀▀▀ ▀▀▀▀ █	 / /   / __ \/ / __ \/ ___/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	/ /___/ /_/ / / /_/ / /  (__  )
+	▀▀▀▀▀▀▀▀▀	\____/\____/_/\____/_/  /____/*/
+
+
+// LESS Variables
+
+@green-0: #ebfbee;
+@green-1: #d3f9d8;
+@green-2: #b2f2bb; //Surface
+@green-3: #8ce99a; //Surface Hover
+@green-4: #69db7c;
+@green-5: #51cf66; //Borders
+@green-6: #40c057; //Shapes, Border Hover
+@green-7: #37b24d; //Text, Shape Hover
+@green-8: #2f9e44; //Text Hover, Shape Active
+@green-9: #2b8a3e; //Text Active
+
+// CSS Variables
+
+:where(html) {
+
+	--green-0: @green-0;
+	--green-1: @green-1;
+	--green-2: @green-2;
+	--green-3: @green-3;
+	--green-4: @green-4;
+	--green-5: @green-5;
+	--green-6: @green-6;
+	--green-7: @green-7;
+	--green-8: @green-8;
+	--green-9: @green-9;
+}
+
+// LESS-CSS Variables
+
+@-green-0: var(--green-0);
+@-green-1: var(--green-1);
+@-green-2: var(--green-2);
+@-green-3: var(--green-3);
+@-green-4: var(--green-4);
+@-green-5: var(--green-5);
+@-green-6: var(--green-6);
+@-green-7: var(--green-7);
+@-green-8: var(--green-8);
+@-green-9: var(--green-9);
+
+// OSCS LESS Variables
+
+@green-surface: 		@green-2;
+@green-surface-hover: 	@green-3;
+@green-border: 			@green-5;
+@green-shape: 			@green-6;
+@green-border-hover: 	@green-6;
+@green-text: 			@green-7;
+@green-shape-hover: 	@green-7;
+@green-text-hover: 		@green-8;
+@green-shape-active: 	@green-8;
+@green-text-active: 	@green-9;
+
+// OSCS CSS Variables
+
+:where(html) {
+
+	--green-surface: 		var(--green-2);
+	--green-surface-hover: 	var(--green-3);
+	--green-border: 		var(--green-5);
+	--green-shape: 			var(--green-6);
+	--green-border-hover: 	var(--green-6);
+	--green-text: 			var(--green-7);
+	--green-shape-hover: 	var(--green-7);
+	--green-text-hover: 	var(--green-8);
+	--green-shape-active: 	var(--green-8);
+	--green-text-active: 	var(--green-9);
+}
+
+// OSCS LESS-CSS Variables
+
+@-green-surface: 		var(--green-surface);
+@-green-surface-hover: 	var(--green-surface-hover);
+@-green-border: 		var(--green-border);
+@-green-shape: 			var(--green-shape);
+@-green-border-hover: 	var(--green-border-hover);
+@-green-text: 			var(--green-text);
+@-green-shape-hover: 	var(--green-shape-hover);
+@-green-text-hover: 	var(--green-text-hover);
+@-green-shape-active: 	var(--green-shape-active);
+@-green-text-active: 	var(--green-text-active);

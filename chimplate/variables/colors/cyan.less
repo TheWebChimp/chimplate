@@ -1,0 +1,90 @@
+/*				   ______      __
+	▀▀▀▀▀▀▀▀▀	  / ____/___  / /___  __________
+  █ ▀▀▀▀ ▀▀▀▀ █	 / /   / __ \/ / __ \/ ___/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	/ /___/ /_/ / / /_/ / /  (__  )
+	▀▀▀▀▀▀▀▀▀	\____/\____/_/\____/_/  /____/*/
+
+
+// LESS Variables
+
+@cyan-0: #e3fafc;
+@cyan-1: #c5f6fa;
+@cyan-2: #99e9f2; //Surface
+@cyan-3: #66d9e8; //Surface Hover
+@cyan-4: #3bc9db;
+@cyan-5: #22b8cf; //Borders
+@cyan-6: #15aabf; //Shapes, Border Hover
+@cyan-7: #1098ad; //Text, Shape Hover
+@cyan-8: #0c8599; //Text Hover, Shape Active
+@cyan-9: #0b7285; //Text Active
+
+// CSS Variables
+
+:where(html) {
+
+	--cyan-0: @cyan-0;
+	--cyan-1: @cyan-1;
+	--cyan-2: @cyan-2;
+	--cyan-3: @cyan-3;
+	--cyan-4: @cyan-4;
+	--cyan-5: @cyan-5;
+	--cyan-6: @cyan-6;
+	--cyan-7: @cyan-7;
+	--cyan-8: @cyan-8;
+	--cyan-9: @cyan-9;
+}
+
+// LESS-CSS Variables
+
+@-cyan-0: var(--cyan-0);
+@-cyan-1: var(--cyan-1);
+@-cyan-2: var(--cyan-2);
+@-cyan-3: var(--cyan-3);
+@-cyan-4: var(--cyan-4);
+@-cyan-5: var(--cyan-5);
+@-cyan-6: var(--cyan-6);
+@-cyan-7: var(--cyan-7);
+@-cyan-8: var(--cyan-8);
+@-cyan-9: var(--cyan-9);
+
+// OSCS LESS Variables
+
+@cyan-surface: 			@cyan-2;
+@cyan-surface-hover: 	@cyan-3;
+@cyan-border: 			@cyan-5;
+@cyan-shape: 			@cyan-6;
+@cyan-border-hover: 	@cyan-6;
+@cyan-text: 			@cyan-7;
+@cyan-shape-hover: 		@cyan-7;
+@cyan-text-hover: 		@cyan-8;
+@cyan-shape-active: 	@cyan-8;
+@cyan-text-active: 		@cyan-9;
+
+// OSCS CSS Variables
+
+:where(html) {
+
+	--cyan-surface: 		var(--cyan-2);
+	--cyan-surface-hover: 	var(--cyan-3);
+	--cyan-border: 			var(--cyan-5);
+	--cyan-shape: 			var(--cyan-6);
+	--cyan-border-hover: 	var(--cyan-6);
+	--cyan-text: 			var(--cyan-7);
+	--cyan-shape-hover: 	var(--cyan-7);
+	--cyan-text-hover: 		var(--cyan-8);
+	--cyan-shape-active: 	var(--cyan-8);
+	--cyan-text-active: 	var(--cyan-9);
+}
+
+// OSCS LESS-CSS Variables
+
+@-cyan-surface: 		var(--cyan-surface);
+@-cyan-surface-hover: 	var(--cyan-surface-hover);
+@-cyan-border: 			var(--cyan-border);
+@-cyan-shape: 			var(--cyan-shape);
+@-cyan-border-hover: 	var(--cyan-border-hover);
+@-cyan-text: 			var(--cyan-text);
+@-cyan-shape-hover: 	var(--cyan-shape-hover);
+@-cyan-text-hover: 		var(--cyan-text-hover);
+@-cyan-shape-active: 	var(--cyan-shape-active);
+@-cyan-text-active: 	var(--cyan-text-active);

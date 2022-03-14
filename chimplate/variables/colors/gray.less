@@ -1,0 +1,90 @@
+/*				   ______      __
+	▀▀▀▀▀▀▀▀▀	  / ____/___  / /___  __________
+  █ ▀▀▀▀ ▀▀▀▀ █	 / /   / __ \/ / __ \/ ___/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	/ /___/ /_/ / / /_/ / /  (__  )
+	▀▀▀▀▀▀▀▀▀	\____/\____/_/\____/_/  /____/*/
+
+
+// LESS Variables
+
+@gray-0: #f8f9fa;
+@gray-1: #f1f3f5;
+@gray-2: #e9ecef; //Surface
+@gray-3: #dee2e6; //Surface Hover
+@gray-4: #ced4da;
+@gray-5: #adb5bd; //Borders
+@gray-6: #868e96; //Shapes, Border Hover
+@gray-7: #495057; //Text, Shape Hover
+@gray-8: #343a40; //Text Hover, Shape Active
+@gray-9: #212529; //Text Active
+
+// CSS Variables
+
+:where(html) {
+
+	--gray-0: @gray-0;
+	--gray-1: @gray-1;
+	--gray-2: @gray-2;
+	--gray-3: @gray-3;
+	--gray-4: @gray-4;
+	--gray-5: @gray-5;
+	--gray-6: @gray-6;
+	--gray-7: @gray-7;
+	--gray-8: @gray-8;
+	--gray-9: @gray-9;
+}
+
+// LESS-CSS Variables
+
+@-gray-0: var(--gray-0);
+@-gray-1: var(--gray-1);
+@-gray-2: var(--gray-2);
+@-gray-3: var(--gray-3);
+@-gray-4: var(--gray-4);
+@-gray-5: var(--gray-5);
+@-gray-6: var(--gray-6);
+@-gray-7: var(--gray-7);
+@-gray-8: var(--gray-8);
+@-gray-9: var(--gray-9);
+
+// OSCS LESS Variables
+
+@gray-surface: 			@gray-2;
+@gray-surface-hover: 	@gray-3;
+@gray-border: 			@gray-5;
+@gray-shape: 			@gray-6;
+@gray-border-hover: 	@gray-6;
+@gray-text: 			@gray-7;
+@gray-shape-hover: 		@gray-7;
+@gray-text-hover: 		@gray-8;
+@gray-shape-active: 	@gray-8;
+@gray-text-active: 		@gray-9;
+
+// OSCS CSS Variables
+
+:where(html) {
+
+	--gray-surface: 		var(--gray-2);
+	--gray-surface-hover: 	var(--gray-3);
+	--gray-border: 			var(--gray-5);
+	--gray-shape: 			var(--gray-6);
+	--gray-border-hover: 	var(--gray-6);
+	--gray-text: 			var(--gray-7);
+	--gray-shape-hover: 	var(--gray-7);
+	--gray-text-hover: 		var(--gray-8);
+	--gray-shape-active: 	var(--gray-8);
+	--gray-text-active: 	var(--gray-9);
+}
+
+// OSCS LESS-CSS Variables
+
+@-gray-surface: 		var(--gray-surface);
+@-gray-surface-hover: 	var(--gray-surface-hover);
+@-gray-border: 			var(--gray-border);
+@-gray-shape: 			var(--gray-shape);
+@-gray-border-hover: 	var(--gray-border-hover);
+@-gray-text: 			var(--gray-text);
+@-gray-shape-hover: 	var(--gray-shape-hover);
+@-gray-text-hover: 		var(--gray-text-hover);
+@-gray-shape-active: 	var(--gray-shape-active);
+@-gray-text-active: 	var(--gray-text-active);

@@ -1,0 +1,90 @@
+/*				   ______      __
+	▀▀▀▀▀▀▀▀▀	  / ____/___  / /___  __________
+  █ ▀▀▀▀ ▀▀▀▀ █	 / /   / __ \/ / __ \/ ___/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	/ /___/ /_/ / / /_/ / /  (__  )
+	▀▀▀▀▀▀▀▀▀	\____/\____/_/\____/_/  /____/*/
+
+
+// LESS Variables
+
+@grape-0: #f8f0fc;
+@grape-1: #f3d9fa;
+@grape-2: #eebefa; //Surface
+@grape-3: #e599f7; //Surface Hover
+@grape-4: #da77f2;
+@grape-5: #cc5de8; //Borders
+@grape-6: #be4bdb; //Shapes, Border Hover
+@grape-7: #ae3ec9; //Text, Shape Hover
+@grape-8: #9c36b5; //Text Hover, Shape Active
+@grape-9: #862e9c; //Text Active
+
+// CSS Variables
+
+:where(html) {
+
+	--grape-0: @grape-0;
+	--grape-1: @grape-1;
+	--grape-2: @grape-2;
+	--grape-3: @grape-3;
+	--grape-4: @grape-4;
+	--grape-5: @grape-5;
+	--grape-6: @grape-6;
+	--grape-7: @grape-7;
+	--grape-8: @grape-8;
+	--grape-9: @grape-9;
+}
+
+// LESS-CSS Variables
+
+@-grape-0: var(--grape-0);
+@-grape-1: var(--grape-1);
+@-grape-2: var(--grape-2);
+@-grape-3: var(--grape-3);
+@-grape-4: var(--grape-4);
+@-grape-5: var(--grape-5);
+@-grape-6: var(--grape-6);
+@-grape-7: var(--grape-7);
+@-grape-8: var(--grape-8);
+@-grape-9: var(--grape-9);
+
+// OSCS LESS Variables
+
+@grape-surface: 		@grape-2;
+@grape-surface-hover: 	@grape-3;
+@grape-border: 			@grape-5;
+@grape-shape: 			@grape-6;
+@grape-border-hover: 	@grape-6;
+@grape-text: 			@grape-7;
+@grape-shape-hover: 	@grape-7;
+@grape-text-hover: 		@grape-8;
+@grape-shape-active: 	@grape-8;
+@grape-text-active: 	@grape-9;
+
+// OSCS CSS Variables
+
+:where(html) {
+
+	--grape-surface: 		var(--grape-2);
+	--grape-surface-hover: 	var(--grape-3);
+	--grape-border: 		var(--grape-5);
+	--grape-shape: 			var(--grape-6);
+	--grape-border-hover: 	var(--grape-6);
+	--grape-text: 			var(--grape-7);
+	--grape-shape-hover: 	var(--grape-7);
+	--grape-text-hover: 	var(--grape-8);
+	--grape-shape-active: 	var(--grape-8);
+	--grape-text-active: 	var(--grape-9);
+}
+
+// OSCS LESS-CSS Variables
+
+@-grape-surface: 		var(--grape-surface);
+@-grape-surface-hover: 	var(--grape-surface-hover);
+@-grape-border: 		var(--grape-border);
+@-grape-shape: 			var(--grape-shape);
+@-grape-border-hover: 	var(--grape-border-hover);
+@-grape-text: 			var(--grape-text);
+@-grape-shape-hover: 	var(--grape-shape-hover);
+@-grape-text-hover: 	var(--grape-text-hover);
+@-grape-shape-active: 	var(--grape-shape-active);
+@-grape-text-active: 	var(--grape-text-active);

@@ -1,0 +1,90 @@
+/*				   ______      __
+	▀▀▀▀▀▀▀▀▀	  / ____/___  / /___  __________
+  █ ▀▀▀▀ ▀▀▀▀ █	 / /   / __ \/ / __ \/ ___/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	/ /___/ /_/ / / /_/ / /  (__  )
+	▀▀▀▀▀▀▀▀▀	\____/\____/_/\____/_/  /____/*/
+
+
+// LESS Variables
+
+@violet-0: #f3f0ff;
+@violet-1: #e5dbff;
+@violet-2: #d0bfff; //Surface
+@violet-3: #b197fc; //Surface Hover
+@violet-4: #9775fa;
+@violet-5: #845ef7; //Borders
+@violet-6: #7950f2; //Shapes, Border Hover
+@violet-7: #7048e8; //Text, Shape Hover
+@violet-8: #6741d9; //Text Hover, Shape Active
+@violet-9: #5f3dc4; //Text Active
+
+// CSS Variables
+
+:where(html) {
+
+	--violet-0: @violet-0;
+	--violet-1: @violet-1;
+	--violet-2: @violet-2;
+	--violet-3: @violet-3;
+	--violet-4: @violet-4;
+	--violet-5: @violet-5;
+	--violet-6: @violet-6;
+	--violet-7: @violet-7;
+	--violet-8: @violet-8;
+	--violet-9: @violet-9;
+}
+
+// LESS-CSS Variables
+
+@-violet-0: var(--violet-0);
+@-violet-1: var(--violet-1);
+@-violet-2: var(--violet-2);
+@-violet-3: var(--violet-3);
+@-violet-4: var(--violet-4);
+@-violet-5: var(--violet-5);
+@-violet-6: var(--violet-6);
+@-violet-7: var(--violet-7);
+@-violet-8: var(--violet-8);
+@-violet-9: var(--violet-9);
+
+// OSCS LESS Variables
+
+@violet-surface: 		@violet-2;
+@violet-surface-hover: 	@violet-3;
+@violet-border: 		@violet-5;
+@violet-shape: 			@violet-6;
+@violet-border-hover: 	@violet-6;
+@violet-text: 			@violet-7;
+@violet-shape-hover: 	@violet-7;
+@violet-text-hover: 	@violet-8;
+@violet-shape-active: 	@violet-8;
+@violet-text-active: 	@violet-9;
+
+// OSCS CSS Variables
+
+:where(html) {
+
+	--violet-surface: 		var(--violet-2);
+	--violet-surface-hover: var(--violet-3);
+	--violet-border: 		var(--violet-5);
+	--violet-shape: 		var(--violet-6);
+	--violet-border-hover: 	var(--violet-6);
+	--violet-text: 			var(--violet-7);
+	--violet-shape-hover: 	var(--violet-7);
+	--violet-text-hover: 	var(--violet-8);
+	--violet-shape-active: 	var(--violet-8);
+	--violet-text-active: 	var(--violet-9);
+}
+
+// OSCS LESS-CSS Variables
+
+@-violet-surface: 		var(--violet-surface);
+@-violet-surface-hover: var(--violet-surface-hover);
+@-violet-border: 		var(--violet-border);
+@-violet-shape: 		var(--violet-shape);
+@-violet-border-hover: 	var(--violet-border-hover);
+@-violet-text: 			var(--violet-text);
+@-violet-shape-hover: 	var(--violet-shape-hover);
+@-violet-text-hover: 	var(--violet-text-hover);
+@-violet-shape-active: 	var(--violet-shape-active);
+@-violet-text-active: 	var(--violet-text-active);

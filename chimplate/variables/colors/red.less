@@ -1,0 +1,90 @@
+/*				   ______      __
+	▀▀▀▀▀▀▀▀▀	  / ____/___  / /___  __________
+  █ ▀▀▀▀ ▀▀▀▀ █	 / /   / __ \/ / __ \/ ___/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	/ /___/ /_/ / / /_/ / /  (__  )
+	▀▀▀▀▀▀▀▀▀	\____/\____/_/\____/_/  /____/*/
+
+
+// LESS Variables
+
+@red-0: #fff5f5;
+@red-1: #ffe3e3;
+@red-2: #ffc9c9; //Surface
+@red-3: #ffa8a8; //Surface Hover
+@red-4: #ff8787;
+@red-5: #ff6b6b; //Borders
+@red-6: #fa5252; //Shapes, Border Hover
+@red-7: #f03e3e; //Text, Shape Hover
+@red-8: #e03131; //Text Hover, Shape Active
+@red-9: #c92a2a; //Text Active
+
+// CSS Variables
+
+:where(html) {
+
+	--red-0: @red-0;
+	--red-1: @red-1;
+	--red-2: @red-2;
+	--red-3: @red-3;
+	--red-4: @red-4;
+	--red-5: @red-5;
+	--red-6: @red-6;
+	--red-7: @red-7;
+	--red-8: @red-8;
+	--red-9: @red-9;
+}
+
+// LESS-CSS Variables
+
+@-red-0: var(--red-0);
+@-red-1: var(--red-1);
+@-red-2: var(--red-2);
+@-red-3: var(--red-3);
+@-red-4: var(--red-4);
+@-red-5: var(--red-5);
+@-red-6: var(--red-6);
+@-red-7: var(--red-7);
+@-red-8: var(--red-8);
+@-red-9: var(--red-9);
+
+// OSCS LESS Variables
+
+@red-surface: 			@red-2;
+@red-surface-hover: 	@red-3;
+@red-border: 			@red-5;
+@red-shape: 			@red-6;
+@red-border-hover: 	@red-6;
+@red-text: 			@red-7;
+@red-shape-hover: 		@red-7;
+@red-text-hover: 		@red-8;
+@red-shape-active: 	@red-8;
+@red-text-active: 		@red-9;
+
+// OSCS CSS Variables
+
+:where(html) {
+
+	--red-surface: 			var(--red-2);
+	--red-surface-hover: 	var(--red-3);
+	--red-border: 			var(--red-5);
+	--red-shape: 			var(--red-6);
+	--red-border-hover: 	var(--red-6);
+	--red-text: 			var(--red-7);
+	--red-shape-hover: 		var(--red-7);
+	--red-text-hover: 		var(--red-8);
+	--red-shape-active: 	var(--red-8);
+	--red-text-active: 		var(--red-9);
+}
+
+// OSCS LESS-CSS Variables
+
+@-red-surface: 			var(--red-surface);
+@-red-surface-hover: 	var(--red-surface-hover);
+@-red-border: 			var(--red-border);
+@-red-shape: 			var(--red-shape);
+@-red-border-hover: 	var(--red-border-hover);
+@-red-text: 			var(--red-text);
+@-red-shape-hover: 		var(--red-shape-hover);
+@-red-text-hover: 		var(--red-text-hover);
+@-red-shape-active: 	var(--red-shape-active);
+@-red-text-active: 		var(--red-text-active);
