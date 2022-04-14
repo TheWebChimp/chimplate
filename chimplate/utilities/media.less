@@ -75,3 +75,8 @@
 .at-least(@device-width, @rules) { @media screen and (min-width: @device-width) { @rules(); } }
 .until(@device-width, @rules) { @media screen and (max-width: @device-width - 1) { @rules(); } }
 .range(@min, @max, @rules) { @media screen and (min-width: @min) and (max-width: @max) { @rules(); } }
+
+
+.on(@var, @rules) {
+	@media @var { @rules(); }
+}
