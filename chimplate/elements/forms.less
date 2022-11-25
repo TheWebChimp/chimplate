@@ -4,6 +4,8 @@
   ▀ █ ▀▀▀▀▀ █ ▀	 / __/ / /_/ / /  / / / / / (__  )
 	▀▀▀▀▀▀▀▀▀	/_/    \____/_/  /_/ /_/ /_/____/*/
 
+@form-control-border-radius: @-size-1;
+
 .form-group {
 
 	margin-bottom: @margin-default;
@@ -12,56 +14,55 @@
 
 		display: block;
 		margin-bottom: @margin-half;
+
+		&.control-label-large { .comb-font-size(@component-large); }
+		&.control-label-medium { .comb-font-size(@component-medium); }
+		&.control-label-small { .comb-font-size(@component-small); }
+		&.control-label-xsmall { .comb-font-size(@component-xsmall); }
 	}
 
 	.form-control {
 
-		text-transform: none;
-		vertical-align: middle;
-		background: var(--background-base);
-		color: var(--body-color);
-		border: 1px solid var(--border-2);
-		padding: 0.375rem 0.75rem;
-		font-size: 1rem;
-		font-weight: 400;
-		line-height: 1.5;
-		height: 2.4em;
-		appearance: none;
-		box-sizing: border-box;
-		background-clip: padding-box;
-		border-radius: 0.25rem;
-		transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+		.form-control-style();
 
-		&:disabled { background-color: var(--background-2); }
+		&:disabled, .is-disabled { background-color: var(--background-2); }
 
-		&:focus {
+		&:focus, .is-focus {
 
 			outline: 0;
-			box-shadow: 0 0 0 0.125rem var(--primary);
 			border-color: var(--border-3);
+			//box-shadow: 0 0 0 0.125rem var(--primary); //TODO: Check if we need this;
 		}
-
-		&.form-control-xsmall { font-size: 70%; }
-		&.form-control-small { font-size: 85%; }
-		&.form-control-large { font-size: 125%; }
-		&.form-control-xlarge { font-size: 150%; }
 
 		&.input-block {
 
 			width: 100%;
 			display: block;
 		}
+
+		// Sizes
+
+		&.form-control-large { .comb-large; }
+		&.form-control-medium { .comb-medium; }
+		&.form-control-small { .comb-small; }
+		&.form-control-xsmall { .comb-xsmall; }
 	}
+
+	// Sizes
+	&.form-group-large > .form-control { .comb-large; }
+	&.form-group-medium > .form-control { .comb-medium; }
+	&.form-group-small > .form-control { .comb-small; }
+	&.form-group-xsmall > .form-control { .comb-xsmall; }
 
 	textarea.form-control { height: auto; }
 
 	select.form-control {
 
-		padding: .375rem 2.25rem .375rem .75rem;
-		-moz-padding-start: calc(0.75rem - 3px);
+		padding-right: 2.25em !important;
+		-moz-padding-start: calc(0.75em - 3px);
 		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
 		background-repeat: no-repeat;
-		background-position: right .75rem center;
+		background-position: right .55em center;
 		background-size: 16px 12px;
 	}
 
@@ -70,6 +71,8 @@
 
 		display: block;
 		margin: @margin-default 0;
+		margin-top: @margin-half;
+		font-size: @font-size-0;
 		color: var(--body-color-muted);
 	}
 
@@ -174,4 +177,84 @@
 		filter: none;
 		opacity: 0.5;
 	}
+}
+
+
+.form-group.controls-group {
+
+	display: flex;
+
+	.group-divider {
+
+		width: 0;
+		border: 0;
+		border-right: 1px solid var(--border-2);
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	span.group-label {
+
+		.comb;
+		background: var(--background-2);
+		border-color: var(--border-2);
+		text-align: center;
+		flex: 0;
+
+		&.group-label-large { .comb-large; }
+		&.group-label-medium { .comb-medium; }
+		&.group-label-small { .comb-small; }
+		&.group-label-xsmall { .comb-xsmall; }
+	}
+
+	& > * {
+
+		border-radius: 0;
+
+		&.is-grow {
+
+			flex: 1;
+		}
+
+		each(range(1%, 100%, 1), {
+			&.basis-@{index} {
+				flex-basis: @value;
+			}
+		});
+
+		&:not(:first-child):not(:last-child) {
+
+			border-left-width: 0;
+		}
+
+		&:first-child {
+
+			border-radius: 0;
+			border-top-left-radius: @form-control-border-radius;
+			border-bottom-left-radius: @form-control-border-radius;
+		}
+
+		&:last-child {
+
+			border-radius: 0;
+			border-left-width: 0;
+			border-top-right-radius: @form-control-border-radius;
+			border-bottom-right-radius: @form-control-border-radius;
+		}
+	}
+}
+
+.controls {
+
+	// Sizes
+
+	&.are-large > .form-control { .comb-large; }
+	&.are-medium > .form-control { .comb-medium; }
+	&.are-small > .form-control { .comb-small; }
+	&.are-xsmall > .form-control { .comb-xsmall; }
+
+	&.are-large > .group-label { .comb-large !important; }
+	&.are-medium > .group-label { .comb-medium !important; }
+	&.are-small > .group-label { .comb-small !important; }
+	&.are-xsmall > .group-label { .comb-xsmall !important; }
 }

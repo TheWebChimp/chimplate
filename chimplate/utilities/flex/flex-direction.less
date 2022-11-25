@@ -1,0 +1,19 @@
+/*				    ________             ____  _                __  _
+	▀▀▀▀▀▀▀▀▀	   / ____/ /__  _  __   / __ \(_)_______  _____/ /_(_)___  ____
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /_  / / _ \| |/_/  / / / / / ___/ _ \/ ___/ __/ / __ \/ __ \
+  ▀ █ ▀▀▀▀▀ █ ▀	 / __/ / /  __/>  <   / /_/ / / /  /  __/ /__/ /_/ / /_/ / / / /
+	▀▀▀▀▀▀▀▀▀	/_/   /_/\___/_/|_|  /_____/_/_/   \___/\___/\__/_/\____/_/ /_/
+/**/
+
+@flex-direction-values: {
+	flex-row: row;
+	flex-row-reverse: row-reverse;
+	flex-col: column;
+	flex-col-reverse: column-reverse;
+}
+
+each(@flex-direction-values, {
+	.set-rule(@key, {
+		.apply-rule(flex-direction, @value);
+	});
+});

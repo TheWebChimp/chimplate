@@ -30,19 +30,3 @@
 .translate(@x: 0, @y: 0) { .transform(translate(@x, @y)); }
 
 .skew(@deg, @deg2) { .transform(skew(@deg, @deg2)); }
-
-/* Buttons Mixin */
-/* ---------------------------------------------------------------------------------------------- */
-
-.button-style(@background, @hover_background, @color: white) {
-
-	color: @color;
-	background: @background;
-	border-color: @background;
-
-	&:hover {
-
-		background: @hover_background;
-		border-color: @hover_background;
-	}
-}

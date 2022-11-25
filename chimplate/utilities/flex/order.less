@@ -1,0 +1,30 @@
+/*				   ____           __
+	▀▀▀▀▀▀▀▀▀	  / __ \_________/ /__  _____
+  █ ▀▀▀▀ ▀▀▀▀ █	 / / / / ___/ __  / _ \/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	/ /_/ / /  / /_/ /  __/ /
+	▀▀▀▀▀▀▀▀▀	\____/_/   \__,_/\___/_/
+/**/
+
+@order-values: {
+	order-1: 1;
+	order-2: 2;
+	order-3: 3;
+	order-4: 4;
+	order-5: 5;
+	order-6: 6;
+	order-7: 7;
+	order-8: 8;
+	order-9: 9;
+	order-10: 10;
+	order-11: 11;
+	order-12: 12;
+	order-first: -9999;
+	order-last: 9999;
+	order-none: 0;
+}
+
+each(@order-values, {
+	.set-rule(@key, {
+		.apply-rule(order, @value);
+	});
+});

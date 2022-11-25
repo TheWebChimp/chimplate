@@ -1,0 +1,11 @@
+@float-values: {
+	float-right: right;
+	float-left: left;
+	float-none: none;
+}
+
+each(@float-values, {
+	.set-rule(@key, {
+		.apply-rule(float, @value);
+	});
+});

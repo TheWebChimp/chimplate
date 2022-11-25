@@ -32,6 +32,17 @@
 	Values
 	======
 
+	Spacing is based on 4 pixels.
+	This is a magic number but a very good one. Like in tailwind, the number 4 is uses as the base so:
+
+	1 = 4px
+	2 = 8px
+
+	but also:
+
+	0.5 = 2px
+
+
 	Values or magnitude (Like Tailwind):
 
 		- 0
@@ -63,6 +74,7 @@
 @padding-spacer: @spacer;
 
 @margin-default: @margin-spacer;
+@margin_default: @margin-spacer;
 
 @margin-third: (@margin-default / 3);
 @margin-half: (@margin-default / 2);

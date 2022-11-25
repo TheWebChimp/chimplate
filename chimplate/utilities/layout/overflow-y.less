@@ -1,0 +1,23 @@
+@overflow-y-values: {
+	overflow-auto: auto;
+	overflow-hidden: hidden;
+	overflow-clip: clip;
+	overflow-visible: visible;
+	overflow-scroll: scroll;
+	overflow-x-auto: auto;
+	overflow-y-auto: auto;
+	overflow-x-hidden: hidden;
+	overflow-y-hidden: hidden;
+	overflow-x-clip: clip;
+	overflow-y-clip: clip;
+	overflow-x-visible: visible;
+	overflow-y-visible: visible;
+	overflow-x-scroll: scroll;
+	overflow-y-scroll: scroll;
+}
+
+each(@overflow-y-values, {
+	.set-rule(@key, {
+		.apply-rule(overflow-y, @value);
+	});
+});

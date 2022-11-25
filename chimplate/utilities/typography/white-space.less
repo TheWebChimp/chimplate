@@ -1,0 +1,20 @@
+/*				 _       ____    _ __          _____
+	▀▀▀▀▀▀▀▀▀	| |     / / /_  (_) /____     / ___/____  ____ _________
+  █ ▀▀▀▀ ▀▀▀▀ █	| | /| / / __ \/ / __/ _ \    \__ \/ __ \/ __ `/ ___/ _ \
+  ▀ █ ▀▀▀▀▀ █ ▀	| |/ |/ / / / / / /_/  __/   ___/ / /_/ / /_/ / /__/  __/
+	▀▀▀▀▀▀▀▀▀	|__/|__/_/ /_/_/\__/\___/   /____/ .___/\__,_/\___/\___/
+/*				                                /_/*/
+
+@white-space-values: {
+	whitespace-normal: normal;
+	whitespace-nowrap: nowrap;
+	whitespace-pre: pre;
+	whitespace-pre-line: pre-line;
+	whitespace-pre-wrap: pre-wrap;
+}
+
+each(@white-space-values, {
+	.set-rule(@key, {
+		.apply-rule(white-space, @value);
+	});
+});

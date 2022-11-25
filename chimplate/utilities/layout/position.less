@@ -1,16 +1,13 @@
+@position-values: {
+	static: static;
+	fixed: fixed;
+	absolute: absolute;
+	relative: relative;
+	sticky: sticky;
+}
 
-
-.static { position: static; }
-.set-rule(static, { .static; });
-
-.fixed { position: fixed; }
-.set-rule(fixed, { .fixed; });
-
-.absolute { position: absolute; }
-.set-rule(absolute, { .absolute; });
-
-.relative { position: relative; }
-.set-rule(relative, { .relative; });
-
-.sticky { position: sticky; }
-.set-rule(sticky, { .sticky; });
+each(@position-values, {
+	.set-rule(@key, {
+		.apply-rule(position, @value);
+	});
+});

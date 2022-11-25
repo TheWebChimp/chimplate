@@ -1,11 +1,11 @@
+@aspect-ratio-values: {
+	aspect-auto: auto;
+	aspect-square: 1 / 1;
+	aspect-video: 16 / 9;
+}
 
-
-.aspect-auto { aspect-ratio: auto; }
-.set-rule(aspect-auto, { .aspect-auto; });
-
-.aspect-square { aspect-ratio: ~'1 / 1'; }
-.set-rule(aspect-square, { .aspect-square; });
-
-.aspect-video { aspect-ratio: ~'16 / 9'; }
-
-.set-rule(aspect-video, { .aspect-video; });
+each(@aspect-ratio-values, {
+	.set-rule(@key, {
+		.apply-rule(aspect-ratio, @value);
+	});
+});

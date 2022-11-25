@@ -6,6 +6,16 @@
 	border-radius: @-radius-conditional-1;
 }
 
+/*.function {
+	.foo(@x) {
+		return: @x * 2;
+	}
+}
+
+.special-div {
+	width: foo(21em); // -> 42em
+}*/
+
 @media @md-n-above and @xl-n-below {
 
 	p {
@@ -25,3 +35,30 @@ body {
 
 	--primary: red !important;
 }*/
+
+
+// Examples
+
+
+/*.border(@color, @number) {
+
+	@color-number: "@{color}-@{number}";
+	border: 1px solid @@color-number;
+}
+
+.border-color(@number) {
+
+	each(@colors, {
+		.set-rule(~"border-@{value}-@{number}", { .border(@value, @number); });
+	});
+}
+
+each(@color-numbers, {
+	.border-color(@value);
+});*/
+
+
+.button-chido {
+
+	.button-style(#FAB005);
+}

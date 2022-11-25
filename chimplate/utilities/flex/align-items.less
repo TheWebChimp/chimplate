@@ -1,0 +1,20 @@
+/*				    ___    ___                ______
+	▀▀▀▀▀▀▀▀▀	   /   |  / (_)___ _____     /  _/ /____  ____ ___  _____
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /| | / / / __ `/ __ \    / // __/ _ \/ __ `__ \/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	 / ___ |/ / / /_/ / / / /  _/ // /_/  __/ / / / / (__  )
+	▀▀▀▀▀▀▀▀▀	/_/  |_/_/_/\__, /_/ /_/  /___/\__/\___/_/ /_/ /_/____/
+/*				           /____/*/
+
+@align-items-values: {
+	items-start: flex-start;
+	items-end: flex-end;
+	items-center: center;
+	items-baseline: baseline;
+	items-stretch: stretch;
+}
+
+each(@align-items-values, {
+	.set-rule(@key, {
+		.apply-rule(align-items, @value);
+	});
+});

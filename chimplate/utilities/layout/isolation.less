@@ -1,7 +1,10 @@
+@isolation-values: {
+	isolate: isolate;
+	isolation-auto: auto;
+}
 
-
-.isolate { isolation: isolate; }
-.set-rule(isolate, { .isolate; });
-
-.isolation-auto { isolation: auto; }
-.set-rule(isolation-auto, { .isolation-auto; });
+each(@isolation-values, {
+	.set-rule(@key, {
+		.apply-rule(isolation, @value);
+	});
+});

@@ -1,7 +1,10 @@
+@visibility-values: {
+	visible: visible;
+	invisible: hidden;
+}
 
-
-.visible { visibility: visible; }
-.set-rule(visible, { .visible; });
-
-.invisible { visibility: hidden; }
-.set-rule(invisible, { .invisible; });
+each(@visibility-values, {
+	.set-rule(@key, {
+		.apply-rule(visibility, @value);
+	});
+});

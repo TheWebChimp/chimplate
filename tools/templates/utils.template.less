@@ -1,0 +1,11 @@
+@{{prop}}-values: {
+	{{#each rules}}
+	{{@key}}: {{this}};
+	{{/each}}
+}
+
+each(@{{prop}}-values, {
+	.set-rule(@key, {
+		.apply-rule({{prop}}, @value);
+	});
+});

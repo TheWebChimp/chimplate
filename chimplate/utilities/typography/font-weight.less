@@ -1,0 +1,24 @@
+/*				    ______            __     _       __     _       __    __
+	▀▀▀▀▀▀▀▀▀	   / ____/___  ____  / /_   | |     / /__  (_)___ _/ /_  / /_
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /_  / __ \/ __ \/ __/   | | /| / / _ \/ / __ `/ __ \/ __/
+  ▀ █ ▀▀▀▀▀ █ ▀	 / __/ / /_/ / / / / /_     | |/ |/ /  __/ / /_/ / / / / /_
+	▀▀▀▀▀▀▀▀▀	/_/    \____/_/ /_/\__/     |__/|__/\___/_/\__, /_/ /_/\__/
+/*				                                          /____/*/
+
+@font-weight-values: {
+	font-thin: 100;
+	font-extralight: 200;
+	font-light: 300;
+	font-normal: 400;
+	font-medium: 500;
+	font-semibold: 600;
+	font-bold: 700;
+	font-extrabold: 800;
+	font-black: 900;
+}
+
+each(@font-weight-values, {
+	.set-rule(@key, {
+		.apply-rule(font-weight, @value);
+	});
+});

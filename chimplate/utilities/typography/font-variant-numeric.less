@@ -1,0 +1,24 @@
+/*				    ______            __     _    __           _             __     _   __                          _
+	▀▀▀▀▀▀▀▀▀	   / ____/___  ____  / /_   | |  / /___ ______(_)___ _____  / /_   / | / /_  ______ ___  ___  _____(_)____
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /_  / __ \/ __ \/ __/   | | / / __ `/ ___/ / __ `/ __ \/ __/  /  |/ / / / / __ `__ \/ _ \/ ___/ / ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	 / __/ / /_/ / / / / /_     | |/ / /_/ / /  / / /_/ / / / / /_   / /|  / /_/ / / / / / /  __/ /  / / /__
+	▀▀▀▀▀▀▀▀▀	/_/    \____/_/ /_/\__/     |___/\__,_/_/  /_/\__,_/_/ /_/\__/  /_/ |_/\__,_/_/ /_/ /_/\___/_/  /_/\___/
+/**/
+
+@font-variant-numeric-values: {
+	normal-nums: normal;
+	ordinal: ordinal;
+	slashed-zero: slashed-zero;
+	lining-nums: lining-nums;
+	oldstyle-nums: oldstyle-nums;
+	proportional-nums: proportional-nums;
+	tabular-nums: tabular-nums;
+	diagonal-fractions: diagonal-fractions;
+	stacked-fractions: stacked-fractions;
+}
+
+each(@font-variant-numeric-values, {
+	.set-rule(@key, {
+		.apply-rule(font-variant-numeric, @value);
+	});
+});

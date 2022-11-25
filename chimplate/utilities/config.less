@@ -4,6 +4,8 @@
   ▀ █ ▀▀▀▀▀ █ ▀	/ /_/ / /_/ / / / /_/ /  __(__  )
 	▀▀▀▀▀▀▀▀▀	\____/\__/_/_/_/\__/_/\___/____/*/
 
+.apply-rule(@p, @v) { @{p}: @v; }
+
 .set-rule(@class-name, @rules) {
 
 	.@{class-name} {
@@ -61,22 +63,3 @@
 		}
 	}
 }
-
-// Examples
-
-.border(@color, @number) {
-
-	@color-number: "@{color}-@{number}";
-	border: 1px solid @@color-number;
-}
-
-.border-color(@number) {
-
-	each(@colors, {
-		.set-rule(~"border-@{value}-@{number}", { .border(@value, @number); });
-	});
-}
-
-each(@numbers, {
-	.border-color(@value);
-});

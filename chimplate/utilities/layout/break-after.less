@@ -1,0 +1,16 @@
+@break-after-values: {
+	break-after-auto: auto;
+	break-after-avoid: avoid;
+	break-after-all: all;
+	break-after-avoid-page: avoid-page;
+	break-after-page: page;
+	break-after-left: left;
+	break-after-right: right;
+	break-after-column: column;
+}
+
+each(@break-after-values, {
+	.set-rule(@key, {
+		.apply-rule(break-after, @value);
+	});
+});

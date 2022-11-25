@@ -1,0 +1,17 @@
+@overscroll-behavior-x-values: {
+	overscroll-auto: auto;
+	overscroll-contain: contain;
+	overscroll-none: none;
+	overscroll-y-auto: auto;
+	overscroll-y-contain: contain;
+	overscroll-y-none: none;
+	overscroll-x-auto: auto;
+	overscroll-x-contain: contain;
+	overscroll-x-none: none;
+}
+
+each(@overscroll-behavior-x-values, {
+	.set-rule(@key, {
+		.apply-rule(overscroll-behavior-x, @value);
+	});
+});

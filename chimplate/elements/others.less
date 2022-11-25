@@ -1,0 +1,57 @@
+/*				   ____  __  __
+	▀▀▀▀▀▀▀▀▀	  / __ \/ /_/ /_  ___  __________
+  █ ▀▀▀▀ ▀▀▀▀ █	 / / / / __/ __ \/ _ \/ ___/ ___/
+  ▀ █ ▀▀▀▀▀ █ ▀	/ /_/ / /_/ / / /  __/ /  (__  )
+	▀▀▀▀▀▀▀▀▀	\____/\__/_/ /_/\___/_/  /____/*/
+
+/* Media Object */
+/* ---------------------------------------------------------------------------------------------- */
+
+.media-object {
+
+	display: inline-flex;
+	align-items: flex-start;
+
+	.media {
+
+		margin-right: @margin-half;
+	}
+
+	.media-body {
+
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&.is-vertical {
+
+		align-items: center;
+	}
+
+	&.media-object-block {
+
+		display: flex;
+	}
+}
+
+/* Inner */
+/* ---------------------------------------------------------------------------------------------- */
+
+.inner {
+
+	max-width: 100%;
+	margin: 0 auto;
+	display: block;
+
+	@media screen and @lg-n-above {
+
+		width: 1000px;
+		max-width: none;
+	}
+
+	@media screen and @xl-n-above {
+
+		width: 1280px;
+	}
+}

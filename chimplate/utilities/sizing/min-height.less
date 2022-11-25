@@ -1,0 +1,14 @@
+@min-height-values: {
+	min-h-0: 0px;
+	min-h-full: 100%;
+	min-h-screen: 100vh;
+	min-h-min: min-content;
+	min-h-max: max-content;
+	min-h-fit: fit-content;
+}
+
+each(@min-height-values, {
+	.set-rule(@key, {
+		.apply-rule(min-height, @value);
+	});
+});

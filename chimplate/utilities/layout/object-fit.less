@@ -1,16 +1,13 @@
+@object-fit-values: {
+	object-contain: contain;
+	object-cover: cover;
+	object-fill: fill;
+	object-none: none;
+	object-scale-down: scale-down;
+}
 
-
-.object-contain { object-fit: contain; }
-.set-rule(object-contain, { .object-contain; });
-
-.object-cover { object-fit: cover; }
-.set-rule(object-cover, { .object-cover; });
-
-.object-fill { object-fit: fill; }
-.set-rule(object-fill, { .object-fill; });
-
-.object-none { object-fit: none; }
-.set-rule(object-none, { .object-none; });
-
-.object-scale-down { object-fit: scale-down; }
-.set-rule(object-scale-down, { .object-scale-down; });
+each(@object-fit-values, {
+	.set-rule(@key, {
+		.apply-rule(object-fit, @value);
+	});
+});

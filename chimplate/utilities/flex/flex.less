@@ -1,0 +1,19 @@
+/*				    ________
+	▀▀▀▀▀▀▀▀▀	   / ____/ /__  _  __
+  █ ▀▀▀▀ ▀▀▀▀ █	  / /_  / / _ \| |/_/
+  ▀ █ ▀▀▀▀▀ █ ▀	 / __/ / /  __/>  <
+	▀▀▀▀▀▀▀▀▀	/_/   /_/\___/_/|_|
+/**/
+
+@flex-values: {
+	flex-1: 1 1 0%;
+	flex-auto: 1 1 auto;
+	flex-initial: 0 1 auto;
+	flex-none: none;
+}
+
+each(@flex-values, {
+	.set-rule(@key, {
+		.apply-rule(flex, @value);
+	});
+});

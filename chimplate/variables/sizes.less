@@ -9,25 +9,25 @@
  * https://open-props.style/#sizes
  */
 
+@base-size: 1rem / 4; //1 rem = 16 / 4 = 4 <- base size!
+
 // Less Variables
 
-@size-000: -.5rem;
-@size-00: -.25rem;
-@size-1: .25rem;
-@size-2: .5rem;
-@size-3: 1rem;
-@size-4: 1.25rem;
-@size-5: 1.5rem;
-@size-6: 1.75rem;
-@size-7: 2rem;
-@size-8: 3rem;
-@size-9: 4rem;
-@size-10: 5rem;
-@size-11: 7.5rem;
-@size-12: 10rem;
-@size-13: 15rem;
-@size-14: 20rem;
-@size-15: 30rem;
+@size-1: @base-size;
+@size-2: @base-size*2;
+@size-3: @base-size*3;
+@size-4: @base-size*4;
+@size-5: @base-size*5;
+@size-6: @base-size*6;
+@size-7: @base-size*7;
+@size-8: @base-size*8;
+@size-9: @base-size*9;
+@size-10: @base-size*10;
+@size-11: @base-size*11;
+@size-12: @base-size*12;
+@size-13: @base-size*13;
+@size-14: @base-size*14;
+@size-15: @base-size*15;
 
 @size-fluid-1: clamp(.5rem, 1vw, 1rem);
 @size-fluid-2: clamp(1rem, 2vw, 1.5rem);
@@ -52,8 +52,6 @@
 
 :where(html) {
 
-	--size-000: @size-000;
-	--size-00: @size-00;
 	--size-1: @size-1;
 	--size-2: @size-2;
 	--size-3: @size-3;
@@ -69,6 +67,7 @@
 	--size-13: @size-13;
 	--size-14: @size-14;
 	--size-15: @size-15;
+
 	--size-fluid-1: @size-fluid-1;
 	--size-fluid-2: @size-fluid-2;
 	--size-fluid-3: @size-fluid-3;
@@ -79,9 +78,11 @@
 	--size-fluid-8: @size-fluid-8;
 	--size-fluid-9: @size-fluid-9;
 	--size-fluid-10: @size-fluid-10;
+
 	--size-content-1: @size-content-1;
 	--size-content-2: @size-content-2;
 	--size-content-3: @size-content-3;
+
 	--size-header-1: @size-header-1;
 	--size-header-2: @size-header-2;
 	--size-header-3: @size-header-3;
@@ -89,8 +90,6 @@
 
 // LESS - CSS Variables
 
-@-size-000: var(--size-000);
-@-size-00: var(--size-00);
 @-size-1: var(--size-1);
 @-size-2: var(--size-2);
 @-size-3: var(--size-3);
@@ -106,6 +105,7 @@
 @-size-13: var(--size-13);
 @-size-14: var(--size-14);
 @-size-15: var(--size-15);
+
 @-size-fluid-1: var(--size-fluid-1);
 @-size-fluid-2: var(--size-fluid-2);
 @-size-fluid-3: var(--size-fluid-3);
@@ -116,9 +116,11 @@
 @-size-fluid-8: var(--size-fluid-8);
 @-size-fluid-9: var(--size-fluid-9);
 @-size-fluid-10: var(--size-fluid-10);
+
 @-size-content-1: var(--size-content-1);
 @-size-content-2: var(--size-content-2);
 @-size-content-3: var(--size-content-3);
+
 @-size-header-1: var(--size-header-1);
 @-size-header-2: var(--size-header-2);
 @-size-header-3: var(--size-header-3);

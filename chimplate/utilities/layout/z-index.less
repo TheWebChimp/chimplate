@@ -1,22 +1,15 @@
+@z-index-values: {
+	z-0: 0;
+	z-10: 10;
+	z-20: 20;
+	z-30: 30;
+	z-40: 40;
+	z-50: 50;
+	z-auto: auto;
+}
 
-
-.z-0 { z-index: 0; }
-.set-rule(z-0, { .z-0; });
-
-.z-10 { z-index: 10; }
-.set-rule(z-10, { .z-10; });
-
-.z-20 { z-index: 20; }
-.set-rule(z-20, { .z-20; });
-
-.z-30 { z-index: 30; }
-.set-rule(z-30, { .z-30; });
-
-.z-40 { z-index: 40; }
-.set-rule(z-40, { .z-40; });
-
-.z-50 { z-index: 50; }
-.set-rule(z-50, { .z-50; });
-
-.z-auto { z-index: auto; }
-.set-rule(z-auto, { .z-auto; });
+each(@z-index-values, {
+	.set-rule(@key, {
+		.apply-rule(z-index, @value);
+	});
+});

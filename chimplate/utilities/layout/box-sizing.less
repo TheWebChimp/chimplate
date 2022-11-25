@@ -1,7 +1,10 @@
+@box-sizing-values: {
+	box-border: border-box;
+	box-content: content-box;
+}
 
-
-.box-border { box-sizing: border-box; }
-.set-rule(box-border, { .box-border; });
-
-.box-content { box-sizing: content-box; }
-.set-rule(box-content, { .box-content; });
+each(@box-sizing-values, {
+	.set-rule(@key, {
+		.apply-rule(box-sizing, @value);
+	});
+});
